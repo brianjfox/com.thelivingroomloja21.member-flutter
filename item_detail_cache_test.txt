@@ -1,0 +1,827 @@
+Resolving dependencies...
+Downloading packages...
+  characters 1.4.0 (1.4.1 available)
+  flutter_secure_storage_linux 1.2.3 (2.0.1 available)
+  flutter_secure_storage_macos 3.1.3 (4.0.0 available)
+  flutter_secure_storage_platform_interface 1.1.2 (2.0.1 available)
+  flutter_secure_storage_web 1.2.1 (2.0.0 available)
+  flutter_secure_storage_windows 3.1.2 (4.0.0 available)
+  js 0.6.7 (0.7.2 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  meta 1.16.0 (1.17.0 available)
+  mobile_scanner 5.2.3 (7.0.1 available)
+  test_api 0.7.6 (0.7.7 available)
+Got dependencies!
+11 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Launching lib/main.dart on 2409BRN2CY in debug mode...
+Running Gradle task 'assembleDebug'...                              5.7s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...           7.5s
+D/FlutterJNI( 5529): Beginning load of flutter...
+D/FlutterJNI( 5529): flutter (null) was loaded normally!
+I/flutter ( 5529): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+Syncing files to device 2409BRN2CY...                               45ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on 2409BRN2CY is available at: http://127.0.0.1:60513/1N-cUwCjEJU=/
+I/flutter ( 5529): 🔐 AuthService: Initializing...
+The Flutter DevTools debugger and profiler on 2409BRN2CY is available at: http://127.0.0.1:9100?uri=http://127.0.0.1:60513/1N-cUwCjEJU=/
+I/WindowExtensionsImpl( 5529): Initializing Window Extensions, vendor API level=6, activity embedding enabled=true
+I/_member_flutter( 5529): Compiler allocated 6698KB to compile void android.view.ViewRootImpl.performTraversals()
+D/BufferQueueConsumer( 5529): [](id:159900000000,api:0,p:-1,c:5529) connect: controlledByApp=false
+D/BLASTBufferQueue( 5529): [VRI[MainActivity]#0](f:0,a:0) constructor()
+D/BLASTBufferQueue( 5529): [VRI[MainActivity]#0](f:0,a:0) update width=720 height=1640 format=-3 mTransformHint=0
+D/VRI[MainActivity]( 5529): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4965 android.view.ViewRootImpl.doTraversal:3571 android.view.ViewRootImpl$TraversalRunnable.run:11761 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 
+D/SurfaceView( 5529): UPDATE null, mIsCastMode = false
+D/BufferQueueConsumer( 5529): [](id:159900000001,api:0,p:-1,c:5529) connect: controlledByApp=false
+D/BLASTBufferQueue( 5529): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:0) constructor()
+D/BLASTBufferQueue( 5529): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:0) update width=720 height=1640 format=4 mTransformHint=0
+E/_member_flutter( 5529): checkIfsupportxIntfps do not binder to joyose
+D/MAGT_SYNC_FRAME( 5529): MAGT Sync: MAGT is not supported. Disabling Sync.
+D/_member_flutter( 5529): Can't load libmbrainSDK
+I/Choreographer( 5529): first vsync insert message into MessageQueue Head
+D/SurfaceView( 5529): UPDATE Surface(name=SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1918)/@0x5174855, mIsProjectionMode = false
+I/GrallocExtra( 5529): gralloc_extra_query:is_SW3D 0
+I/GrallocExtra( 5529): gralloc_extra_query:is_SW3D 0
+W/libc    ( 5529): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue( 5529): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:1) acquireNextBufferLocked size=720x1640 mFrameNumber=1 applyTransaction=true mTimestamp=51863506869398(auto) mPendingTransactions.size=0 graphicBufferId=23746874179594 transform=0
+D/_member_flutter( 5529): Can't load libmbrainSDK
+I/Choreographer( 5529): Skipped 44 frames!  The application may be doing too much work on its main thread.
+D/UserSceneDetector( 5529): invoke error.
+D/VRI[MainActivity]( 5529): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4965 android.view.ViewRootImpl.doTraversal:3571 android.view.ViewRootImpl$TraversalRunnable.run:11761 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 
+D/VRI[MainActivity]( 5529): Setup new sync=wmsSync-VRI[MainActivity]#1
+D/UserSceneDetector( 5529): invoke error.
+D/HWUI    ( 5529): makeCurrent grContext:0xb400007861a2a250 reset mTextureAvailable
+D/_member_flutter( 5529): MiuiProcessManagerServiceStub setSchedFifo
+I/MiuiProcessManagerImpl( 5529): setSchedFifo pid:5529, mode:3
+W/libc    ( 5529): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue( 5529): [VRI[MainActivity]#0](f:0,a:1) acquireNextBufferLocked size=720x1640 mFrameNumber=1 applyTransaction=true mTimestamp=51863684660398(auto) mPendingTransactions.size=0 graphicBufferId=23746874179602 transform=0
+D/VRI[MainActivity]( 5529): vri.reportDrawFinished
+I/HWUI    ( 5529): Davey! duration=806ms; Flags=1, FrameTimelineVsyncId=2279734, IntendedVsync=51862878342862, Vsync=51863610893186, InputEventId=0, HandleInputStart=51863628306936, AnimationStart=51863628312782, PerformTraversalsStart=51863628314859, DrawStart=51863652916398, FrameDeadline=51862898342862, FrameInterval=51863626506551, FrameStartTime=16648871, SyncQueued=51863659221705, SyncStart=51863659441321, IssueDrawCommandsStart=51863665006628, SwapBuffers=51863684153936, FrameCompleted=51863685426244, DequeueBufferDuration=1683385, QueueBufferDuration=605923, GpuCompleted=51863684964474, SwapBuffersCompleted=51863685426244, DisplayPresentTime=0, CommandSubmissionCompleted=51863684153936, 
+D/ProfileInstaller( 5529): Installing profile for com.thelivingroomloja21.tlr_member_flutter
+I/HandWritingStubImpl( 5529): refreshLastKeyboardType: 1
+I/HandWritingStubImpl( 5529): getCurrentKeyboardType: 1
+I/HandWritingStubImpl( 5529): getCurrentKeyboardType: 1
+I/flutter ( 5529): 🔐 AuthService: Checking biometric availability...
+I/flutter ( 5529): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter ( 5529): 🔐 AuthService: Biometric available: true, enabled: true
+I/flutter ( 5529): 🔐 AuthService: Initialization complete - biometric enabled: true
+I/flutter ( 5529): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter ( 5529): 🔐 AuthProvider: Initialized
+I/flutter ( 5529): 🔐 AuthProvider: biometricAvailable: true
+I/flutter ( 5529): 🔐 AuthProvider: biometricEnabled: true
+I/flutter ( 5529): 🔐 AuthProvider: isAuthenticated: true
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51867826, downTime=51867826, phoneEventTime=20:28:31.132 } moveCount:0
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/MirrorManager( 5529): this model don't Support
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51867876, downTime=51867826, phoneEventTime=20:28:31.182 } moveCount:1
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51868509, downTime=51868509, phoneEventTime=20:28:31.815 } moveCount:0
+D/VRI[MainActivity]( 5529): vri.reportNextDraw android.view.ViewRootImpl.handleResized:2773 android.view.ViewRootImpl.-$$Nest$mhandleResized:0 android.view.ViewRootImpl$W.resized:12912 android.app.servertransaction.WindowStateResizeItem.execute:64 android.app.servertransaction.WindowStateTransactionItem.execute:59 
+D/VRI[MainActivity]( 5529): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+D/BLASTBufferQueue( 5529): [VRI[MainActivity]#0](f:0,a:1) update width=1640 height=720 format=-3 mTransformHint=7
+D/BLASTBufferQueue( 5529): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:4) update width=1640 height=720 format=4 mTransformHint=7
+E/_member_flutter( 5529): DynamicFPS DF open fail: No such file or directory
+E/_member_flutter( 5529): FrameInsert open fail: No such file or directory
+D/VRI[MainActivity]( 5529): Setup new sync=wmsSync-VRI[MainActivity]#4
+W/libc    ( 5529): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue( 5529): [VRI[MainActivity]#0](f:0,a:2) producer disconnected before acquireNextBufferLocked
+D/VRI[MainActivity]( 5529): vri.reportDrawFinished
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51868758, downTime=51868509, phoneEventTime=20:28:32.064 } moveCount:10
+E/Surface ( 5529): freeAllBuffers: 1 buffers were freed while being dequeued!
+I/ScrollIdentify( 5529): on fling
+E/_member_flutter( 5529): checkIfsupportxIntfps do not binder to joyose
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51869136, downTime=51869136, phoneEventTime=20:28:32.442 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51869147, downTime=51869136, phoneEventTime=20:28:32.453 } moveCount:0
+D/VRI[MainActivity]( 5529): vri.reportNextDraw android.view.ViewRootImpl.handleResized:2773 android.view.ViewRootImpl.-$$Nest$mhandleResized:0 android.view.ViewRootImpl$W.resized:12912 android.app.servertransaction.WindowStateResizeItem.execute:64 android.app.servertransaction.WindowStateTransactionItem.execute:59 
+D/VRI[MainActivity]( 5529): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+D/BLASTBufferQueue( 5529): [VRI[MainActivity]#0](f:0,a:2) update width=720 height=1640 format=-3 mTransformHint=0
+D/BLASTBufferQueue( 5529): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:2) update width=720 height=1640 format=4 mTransformHint=0
+D/VRI[MainActivity]( 5529): Setup new sync=wmsSync-VRI[MainActivity]#7
+D/BLASTBufferQueue( 5529): [VRI[MainActivity]#0](f:0,a:3) producer disconnected before acquireNextBufferLocked
+D/VRI[MainActivity]( 5529): vri.reportDrawFinished
+E/Surface ( 5529): freeAllBuffers: 1 buffers were freed while being dequeued!
+E/_member_flutter( 5529): checkIfsupportxIntfps do not binder to joyose
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51870923, downTime=51870923, phoneEventTime=20:28:34.229 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51871056, downTime=51870923, phoneEventTime=20:28:34.362 } moveCount:5
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51873238, downTime=51873238, phoneEventTime=20:28:36.544 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51873354, downTime=51873238, phoneEventTime=20:28:36.661 } moveCount:4
+I/ImeTracker( 5529): com.thelivingroomloja21.tlr_member_flutter:d5e28a86: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+I/HandWritingStubImpl( 5529): refreshLastKeyboardType: 1
+I/HandWritingStubImpl( 5529): getCurrentKeyboardType: 1
+D/InputMethodManager( 5529): showSoftInput() view=io.flutter.embedding.android.FlutterView{bb543e9 VFE...... .F....ID 0,0-720,1640 #2 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputConnectionAdaptor( 5529): The input method toggled cursor monitoring on
+D/InsetsController( 5529): show(ime(), fromIme=true)
+D/ViewRootImplStubImpl( 5529): requestedTypes: 8
+D/ViewRootImplStubImpl( 5529): onAnimationStart
+W/InteractionJankMonitor( 5529): Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.thelivingroomloja21.tlr_member_flutter
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.0
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.04733659
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.15943412
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.29088494
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.41884574
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.53307694
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.6301417
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.71007425
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.7745153
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.8256822
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.86586136
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.8971517
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9213679
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.94001883
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9543272
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9652721
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9736247
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9799868
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9848254
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.98850095
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9912904
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9934057
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9950088
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.99622315
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9971426
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.99783856
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9983652
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.99876374
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 1.0
+D/ViewRootImplStubImpl( 5529): onAnimationEnd,canceled: false
+D/InsetsController( 5529): cancelAnimation of types: 8, animType: 0, host: com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity invokeCallback=false reason=android.view.InsetsController.notifyFinished:1792 android.view.InsetsAnimationControlImpl.applyChangeInsets:310 android.view.InsetsController.lambda$new$3:870 android.view.InsetsController.$r8$lambda$meqKUiuVHZJFS86fhQQzBBmdABw:0 android.view.InsetsController$$ExternalSyntheticLambda11.run:0 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 android.view.Choreographer.doCallbacks:1307 android.view.Choreographer.doFrame:1170 android.view.Choreographer$FrameDisplayEventReceiver.run:1776 
+I/ImeTracker( 5529): com.thelivingroomloja21.tlr_member_flutter:d5e28a86: onShown
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51878133, downTime=51878133, phoneEventTime=20:28:41.439 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51878249, downTime=51878133, phoneEventTime=20:28:41.555 } moveCount:3
+I/HandWritingStubImpl( 5529): getCurrentKeyboardType: 1
+I/ImeTracker( 5529): com.thelivingroomloja21.tlr_member_flutter:287acdac: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+D/InputMethodManager( 5529): showSoftInput() view=io.flutter.embedding.android.FlutterView{bb543e9 VFE...... .F...... 0,0-720,1640 #2 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputConnectionAdaptor( 5529): The input method toggled cursor monitoring on
+D/InputConnectionAdaptor( 5529): The input method toggled cursor monitoring off
+D/InputConnectionAdaptor( 5529): The input method toggled cursor monitoring on
+D/InsetsController( 5529): show(ime(), fromIme=true)
+I/ImeTracker( 5529): com.thelivingroomloja21.tlr_member_flutter:287acdac: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51887475, downTime=51887475, phoneEventTime=20:28:50.781 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51887608, downTime=51887475, phoneEventTime=20:28:50.914 } moveCount:4
+I/flutter ( 5529): 🔐 AuthService: Attempting login for bfox@brianjfox.com
+I/flutter ( 5529): 🌐 ApiService: Making login request to /auth/authenticate
+I/flutter ( 5529): 🌐 ApiService: Base URL: https://api.thelivingroomloja21.com/api
+I/flutter ( 5529): 🌐 ApiService: Username: bfox@brianjfox.com
+E/LB      ( 5529): fail to open file: No such file or directory
+E/LB      ( 5529): fail to open node: No such file or directory
+E/LB      ( 5529): fail to open node: No such file or directory
+I/flutter ( 5529): 🌐 ApiService: Response status: 200
+I/flutter ( 5529): 🌐 ApiService: Response data: {success: true, message: Authentication successful, data: {user: {email: bfox@brianjfox.com, fname: Brian, lname: Fox, dob: 1959-12-11T00:00:00.000Z, phone: +18056378642, nif: 308549171, address: Rua Tenete Valadim 7 4B, Cascais, 2750-502, status: ACTIVE, is_admin: 1, language_pref: EN, created_at: 2025-08-10T18:26:51.000Z, updated_at: 2025-09-17T19:25:09.000Z}, token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJmb3hAYnJpYW5qZm94LmNvbSIsImlzX2FkbWluIjoxLCJuYW1lIjoiQnJpYW4gRm94IiwiaWF0IjoxNzU4MTM3MzMxLCJleHAiOjE3NTgyMjM3MzF9.zkS_Zj09RAurzi1ZxGgg9p2T9azSKHj23PhqhuIIMA4}}
+I/flutter ( 5529): 🔐 AuthService: Login response - success: true, message: Authentication successful
+I/flutter ( 5529): 🔐 AuthService: Login successful, setting user and token
+I/flutter ( 5529): 🔐 AuthService: User data stored, returning true
+I/flutter ( 5529): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter ( 5529): 🔐 LoginScreen: Login successful
+I/flutter ( 5529): 🔐 LoginScreen: biometricAvailable: true
+I/flutter ( 5529): 🔐 LoginScreen: biometricEnabled: true
+I/flutter ( 5529): 🔐 LoginScreen: Navigating to dashboard
+I/flutter ( 5529): EventsScreen: Loading from cache - 6 events
+I/flutter ( 5529): EventsScreen: Fetching fresh data from API
+I/flutter ( 5529): ItemsScreen: Loading from cache - 43 items
+I/flutter ( 5529): ItemsScreen: Fetching fresh data from API
+I/flutter ( 5529): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:25:19 GMT}
+I/flutter ( 5529): EventsScreen: Loading from cache - 6 events
+I/flutter ( 5529): EventsScreen: Fetching fresh data from API
+I/flutter ( 5529): ItemsScreen: Loading from cache - 43 items
+I/flutter ( 5529): ItemsScreen: Fetching fresh data from API
+I/flutter ( 5529): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:25:19 GMT}
+W/WindowOnBackDispatcher( 5529): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 5529): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/ImeTracker( 5529): com.thelivingroomloja21.tlr_member_flutter:2a6271f2: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+D/InsetsController( 5529): hide(ime(), fromIme=true)
+D/InputConnectionAdaptor( 5529): The input method toggled cursor monitoring off
+D/ViewRootImplStubImpl( 5529): requestedTypes: 8
+D/ViewRootImplStubImpl( 5529): onAnimationStart
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.0
+I/flutter ( 5529): CacheService: Cached 2 events
+I/flutter ( 5529): CacheService: Cached 6 events
+D/UserSceneDetector( 5529): invoke error.
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.05345186
+D/UserSceneDetector( 5529): invoke error.
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.17739001
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.3180848
+I/flutter ( 5529): CacheService: Cached 6 events
+I/flutter ( 5529): CacheService: Cached 2 events
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.4508744
+I/flutter ( 5529): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 5529): ItemsScreen: Prefetch successful - 43 items
+I/flutter ( 5529): ItemsScreen: No images from prefetch, starting background image loading
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.56610346
+I/flutter ( 5529): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 5529): ItemsScreen: Prefetch successful - 43 items
+I/flutter ( 5529): ItemsScreen: No images from prefetch, starting background image loading
+I/flutter ( 5529): CacheService: Cached 43 items
+D/UserSceneDetector( 5529): invoke error.
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.6615387
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.7383462
+I/flutter ( 5529): CacheService: Cached 43 items
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.79901326
+I/flutter ( 5529): CacheService: Cached properties for 43 items
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.84632415
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.88289195
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9109774
+I/flutter ( 5529): CacheService: Cached properties for 43 items
+I/flutter ( 5529): CacheService: Cached images for 0 items
+I/flutter ( 5529): CacheService: Cached images for 0 items
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9324497
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9488116
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9612488
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9706858
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9778367
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9832501
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9873451
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.99044114
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.992781
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.99454874
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.995884
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9968924
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.9976539
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.99822885
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 0.99866295
+D/ViewRootImplStubImpl( 5529): onAnimationUpdate, value: 1.0
+D/ViewRootImplStubImpl( 5529): onAnimationEnd,canceled: false
+D/InsetsController( 5529): cancelAnimation of types: 8, animType: 1, host: com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity invokeCallback=false reason=android.view.InsetsController.notifyFinished:1792 android.view.InsetsAnimationControlImpl.applyChangeInsets:310 android.view.InsetsController.lambda$new$3:870 android.view.InsetsController.$r8$lambda$meqKUiuVHZJFS86fhQQzBBmdABw:0 android.view.InsetsController$$ExternalSyntheticLambda11.run:0 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 android.view.Choreographer.doCallbacks:1307 android.view.Choreographer.doFrame:1170 android.view.Choreographer$FrameDisplayEventReceiver.run:1776 
+I/ImeTracker( 5529): com.thelivingroomloja21.tlr_member_flutter:16977049: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+I/ImeTracker( 5529): com.thelivingroomloja21.tlr_member_flutter:2a6271f2: onHidden
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51894135, downTime=51894135, phoneEventTime=20:28:57.441 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51894301, downTime=51894135, phoneEventTime=20:28:57.607 } moveCount:5
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51894818, downTime=51894818, phoneEventTime=20:28:58.125 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51895017, downTime=51894818, phoneEventTime=20:28:58.323 } moveCount:5
+I/ScrollIdentify( 5529): on fling
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 149
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51895650, downTime=51895650, phoneEventTime=20:28:58.957 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51895867, downTime=51895650, phoneEventTime=20:28:59.173 } moveCount:3
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51896700, downTime=51896700, phoneEventTime=20:29:00.006 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51896849, downTime=51896700, phoneEventTime=20:29:00.156 } moveCount:2
+I/ScrollIdentify( 5529): on fling
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 149
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 150
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51897682, downTime=51897682, phoneEventTime=20:29:00.988 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51897798, downTime=51897682, phoneEventTime=20:29:01.105 } moveCount:2
+I/ScrollIdentify( 5529): on fling
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 151
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 150
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 151
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 116
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 116
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 133
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 104
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 146
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 113
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 119
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 142
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 122
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 104
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 139
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 101
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 133
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 122
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 113
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 139
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 110
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 146
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 119
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 110
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 101
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 152
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 107
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 142
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 136
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 152
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 107
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 136
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 117
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 117
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 147
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 105
+I/_member_flutter( 5529): Background concurrent mark compact GC freed 128KB AllocSpace bytes, 10(12MB) LOS objects, 51% free, 5780KB/11MB, paused 290us,7.912ms total 37.147ms
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 102
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 143
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 148
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 111
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 105
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 123
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 134
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 111
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 102
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 147
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 123
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 143
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 137
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 140
+I/_member_flutter( 5529): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 12(12MB) LOS objects, 49% free, 9720KB/18MB, paused 712us,5.094ms total 48.082ms
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 148
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 108
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 140
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 114
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 134
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 108
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 137
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 120
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 114
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 120
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 118
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 106
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 118
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 106
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 132
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 141
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 132
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 135
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 141
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 144
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 138
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 103
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 112
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/_member_flutter( 5529): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 9(12MB) LOS objects, 49% free, 8732KB/17MB, paused 500us,8.149ms total 48.290ms
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 112
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 135
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 138
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 121
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 103
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 144
+I/_member_flutter( 5529): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 9(11MB) LOS objects, 49% free, 8828KB/17MB, paused 517us,6.110ms total 48.912ms
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 115
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 121
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 109
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 115
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 109
+I/_member_flutter( 5529): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 9(14MB) LOS objects, 49% free, 6556KB/12MB, paused 283us,5.711ms total 35.607ms
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51941759, downTime=51941759, phoneEventTime=20:29:45.066 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51942008, downTime=51941759, phoneEventTime=20:29:45.315 } moveCount:22
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51942541, downTime=51942541, phoneEventTime=20:29:45.847 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51942724, downTime=51942541, phoneEventTime=20:29:46.030 } moveCount:15
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51943524, downTime=51943524, phoneEventTime=20:29:46.831 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51943640, downTime=51943524, phoneEventTime=20:29:46.946 } moveCount:10
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51944173, downTime=51944173, phoneEventTime=20:29:47.479 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51944306, downTime=51944173, phoneEventTime=20:29:47.612 } moveCount:13
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51946388, downTime=51946388, phoneEventTime=20:29:49.694 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51946487, downTime=51946388, phoneEventTime=20:29:49.793 } moveCount:8
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51947886, downTime=51947886, phoneEventTime=20:29:51.192 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51947986, downTime=51947886, phoneEventTime=20:29:51.292 } moveCount:2
+I/flutter ( 5529): EventsScreen: Loading from cache - 2 events
+I/flutter ( 5529): EventsScreen: Fetching fresh data from API
+I/flutter ( 5529): ItemsScreen: Loading from cache - 43 items
+I/flutter ( 5529): ItemsScreen: Fetching fresh data from API
+I/flutter ( 5529): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:28:54 GMT}
+W/WindowOnBackDispatcher( 5529): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 5529): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 5529): CacheService: Cached 2 events
+I/flutter ( 5529): CacheService: Cached 6 events
+I/flutter ( 5529): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 5529): ItemsScreen: Prefetch successful - 43 items
+I/flutter ( 5529): ItemsScreen: No images from prefetch, starting background image loading
+I/flutter ( 5529): CacheService: Cached 43 items
+I/flutter ( 5529): CacheService: Cached properties for 43 items
+I/flutter ( 5529): CacheService: Cached images for 0 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 110
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 107
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 149
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 150
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 151
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 104
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 116
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 101
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 113
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 122
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 133
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 119
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 139
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 146
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 111
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 142
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 152
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 108
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 136
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 117
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 105
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 102
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 123
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 147
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 148
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 143
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 134
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 140
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 114
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/_member_flutter( 5529): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 9(12MB) LOS objects, 49% free, 9368KB/18MB, paused 625us,7.362ms total 51.765ms
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 112
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 137
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 120
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 106
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 109
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 118
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 132
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 103
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 141
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 135
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 138
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 144
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 115
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 121
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51984737, downTime=51984737, phoneEventTime=20:30:28.043 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51984952, downTime=51984737, phoneEventTime=20:30:28.258 } moveCount:14
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51985985, downTime=51985985, phoneEventTime=20:30:29.291 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51986185, downTime=51985985, phoneEventTime=20:30:29.491 } moveCount:10
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51986985, downTime=51986985, phoneEventTime=20:30:30.291 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51987200, downTime=51986985, phoneEventTime=20:30:30.506 } moveCount:11
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51987650, downTime=51987650, phoneEventTime=20:30:30.956 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51987800, downTime=51987650, phoneEventTime=20:30:31.106 } moveCount:13
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51988733, downTime=51988733, phoneEventTime=20:30:32.040 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51988832, downTime=51988733, phoneEventTime=20:30:32.139 } moveCount:1
+I/flutter ( 5529): ItemDetailScreen: Cached image for item 101: not found
+W/WindowOnBackDispatcher( 5529): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 5529): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/VRI[MainActivity]( 5529): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+I/flutter ( 5529): ItemDetailScreen: API image for item 101: found
+I/flutter ( 5529): ItemDetailScreen: Error fetching user for tasting note: DioException [bad response]: This exception was thrown because the response has a status code of 400 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter ( 5529): The status code of 400 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter ( 5529): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter ( 5529): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51991297, downTime=51991297, phoneEventTime=20:30:34.603 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51991463, downTime=51991297, phoneEventTime=20:30:34.769 } moveCount:17
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51991896, downTime=51991896, phoneEventTime=20:30:35.202 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51992063, downTime=51991896, phoneEventTime=20:30:35.369 } moveCount:17
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51993712, downTime=51993712, phoneEventTime=20:30:37.018 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51993861, downTime=51993712, phoneEventTime=20:30:37.167 } moveCount:12
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51995227, downTime=51995227, phoneEventTime=20:30:38.534 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51995360, downTime=51995227, phoneEventTime=20:30:38.666 } moveCount:3
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51996426, downTime=51996426, phoneEventTime=20:30:39.732 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51996575, downTime=51996426, phoneEventTime=20:30:39.881 } moveCount:4
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51997408, downTime=51997408, phoneEventTime=20:30:40.714 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51997424, downTime=51997408, phoneEventTime=20:30:40.731 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51998224, downTime=51998224, phoneEventTime=20:30:41.530 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=51998407, downTime=51998224, phoneEventTime=20:30:41.713 } moveCount:17
+I/ScrollIdentify( 5529): on fling
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=51999923, downTime=51999923, phoneEventTime=20:30:43.229 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52000055, downTime=51999923, phoneEventTime=20:30:43.361 } moveCount:4
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52004785, downTime=52004785, phoneEventTime=20:30:48.091 } moveCount:0
+I/MIUIInput( 5529): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52004884, downTime=52004785, phoneEventTime=20:30:48.191 } moveCount:3
+I/flutter ( 5529): EventsScreen: Loading from cache - 6 events
+I/flutter ( 5529): EventsScreen: Fetching fresh data from API
+I/flutter ( 5529): ItemsScreen: Loading from cache - 43 items
+I/flutter ( 5529): ItemsScreen: Fetching fresh data from API
+I/flutter ( 5529): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:29:52 GMT}
+I/flutter ( 5529): EventsScreen: Loading from cache - 6 events
+I/flutter ( 5529): EventsScreen: Fetching fresh data from API
+I/flutter ( 5529): ItemsScreen: Loading from cache - 43 items
+I/flutter ( 5529): ItemsScreen: Fetching fresh data from API
+I/flutter ( 5529): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:29:52 GMT}
+W/WindowOnBackDispatcher( 5529): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 5529): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/VRI[MainActivity]( 5529): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+I/flutter ( 5529): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 5529): ItemsScreen: Prefetch successful - 43 items
+I/flutter ( 5529): ItemsScreen: No images from prefetch, starting background image loading
+I/flutter ( 5529): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 5529): ItemsScreen: Prefetch successful - 43 items
+I/flutter ( 5529): ItemsScreen: No images from prefetch, starting background image loading
+I/flutter ( 5529): CacheService: Cached 2 events
+I/flutter ( 5529): CacheService: Cached 6 events
+I/flutter ( 5529): CacheService: Cached 2 events
+I/flutter ( 5529): CacheService: Cached 6 events
+I/flutter ( 5529): CacheService: Cached 43 items
+I/flutter ( 5529): CacheService: Cached 43 items
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter( 5529): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+I/flutter ( 5529): CacheService: Cached properties for 43 items
+I/flutter ( 5529): CacheService: Cached properties for 43 items
+I/flutter ( 5529): CacheService: Cached images for 0 items
+I/flutter ( 5529): CacheService: Cached images for 0 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 104
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 149
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 149
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 119
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 107
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 150
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 150
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 122
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 151
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 151
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 136
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 142
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 116
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 146
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 113
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 116
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 133
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 104
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 139
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 113
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 133
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 122
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 139
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 110
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 146
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 119
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 101
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 110
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 101
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 152
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 142
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 152
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 107
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 136
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 105
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 108
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 123
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 137
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 117
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 120
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 143
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 147
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 117
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 148
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 111
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 105
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 102
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 111
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 147
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 102
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 123
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 114
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 140
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 148
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 143
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/_member_flutter( 5529): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 12(10MB) LOS objects, 49% free, 7740KB/15MB, paused 301us,5.206ms total 36.330ms
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 134
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 140
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 106
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 134
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 137
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 108
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 114
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 132
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 120
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 138
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 121
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 109
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 118
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 118
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 106
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 144
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 141
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 132
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 141
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 112
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 112
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 135
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 135
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 138
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 103
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 115
+I/_member_flutter( 5529): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 12(13MB) LOS objects, 49% free, 11MB/22MB, paused 671us,5.067ms total 48.563ms
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 103
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/_member_flutter( 5529): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 9(12MB) LOS objects, 49% free, 9084KB/17MB, paused 673us,7.818ms total 56.332ms
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 144
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 115
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 121
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): CacheService: Cached images for 1 items
+I/flutter ( 5529): ItemsScreen: Successfully loaded image for item 109
+I/flutter ( 5529): CacheService: Cached images for 1 items
+Lost connection to device.

@@ -1,0 +1,1367 @@
+Resolving dependencies...
+Downloading packages...
+  characters 1.4.0 (1.4.1 available)
+  flutter_secure_storage_linux 1.2.3 (2.0.1 available)
+  flutter_secure_storage_macos 3.1.3 (4.0.0 available)
+  flutter_secure_storage_platform_interface 1.1.2 (2.0.1 available)
+  flutter_secure_storage_web 1.2.1 (2.0.0 available)
+  flutter_secure_storage_windows 3.1.2 (4.0.0 available)
+  js 0.6.7 (0.7.2 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  meta 1.16.0 (1.17.0 available)
+  mobile_scanner 5.2.3 (7.0.1 available)
+  test_api 0.7.6 (0.7.7 available)
+Got dependencies!
+11 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Launching lib/main.dart on 2409BRN2CY in debug mode...
+Running Gradle task 'assembleDebug'...                              5.4s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...           7.7s
+D/FlutterJNI( 7181): Beginning load of flutter...
+D/FlutterJNI( 7181): flutter (null) was loaded normally!
+I/flutter ( 7181): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+Syncing files to device 2409BRN2CY...                               67ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on 2409BRN2CY is available at: http://127.0.0.1:60898/Y212SvdHj7E=/
+I/flutter ( 7181): 🔐 AuthService: Initializing...
+The Flutter DevTools debugger and profiler on 2409BRN2CY is available at: http://127.0.0.1:9100?uri=http://127.0.0.1:60898/Y212SvdHj7E=/
+I/WindowExtensionsImpl( 7181): Initializing Window Extensions, vendor API level=6, activity embedding enabled=true
+I/_member_flutter( 7181): Compiler allocated 6698KB to compile void android.view.ViewRootImpl.performTraversals()
+D/BufferQueueConsumer( 7181): [](id:1c0d00000000,api:0,p:-1,c:7181) connect: controlledByApp=false
+D/BLASTBufferQueue( 7181): [VRI[MainActivity]#0](f:0,a:0) constructor()
+D/BLASTBufferQueue( 7181): [VRI[MainActivity]#0](f:0,a:0) update width=720 height=1640 format=-3 mTransformHint=0
+D/VRI[MainActivity]( 7181): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4965 android.view.ViewRootImpl.doTraversal:3571 android.view.ViewRootImpl$TraversalRunnable.run:11761 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 
+D/SurfaceView( 7181): UPDATE null, mIsCastMode = false
+D/BufferQueueConsumer( 7181): [](id:1c0d00000001,api:0,p:-1,c:7181) connect: controlledByApp=false
+D/BLASTBufferQueue( 7181): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:0) constructor()
+D/BLASTBufferQueue( 7181): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:0) update width=720 height=1640 format=4 mTransformHint=0
+E/_member_flutter( 7181): checkIfsupportxIntfps do not binder to joyose
+D/MAGT_SYNC_FRAME( 7181): MAGT Sync: MAGT is not supported. Disabling Sync.
+D/_member_flutter( 7181): Can't load libmbrainSDK
+I/Choreographer( 7181): first vsync insert message into MessageQueue Head
+D/SurfaceView( 7181): UPDATE Surface(name=SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1969)/@0x97a370c, mIsProjectionMode = false
+I/GrallocExtra( 7181): gralloc_extra_query:is_SW3D 0
+I/GrallocExtra( 7181): gralloc_extra_query:is_SW3D 0
+W/libc    ( 7181): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue( 7181): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:1) acquireNextBufferLocked size=720x1640 mFrameNumber=1 applyTransaction=true mTimestamp=52159520909723(auto) mPendingTransactions.size=0 graphicBufferId=30842160152586 transform=0
+D/_member_flutter( 7181): Can't load libmbrainSDK
+I/Choreographer( 7181): Skipped 46 frames!  The application may be doing too much work on its main thread.
+D/UserSceneDetector( 7181): invoke error.
+D/VRI[MainActivity]( 7181): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4965 android.view.ViewRootImpl.doTraversal:3571 android.view.ViewRootImpl$TraversalRunnable.run:11761 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 
+D/VRI[MainActivity]( 7181): Setup new sync=wmsSync-VRI[MainActivity]#1
+D/UserSceneDetector( 7181): invoke error.
+D/HWUI    ( 7181): makeCurrent grContext:0xb400007861a28c90 reset mTextureAvailable
+D/_member_flutter( 7181): MiuiProcessManagerServiceStub setSchedFifo
+I/MiuiProcessManagerImpl( 7181): setSchedFifo pid:7181, mode:3
+W/libc    ( 7181): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue( 7181): [VRI[MainActivity]#0](f:0,a:1) acquireNextBufferLocked size=720x1640 mFrameNumber=1 applyTransaction=true mTimestamp=52159729876492(auto) mPendingTransactions.size=0 graphicBufferId=30842160152594 transform=0
+D/VRI[MainActivity]( 7181): vri.reportDrawFinished
+I/HWUI    ( 7181): Davey! duration=844ms; Flags=1, FrameTimelineVsyncId=2298215, IntendedVsync=52158885923043, Vsync=52159651716139, InputEventId=0, HandleInputStart=52159669571877, AnimationStart=52159669577031, PerformTraversalsStart=52159669578954, DrawStart=52159691169031, FrameDeadline=52158905923043, FrameInterval=52159667169031, FrameStartTime=16647676, SyncQueued=52159694575184, SyncStart=52159694798877, IssueDrawCommandsStart=52159710160107, SwapBuffers=52159729362877, FrameCompleted=52159730647800, DequeueBufferDuration=1999615, QueueBufferDuration=612000, GpuCompleted=52159730251569, SwapBuffersCompleted=52159730647800, DisplayPresentTime=876, CommandSubmissionCompleted=52159729362877, 
+I/HandWritingStubImpl( 7181): refreshLastKeyboardType: 1
+I/HandWritingStubImpl( 7181): getCurrentKeyboardType: 1
+I/HandWritingStubImpl( 7181): getCurrentKeyboardType: 1
+D/ProfileInstaller( 7181): Installing profile for com.thelivingroomloja21.tlr_member_flutter
+I/flutter ( 7181): 🔐 AuthService: Checking biometric availability...
+I/flutter ( 7181): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter ( 7181): 🔐 AuthService: Biometric available: true, enabled: true
+I/flutter ( 7181): 🔐 AuthService: Initialization complete - biometric enabled: true
+I/flutter ( 7181): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter ( 7181): 🔐 AuthProvider: Initialized
+I/flutter ( 7181): 🔐 AuthProvider: biometricAvailable: true
+I/flutter ( 7181): 🔐 AuthProvider: biometricEnabled: true
+I/flutter ( 7181): 🔐 AuthProvider: isAuthenticated: true
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52307803, downTime=52307803, phoneEventTime=20:35:51.109 } moveCount:0
+W/MirrorManager( 7181): this model don't Support
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52307819, downTime=52307803, phoneEventTime=20:35:51.125 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52308402, downTime=52308353, phoneEventTime=20:35:51.708 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52308585, downTime=52308353, phoneEventTime=20:35:51.891 } moveCount:19
+I/ScrollIdentify( 7181): on fling
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52311067, downTime=52311067, phoneEventTime=20:35:54.373 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52311166, downTime=52311067, phoneEventTime=20:35:54.472 } moveCount:1
+E/_member_flutter( 7181): DynamicFPS DF open fail: No such file or directory
+E/_member_flutter( 7181): FrameInsert open fail: No such file or directory
+I/ImeTracker( 7181): com.thelivingroomloja21.tlr_member_flutter:20e0d265: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+I/HandWritingStubImpl( 7181): refreshLastKeyboardType: 1
+I/HandWritingStubImpl( 7181): getCurrentKeyboardType: 1
+D/InputMethodManager( 7181): showSoftInput() view=io.flutter.embedding.android.FlutterView{5109258 VFE...... .F....ID 0,0-720,1640 #2 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+W/libc    ( 7181): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/InputConnectionAdaptor( 7181): The input method toggled cursor monitoring on
+D/InsetsController( 7181): show(ime(), fromIme=true)
+D/ViewRootImplStubImpl( 7181): requestedTypes: 8
+D/ViewRootImplStubImpl( 7181): onAnimationStart
+W/InteractionJankMonitor( 7181): Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.thelivingroomloja21.tlr_member_flutter
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.0
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.047355704
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.15948677
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.2909605
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.41893074
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.53316045
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.6302117
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.71012723
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.77454793
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.82570124
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.86587393
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.897162
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9213755
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.94002336
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9543317
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.96527636
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.97362834
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.97999054
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.984829
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9885043
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9912933
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9934086
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.99501157
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9962256
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9971447
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9978403
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9983666
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.99876475
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 1.0
+D/ViewRootImplStubImpl( 7181): onAnimationEnd,canceled: false
+D/InsetsController( 7181): cancelAnimation of types: 8, animType: 0, host: com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity invokeCallback=false reason=android.view.InsetsController.notifyFinished:1792 android.view.InsetsAnimationControlImpl.applyChangeInsets:310 android.view.InsetsController.lambda$new$3:870 android.view.InsetsController.$r8$lambda$meqKUiuVHZJFS86fhQQzBBmdABw:0 android.view.InsetsController$$ExternalSyntheticLambda11.run:0 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 android.view.Choreographer.doCallbacks:1307 android.view.Choreographer.doFrame:1170 android.view.Choreographer$FrameDisplayEventReceiver.run:1776 
+I/ImeTracker( 7181): com.thelivingroomloja21.tlr_member_flutter:20e0d265: onShown
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52316495, downTime=52316495, phoneEventTime=20:35:59.801 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52316611, downTime=52316495, phoneEventTime=20:35:59.917 } moveCount:4
+I/HandWritingStubImpl( 7181): getCurrentKeyboardType: 1
+I/ImeTracker( 7181): com.thelivingroomloja21.tlr_member_flutter:a8d09ce: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+D/InputMethodManager( 7181): showSoftInput() view=io.flutter.embedding.android.FlutterView{5109258 VFE...... .F...... 0,0-720,1640 #2 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputConnectionAdaptor( 7181): The input method toggled cursor monitoring on
+D/InputConnectionAdaptor( 7181): The input method toggled cursor monitoring off
+D/InputConnectionAdaptor( 7181): The input method toggled cursor monitoring on
+D/InsetsController( 7181): show(ime(), fromIme=true)
+I/ImeTracker( 7181): com.thelivingroomloja21.tlr_member_flutter:a8d09ce: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52324572, downTime=52324572, phoneEventTime=20:36:07.878 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52324670, downTime=52324572, phoneEventTime=20:36:07.976 } moveCount:1
+I/flutter ( 7181): 🔐 AuthService: Attempting login for bfox@brianjfox.com
+I/flutter ( 7181): 🌐 ApiService: Making login request to /auth/authenticate
+I/flutter ( 7181): 🌐 ApiService: Base URL: https://api.thelivingroomloja21.com/api
+I/flutter ( 7181): 🌐 ApiService: Username: bfox@brianjfox.com
+E/LB      ( 7181): fail to open file: No such file or directory
+E/LB      ( 7181): fail to open node: No such file or directory
+E/LB      ( 7181): fail to open node: No such file or directory
+I/flutter ( 7181): 🌐 ApiService: Response status: 200
+I/flutter ( 7181): 🌐 ApiService: Response data: {success: true, message: Authentication successful, data: {user: {email: bfox@brianjfox.com, fname: Brian, lname: Fox, dob: 1959-12-11T00:00:00.000Z, phone: +18056378642, nif: 308549171, address: Rua Tenete Valadim 7 4B, Cascais, 2750-502, status: ACTIVE, is_admin: 1, language_pref: EN, created_at: 2025-08-10T18:26:51.000Z, updated_at: 2025-09-17T19:25:09.000Z}, token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJmb3hAYnJpYW5qZm94LmNvbSIsImlzX2FkbWluIjoxLCJuYW1lIjoiQnJpYW4gRm94IiwiaWF0IjoxNzU4MTM3NzY4LCJleHAiOjE3NTgyMjQxNjh9.dkfebFfXbYypOE3vgNBqr4uoVxhhp92NWWF8IKri_hE}}
+I/flutter ( 7181): 🔐 AuthService: Login response - success: true, message: Authentication successful
+I/flutter ( 7181): 🔐 AuthService: Login successful, setting user and token
+I/flutter ( 7181): 🔐 AuthService: User data stored, returning true
+I/flutter ( 7181): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter ( 7181): 🔐 LoginScreen: Login successful
+I/flutter ( 7181): 🔐 LoginScreen: biometricAvailable: true
+I/flutter ( 7181): 🔐 LoginScreen: biometricEnabled: true
+I/flutter ( 7181): 🔐 LoginScreen: Navigating to dashboard
+I/_member_flutter( 7181): Background concurrent mark compact GC freed 1393KB AllocSpace bytes, 6(236KB) LOS objects, 49% free, 21MB/42MB, paused 309us,5.089ms total 34.653ms
+I/flutter ( 7181): EventsScreen: Fetching fresh data from API
+I/flutter ( 7181): CacheService: Cleared events cache
+I/flutter ( 7181): EventsScreen: Fetching fresh data from API
+I/flutter ( 7181): CacheService: Cleared items cache
+I/flutter ( 7181): ItemsScreen: Fetching fresh data from API
+I/flutter ( 7181): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:30:49 GMT}
+I/flutter ( 7181): CacheService: Cleared item properties cache
+I/flutter ( 7181): ItemsScreen: Fetching fresh data from API
+I/flutter ( 7181): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:30:49 GMT}
+W/WindowOnBackDispatcher( 7181): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 7181): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/ImeTracker( 7181): com.thelivingroomloja21.tlr_member_flutter:859a0512: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+D/InputConnectionAdaptor( 7181): The input method toggled cursor monitoring off
+D/InsetsController( 7181): hide(ime(), fromIme=true)
+D/ViewRootImplStubImpl( 7181): requestedTypes: 8
+D/ViewRootImplStubImpl( 7181): onAnimationStart
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.0
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.05344688
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.17738502
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.31808034
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.45086053
+I/flutter ( 7181): CacheService: Cached 2 events
+I/Choreographer( 7181): Skipped 40 frames!  The application may be doing too much work on its main thread.
+D/UserSceneDetector( 7181): invoke error.
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.56609005
+I/flutter ( 7181): CacheService: Cached 2 events
+I/flutter ( 7181): CacheService: Cached 6 events
+D/UserSceneDetector( 7181): invoke error.
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.66152996
+I/flutter ( 7181): CacheService: Cached 6 events
+D/UserSceneDetector( 7181): invoke error.
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.7383421
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.79901236
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.84632564
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.88289475
+I/flutter ( 7181): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 7181): ItemsScreen: Prefetch successful - 43 items
+I/flutter ( 7181): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 7181): ItemsScreen: Prefetch successful - 43 items
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.91098166
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.93245405
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9488156
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9612522
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9706886
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.977839
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.98325187
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9873465
+I/flutter ( 7181): CacheService: Cached 43 items
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.99044216
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.99278164
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9945491
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9958842
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9968924
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.99765384
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.9982287
+I/flutter ( 7181): CacheService: Cached 43 items
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 0.99866277
+D/ViewRootImplStubImpl( 7181): onAnimationUpdate, value: 1.0
+D/ViewRootImplStubImpl( 7181): onAnimationEnd,canceled: false
+D/InsetsController( 7181): cancelAnimation of types: 8, animType: 1, host: com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity invokeCallback=false reason=android.view.InsetsController.notifyFinished:1792 android.view.InsetsAnimationControlImpl.applyChangeInsets:310 android.view.InsetsController.lambda$new$3:870 android.view.InsetsController.$r8$lambda$meqKUiuVHZJFS86fhQQzBBmdABw:0 android.view.InsetsController$$ExternalSyntheticLambda11.run:0 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 android.view.Choreographer.doCallbacks:1307 android.view.Choreographer.doFrame:1170 android.view.Choreographer$FrameDisplayEventReceiver.run:1776 
+I/ImeTracker( 7181): com.thelivingroomloja21.tlr_member_flutter:29af288d: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+I/ImeTracker( 7181): com.thelivingroomloja21.tlr_member_flutter:859a0512: onHidden
+I/flutter ( 7181): CacheService: Cached properties for 43 items
+I/flutter ( 7181): CacheService: Cached properties for 43 items
+I/flutter ( 7181): CacheService: Cached images for 0 items
+I/flutter ( 7181): CacheService: Cached images for 0 items
+I/flutter ( 7181): ImageService: Preloading images for 43 items
+I/flutter ( 7181): ImageService: Starting background fetch for item 101
+I/flutter ( 7181): ImageService: Starting background fetch for item 102
+I/flutter ( 7181): ImageService: Starting background fetch for item 103
+I/flutter ( 7181): ImageService: Preloading images for 43 items
+I/flutter ( 7181): ImageService: Starting background fetch for item 104
+I/flutter ( 7181): ImageService: Starting background fetch for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 106
+I/flutter ( 7181): CacheService: Cached image for item 102
+I/flutter ( 7181): ImageService: Successfully cached image for item 102
+I/flutter ( 7181): CacheService: Cached image for item 106
+I/flutter ( 7181): ImageService: Successfully cached image for item 106
+I/flutter ( 7181): CacheService: Cached image for item 104
+I/flutter ( 7181): ImageService: Successfully cached image for item 104
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+I/flutter ( 7181): CacheService: Cached image for item 105
+I/flutter ( 7181): ImageService: Successfully cached image for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 107
+I/flutter ( 7181): ImageService: Starting background fetch for item 108
+I/flutter ( 7181): ImageService: Starting background fetch for item 109
+I/flutter ( 7181): CacheService: Cached image for item 101
+I/flutter ( 7181): ImageService: Successfully cached image for item 101
+I/flutter ( 7181): CacheService: Cached image for item 103
+I/flutter ( 7181): ImageService: Successfully cached image for item 103
+I/flutter ( 7181): ImageService: Starting background fetch for item 104
+I/flutter ( 7181): ImageService: Starting background fetch for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 106
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52338308, downTime=52338308, phoneEventTime=20:36:21.614 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52338475, downTime=52338308, phoneEventTime=20:36:21.781 } moveCount:4
+I/flutter ( 7181): EventsScreen: Loading from cache - 6 events
+I/flutter ( 7181): EventsScreen: Fetching fresh data from API
+I/flutter ( 7181): ItemsScreen: Loading from cache - 43 items
+I/flutter ( 7181): ImageService: Preloading images for 43 items
+I/flutter ( 7181): ImageService: Starting background fetch for item 101
+I/flutter ( 7181): ImageService: Starting background fetch for item 102
+I/flutter ( 7181): ImageService: Starting background fetch for item 103
+I/flutter ( 7181): ItemsScreen: Fetching fresh data from API
+I/flutter ( 7181): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:36:10 GMT}
+I/Choreographer( 7181): Skipped 33 frames!  The application may be doing too much work on its main thread.
+D/UserSceneDetector( 7181): invoke error.
+W/WindowOnBackDispatcher( 7181): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 7181): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 7181): CacheService: Cached 2 events
+I/flutter ( 7181): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 7181): ItemsScreen: Prefetch successful - 43 items
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52341089, downTime=52341089, phoneEventTime=20:36:24.395 } moveCount:0
+I/flutter ( 7181): CacheService: Cached 6 events
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52341272, downTime=52341089, phoneEventTime=20:36:24.578 } moveCount:2
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached 43 items
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52342222, downTime=52342222, phoneEventTime=20:36:25.528 } moveCount:0
+I/flutter ( 7181): CacheService: Cached image for item 108
+I/flutter ( 7181): ImageService: Successfully cached image for item 108
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52342421, downTime=52342222, phoneEventTime=20:36:25.727 } moveCount:10
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached properties for 43 items
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52343021, downTime=52343021, phoneEventTime=20:36:26.327 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52343220, downTime=52343021, phoneEventTime=20:36:26.527 } moveCount:7
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached image for item 104
+I/flutter ( 7181): ImageService: Successfully cached image for item 104
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+I/flutter ( 7181): CacheService: Cached image for item 107
+I/flutter ( 7181): ImageService: Successfully cached image for item 107
+I/flutter ( 7181): CacheService: Cached images for 0 items
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52345169, downTime=52345169, phoneEventTime=20:36:28.476 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52345468, downTime=52345169, phoneEventTime=20:36:28.774 } moveCount:12
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached image for item 106
+I/flutter ( 7181): ImageService: Successfully cached image for item 106
+I/flutter ( 7181): CacheService: Cached image for item 105
+I/flutter ( 7181): ImageService: Successfully cached image for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 107
+I/flutter ( 7181): ImageService: Starting background fetch for item 108
+I/flutter ( 7181): CacheService: Cached image for item 109
+I/flutter ( 7181): ImageService: Successfully cached image for item 109
+I/flutter ( 7181): ImageService: Starting background fetch for item 110
+I/flutter ( 7181): ImageService: Starting background fetch for item 111
+I/flutter ( 7181): ImageService: Starting background fetch for item 112
+I/flutter ( 7181): CacheService: Cached image for item 102
+I/flutter ( 7181): ImageService: Successfully cached image for item 102
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52348916, downTime=52348916, phoneEventTime=20:36:32.222 } moveCount:0
+I/flutter ( 7181): CacheService: Cached image for item 101
+I/flutter ( 7181): ImageService: Successfully cached image for item 101
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52349115, downTime=52348916, phoneEventTime=20:36:32.422 } moveCount:11
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached image for item 103
+I/flutter ( 7181): ImageService: Successfully cached image for item 103
+I/flutter ( 7181): ImageService: Starting background fetch for item 104
+I/flutter ( 7181): ImageService: Starting background fetch for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 106
+I/flutter ( 7181): ImageService: Preloading images for 43 items
+I/flutter ( 7181): ImageService: Starting background fetch for item 101
+I/flutter ( 7181): ImageService: Starting background fetch for item 102
+I/flutter ( 7181): ImageService: Starting background fetch for item 103
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52350964, downTime=52350964, phoneEventTime=20:36:34.270 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52351163, downTime=52350964, phoneEventTime=20:36:34.469 } moveCount:5
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached image for item 107
+I/flutter ( 7181): ImageService: Successfully cached image for item 107
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52351680, downTime=52351680, phoneEventTime=20:36:34.986 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52351912, downTime=52351680, phoneEventTime=20:36:35.219 } moveCount:15
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached image for item 108
+I/flutter ( 7181): ImageService: Successfully cached image for item 108
+I/flutter ( 7181): ImageService: Starting background fetch for item 113
+I/flutter ( 7181): ImageService: Starting background fetch for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 115
+I/flutter ( 7181): CacheService: Cached image for item 110
+I/flutter ( 7181): ImageService: Successfully cached image for item 110
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52353694, downTime=52353694, phoneEventTime=20:36:37.000 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52353844, downTime=52353694, phoneEventTime=20:36:37.151 } moveCount:8
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached image for item 111
+I/flutter ( 7181): ImageService: Successfully cached image for item 111
+I/flutter ( 7181): CacheService: Cached image for item 112
+I/flutter ( 7181): ImageService: Successfully cached image for item 112
+I/flutter ( 7181): ImageService: Starting background fetch for item 116
+I/flutter ( 7181): ImageService: Starting background fetch for item 117
+I/flutter ( 7181): ImageService: Starting background fetch for item 118
+I/flutter ( 7181): CacheService: Cached image for item 104
+I/flutter ( 7181): ImageService: Successfully cached image for item 104
+I/flutter ( 7181): CacheService: Cached image for item 106
+I/flutter ( 7181): ImageService: Successfully cached image for item 106
+I/flutter ( 7181): CacheService: Cached image for item 105
+I/flutter ( 7181): ImageService: Successfully cached image for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 107
+I/flutter ( 7181): ImageService: Starting background fetch for item 108
+I/flutter ( 7181): ImageService: Starting background fetch for item 109
+I/flutter ( 7181): CacheService: Cached image for item 102
+I/flutter ( 7181): ImageService: Successfully cached image for item 102
+I/flutter ( 7181): CacheService: Cached image for item 101
+I/flutter ( 7181): ImageService: Successfully cached image for item 101
+I/flutter ( 7181): CacheService: Cleared items cache
+I/flutter ( 7181): ItemsScreen: Fetching fresh data from API
+I/flutter ( 7181): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:36:23 GMT}
+I/flutter ( 7181): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 7181): ItemsScreen: Prefetch successful - 43 items
+I/flutter ( 7181): CacheService: Cached image for item 103
+I/flutter ( 7181): ImageService: Successfully cached image for item 103
+I/flutter ( 7181): ImageService: Starting background fetch for item 104
+I/flutter ( 7181): ImageService: Starting background fetch for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 106
+I/flutter ( 7181): CacheService: Cached image for item 113
+I/flutter ( 7181): ImageService: Successfully cached image for item 113
+I/flutter ( 7181): CacheService: Cached image for item 115
+I/flutter ( 7181): ImageService: Successfully cached image for item 115
+I/flutter ( 7181): CacheService: Cached image for item 114
+I/flutter ( 7181): ImageService: Successfully cached image for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 119
+I/flutter ( 7181): ImageService: Starting background fetch for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 121
+I/flutter ( 7181): CacheService: Cached image for item 116
+I/flutter ( 7181): ImageService: Successfully cached image for item 116
+I/flutter ( 7181): CacheService: Cached image for item 117
+I/flutter ( 7181): ImageService: Successfully cached image for item 117
+I/flutter ( 7181): CacheService: Cached image for item 118
+I/flutter ( 7181): ImageService: Successfully cached image for item 118
+I/flutter ( 7181): ImageService: Starting background fetch for item 122
+I/flutter ( 7181): ImageService: Starting background fetch for item 123
+I/flutter ( 7181): ImageService: Starting background fetch for item 132
+I/flutter ( 7181): CacheService: Cached image for item 108
+I/flutter ( 7181): ImageService: Successfully cached image for item 108
+I/flutter ( 7181): CacheService: Cached image for item 107
+I/flutter ( 7181): ImageService: Successfully cached image for item 107
+I/flutter ( 7181): CacheService: Cached image for item 109
+I/flutter ( 7181): ImageService: Successfully cached image for item 109
+I/flutter ( 7181): ImageService: Starting background fetch for item 110
+I/flutter ( 7181): ImageService: Starting background fetch for item 111
+I/flutter ( 7181): ImageService: Starting background fetch for item 112
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52377073, downTime=52377073, phoneEventTime=20:37:00.379 } moveCount:0
+I/MiInputConsumer( 7181): optimized resample latency: 52021364 ns
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52377289, downTime=52377073, phoneEventTime=20:37:00.595 } moveCount:13
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached 43 items
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52377922, downTime=52377922, phoneEventTime=20:37:01.228 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52378155, downTime=52377922, phoneEventTime=20:37:01.462 } moveCount:13
+I/ScrollIdentify( 7181): on fling
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52379521, downTime=52379521, phoneEventTime=20:37:02.827 } moveCount:0
+I/flutter ( 7181): CacheService: Cached image for item 106
+I/flutter ( 7181): ImageService: Successfully cached image for item 106
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52379704, downTime=52379521, phoneEventTime=20:37:03.010 } moveCount:11
+I/ScrollIdentify( 7181): on fling
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52380104, downTime=52380104, phoneEventTime=20:37:03.410 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52380303, downTime=52380104, phoneEventTime=20:37:03.609 } moveCount:12
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached image for item 104
+I/flutter ( 7181): ImageService: Successfully cached image for item 104
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52381519, downTime=52381519, phoneEventTime=20:37:04.826 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52381602, downTime=52381519, phoneEventTime=20:37:04.909 } moveCount:1
+I/flutter ( 7181): ItemDetailScreen: Cached image for item 106: not found
+W/WindowOnBackDispatcher( 7181): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 7181): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/VRI[MainActivity]( 7181): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+I/flutter ( 7181): ItemDetailScreen: Error fetching user for tasting note: DioException [bad response]: This exception was thrown because the response has a status code of 400 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter ( 7181): The status code of 400 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter ( 7181): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter ( 7181): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter ( 7181): CacheService: Cached image for item 105
+I/flutter ( 7181): ImageService: Successfully cached image for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 107
+I/flutter ( 7181): ImageService: Starting background fetch for item 108
+I/flutter ( 7181): ImageService: Starting background fetch for item 109
+I/flutter ( 7181): CacheService: Cached image for item 121
+I/flutter ( 7181): ImageService: Successfully cached image for item 121
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52385766, downTime=52385766, phoneEventTime=20:37:09.072 } moveCount:0
+I/flutter ( 7181): CacheService: Cached image for item 119
+I/flutter ( 7181): ImageService: Successfully cached image for item 119
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52385848, downTime=52385766, phoneEventTime=20:37:09.154 } moveCount:2
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52386898, downTime=52386898, phoneEventTime=20:37:10.204 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52387114, downTime=52386898, phoneEventTime=20:37:10.420 } moveCount:3
+I/flutter ( 7181): EventsScreen: Loading from cache - 6 events
+I/flutter ( 7181): EventsScreen: Fetching fresh data from API
+I/flutter ( 7181): ItemsScreen: Loading from cache - 43 items
+I/flutter ( 7181): ImageService: Preloading images for 43 items
+I/flutter ( 7181): ImageService: Starting background fetch for item 101
+I/flutter ( 7181): ImageService: Starting background fetch for item 102
+I/flutter ( 7181): ImageService: Starting background fetch for item 103
+I/flutter ( 7181): ItemsScreen: Fetching fresh data from API
+I/flutter ( 7181): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:36:23 GMT}
+I/flutter ( 7181): EventsScreen: Loading from cache - 6 events
+I/flutter ( 7181): EventsScreen: Fetching fresh data from API
+I/flutter ( 7181): ItemsScreen: Loading from cache - 43 items
+I/flutter ( 7181): ImageService: Preloading images for 43 items
+I/flutter ( 7181): ItemsScreen: Fetching fresh data from API
+I/flutter ( 7181): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:36:23 GMT}
+I/flutter ( 7181): CacheService: Cached image for item 120
+I/flutter ( 7181): ImageService: Successfully cached image for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 104
+I/flutter ( 7181): ImageService: Starting background fetch for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 106
+W/WindowOnBackDispatcher( 7181): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 7181): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 7181): ImageService: Starting background fetch for item 133
+I/flutter ( 7181): ImageService: Starting background fetch for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 135
+D/VRI[MainActivity]( 7181): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+I/flutter ( 7181): CacheService: Cached image for item 123
+I/flutter ( 7181): ImageService: Successfully cached image for item 123
+I/flutter ( 7181): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 7181): ItemsScreen: Prefetch successful - 43 items
+I/flutter ( 7181): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 7181): ItemsScreen: Prefetch successful - 43 items
+I/flutter ( 7181): CacheService: Cached image for item 122
+I/flutter ( 7181): ImageService: Successfully cached image for item 122
+I/flutter ( 7181): CacheService: Cached image for item 132
+I/flutter ( 7181): ImageService: Successfully cached image for item 132
+I/flutter ( 7181): ImageService: Starting background fetch for item 136
+I/flutter ( 7181): ImageService: Starting background fetch for item 137
+I/flutter ( 7181): ImageService: Starting background fetch for item 138
+I/flutter ( 7181): CacheService: Cached properties for 43 items
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52396389, downTime=52396389, phoneEventTime=20:37:19.695 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52396672, downTime=52396389, phoneEventTime=20:37:19.978 } moveCount:21
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached image for item 110
+I/flutter ( 7181): ImageService: Successfully cached image for item 110
+I/flutter ( 7181): CacheService: Cached image for item 111
+I/flutter ( 7181): ImageService: Successfully cached image for item 111
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+I/flutter ( 7181): CacheService: Cached image for item 112
+I/flutter ( 7181): ImageService: Successfully cached image for item 112
+I/flutter ( 7181): ImageService: Starting background fetch for item 113
+I/flutter ( 7181): ImageService: Starting background fetch for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 115
+I/flutter ( 7181): CacheService: Cached image for item 108
+I/flutter ( 7181): ImageService: Successfully cached image for item 108
+I/flutter ( 7181): CacheService: Cached image for item 107
+I/flutter ( 7181): ImageService: Successfully cached image for item 107
+I/flutter ( 7181): CacheService: Cached image for item 109
+I/flutter ( 7181): ImageService: Successfully cached image for item 109
+I/flutter ( 7181): ImageService: Starting background fetch for item 110
+I/flutter ( 7181): ImageService: Starting background fetch for item 111
+I/flutter ( 7181): ImageService: Starting background fetch for item 112
+I/flutter ( 7181): CacheService: Cached 2 events
+I/flutter ( 7181): CacheService: Cached 6 events
+I/flutter ( 7181): CacheService: Cached 2 events
+I/flutter ( 7181): CacheService: Cached 6 events
+I/flutter ( 7181): CacheService: Cached 43 items
+I/flutter ( 7181): CacheService: Cached 43 items
+I/flutter ( 7181): CacheService: Cached image for item 101
+I/flutter ( 7181): ImageService: Successfully cached image for item 101
+I/flutter ( 7181): CacheService: Cached image for item 102
+I/flutter ( 7181): ImageService: Successfully cached image for item 102
+I/flutter ( 7181): CacheService: Cached image for item 103
+I/flutter ( 7181): ImageService: Successfully cached image for item 103
+I/flutter ( 7181): ImageService: Starting background fetch for item 107
+I/flutter ( 7181): ImageService: Starting background fetch for item 108
+I/flutter ( 7181): ImageService: Starting background fetch for item 109
+I/flutter ( 7181): CacheService: Cached image for item 106
+I/flutter ( 7181): ImageService: Successfully cached image for item 106
+I/flutter ( 7181): CacheService: Cached image for item 104
+I/flutter ( 7181): ImageService: Successfully cached image for item 104
+I/flutter ( 7181): CacheService: Cached image for item 133
+I/flutter ( 7181): ImageService: Successfully cached image for item 133
+I/flutter ( 7181): CacheService: Cached image for item 105
+I/flutter ( 7181): ImageService: Successfully cached image for item 105
+I/_member_flutter( 7181): Background concurrent mark compact GC freed 676KB AllocSpace bytes, 23(23MB) LOS objects, 27% free, 63MB/87MB, paused 460us,6.415ms total 51.437ms
+I/flutter ( 7181): ImageService: Starting background fetch for item 116
+I/flutter ( 7181): ImageService: Starting background fetch for item 117
+I/flutter ( 7181): ImageService: Starting background fetch for item 118
+I/flutter ( 7181): CacheService: Cached image for item 135
+I/flutter ( 7181): ImageService: Successfully cached image for item 135
+I/flutter ( 7181): CacheService: Cached image for item 134
+I/flutter ( 7181): ImageService: Successfully cached image for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 139
+I/flutter ( 7181): ImageService: Starting background fetch for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 141
+I/flutter ( 7181): CacheService: Cached images for 0 items
+I/flutter ( 7181): CacheService: Cached image for item 138
+I/flutter ( 7181): ImageService: Successfully cached image for item 138
+I/flutter ( 7181): CacheService: Cached image for item 137
+I/flutter ( 7181): ImageService: Successfully cached image for item 137
+I/flutter ( 7181): CacheService: Cached image for item 136
+I/flutter ( 7181): ImageService: Successfully cached image for item 136
+I/flutter ( 7181): ImageService: Starting background fetch for item 142
+I/flutter ( 7181): ImageService: Starting background fetch for item 143
+I/flutter ( 7181): ImageService: Starting background fetch for item 144
+I/flutter ( 7181): CacheService: Cleared items cache
+I/flutter ( 7181): ItemsScreen: Fetching fresh data from API
+I/flutter ( 7181): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:36:45 GMT}
+I/flutter ( 7181): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 7181): ItemsScreen: Prefetch successful - 43 items
+I/flutter ( 7181): CacheService: Cached image for item 113
+I/flutter ( 7181): ImageService: Successfully cached image for item 113
+I/flutter ( 7181): CacheService: Cached image for item 115
+I/flutter ( 7181): ImageService: Successfully cached image for item 115
+I/flutter ( 7181): CacheService: Cached image for item 114
+I/flutter ( 7181): ImageService: Successfully cached image for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 119
+I/flutter ( 7181): ImageService: Starting background fetch for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 121
+I/flutter ( 7181): CacheService: Cached image for item 111
+I/flutter ( 7181): ImageService: Successfully cached image for item 111
+I/flutter ( 7181): CacheService: Cached image for item 110
+I/flutter ( 7181): ImageService: Successfully cached image for item 110
+I/_member_flutter( 7181): Background concurrent mark compact GC freed 644KB AllocSpace bytes, 20(23MB) LOS objects, 24% free, 75MB/99MB, paused 372us,5.249ms total 42.400ms
+I/flutter ( 7181): CacheService: Cached image for item 112
+I/flutter ( 7181): ImageService: Successfully cached image for item 112
+I/flutter ( 7181): ImageService: Starting background fetch for item 113
+I/flutter ( 7181): ImageService: Starting background fetch for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 115
+I/flutter ( 7181): CacheService: Cached properties for 43 items
+I/flutter ( 7181): CacheService: Cached properties for 43 items
+I/flutter ( 7181): CacheService: Cached image for item 108
+I/flutter ( 7181): ImageService: Successfully cached image for item 108
+I/flutter ( 7181): CacheService: Cached image for item 107
+I/flutter ( 7181): ImageService: Successfully cached image for item 107
+I/flutter ( 7181): CacheService: Cached image for item 109
+I/flutter ( 7181): ImageService: Successfully cached image for item 109
+I/flutter ( 7181): ImageService: Starting background fetch for item 110
+I/flutter ( 7181): ImageService: Starting background fetch for item 111
+I/flutter ( 7181): ImageService: Starting background fetch for item 112
+I/flutter ( 7181): CacheService: Cached image for item 116
+I/flutter ( 7181): ImageService: Successfully cached image for item 116
+I/flutter ( 7181): CacheService: Cached image for item 117
+I/flutter ( 7181): ImageService: Successfully cached image for item 117
+I/flutter ( 7181): CacheService: Cached image for item 118
+I/flutter ( 7181): ImageService: Successfully cached image for item 118
+I/flutter ( 7181): ImageService: Starting background fetch for item 122
+I/flutter ( 7181): ImageService: Starting background fetch for item 123
+I/flutter ( 7181): ImageService: Starting background fetch for item 132
+I/flutter ( 7181): CacheService: Cached image for item 139
+I/flutter ( 7181): ImageService: Successfully cached image for item 139
+I/flutter ( 7181): CacheService: Cached image for item 141
+I/flutter ( 7181): ImageService: Successfully cached image for item 141
+I/flutter ( 7181): ItemsScreen: Prefetch failed, falling back to individual calls: setState() called after dispose(): _ItemsScreenState#cfcd8(lifecycle state: defunct, not mounted)
+I/flutter ( 7181): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter ( 7181): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter ( 7181): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter ( 7181): CacheService: Cached image for item 140
+I/flutter ( 7181): ImageService: Successfully cached image for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 146
+I/flutter ( 7181): ImageService: Starting background fetch for item 147
+I/flutter ( 7181): ImageService: Starting background fetch for item 148
+I/flutter ( 7181): CacheService: Cached image for item 143
+I/flutter ( 7181): ImageService: Successfully cached image for item 143
+I/_member_flutter( 7181): Background concurrent mark compact GC freed 896KB AllocSpace bytes, 21(15MB) LOS objects, 22% free, 83MB/107MB, paused 409us,5.187ms total 45.212ms
+I/flutter ( 7181): CacheService: Cached image for item 142
+I/flutter ( 7181): ImageService: Successfully cached image for item 142
+I/flutter ( 7181): CacheService: Cached 43 items
+I/flutter ( 7181): CacheService: Cached image for item 144
+I/flutter ( 7181): ImageService: Successfully cached image for item 144
+I/flutter ( 7181): ImageService: Starting background fetch for item 149
+I/flutter ( 7181): ImageService: Starting background fetch for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 151
+I/flutter ( 7181): CacheService: Cached image for item 119
+I/flutter ( 7181): ImageService: Successfully cached image for item 119
+I/flutter ( 7181): CacheService: Cached image for item 121
+I/flutter ( 7181): ImageService: Successfully cached image for item 121
+I/flutter ( 7181): CacheService: Cached image for item 120
+I/flutter ( 7181): ImageService: Successfully cached image for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 133
+I/flutter ( 7181): ImageService: Starting background fetch for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 135
+I/flutter ( 7181): CacheService: Cached image for item 113
+I/flutter ( 7181): ImageService: Successfully cached image for item 113
+I/flutter ( 7181): CacheService: Cached image for item 115
+I/flutter ( 7181): ImageService: Successfully cached image for item 115
+I/flutter ( 7181): CacheService: Cached images for 0 items
+I/flutter ( 7181): CacheService: Cached image for item 114
+I/flutter ( 7181): ImageService: Successfully cached image for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 116
+I/flutter ( 7181): ImageService: Starting background fetch for item 117
+I/flutter ( 7181): ImageService: Starting background fetch for item 118
+I/flutter ( 7181): CacheService: Cached images for 0 items
+I/flutter ( 7181): CacheService: Cached image for item 111
+I/flutter ( 7181): ImageService: Successfully cached image for item 111
+I/flutter ( 7181): CacheService: Cached image for item 110
+I/flutter ( 7181): ImageService: Successfully cached image for item 110
+I/flutter ( 7181): CacheService: Cached image for item 112
+I/flutter ( 7181): ImageService: Successfully cached image for item 112
+I/flutter ( 7181): ImageService: Starting background fetch for item 113
+I/flutter ( 7181): ImageService: Starting background fetch for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 115
+I/flutter ( 7181): CacheService: Cached image for item 122
+I/flutter ( 7181): ImageService: Successfully cached image for item 122
+I/flutter ( 7181): CacheService: Cached image for item 132
+I/flutter ( 7181): ImageService: Successfully cached image for item 132
+I/flutter ( 7181): CacheService: Cached image for item 123
+I/flutter ( 7181): ImageService: Successfully cached image for item 123
+I/flutter ( 7181): ImageService: Starting background fetch for item 136
+I/flutter ( 7181): ImageService: Starting background fetch for item 137
+I/flutter ( 7181): ImageService: Starting background fetch for item 138
+I/flutter ( 7181): CacheService: Cached 43 items
+I/flutter ( 7181): CacheService: Cached image for item 148
+I/flutter ( 7181): ImageService: Successfully cached image for item 148
+I/flutter ( 7181): CacheService: Cached image for item 146
+I/flutter ( 7181): ImageService: Successfully cached image for item 146
+I/flutter ( 7181): CacheService: Cached image for item 147
+I/flutter ( 7181): ImageService: Successfully cached image for item 147
+I/flutter ( 7181): ImageService: Starting background fetch for item 152
+I/flutter ( 7181): CacheService: Cached properties for 43 items
+I/flutter ( 7181): CacheService: Cached image for item 149
+I/flutter ( 7181): ImageService: Successfully cached image for item 149
+I/flutter ( 7181): CacheService: Cached image for item 151
+I/flutter ( 7181): ImageService: Successfully cached image for item 151
+I/flutter ( 7181): CacheService: Cached image for item 150
+I/flutter ( 7181): ImageService: Successfully cached image for item 150
+I/flutter ( 7181): ImageService: Completed preloading images
+I/flutter ( 7181): CacheService: Cached image for item 133
+I/flutter ( 7181): ImageService: Successfully cached image for item 133
+I/flutter ( 7181): CacheService: Cached image for item 135
+I/flutter ( 7181): ImageService: Successfully cached image for item 135
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52568416, downTime=52568416, phoneEventTime=20:40:11.722 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52568566, downTime=52568416, phoneEventTime=20:40:11.872 } moveCount:14
+I/ScrollIdentify( 7181): on fling
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52569282, downTime=52569282, phoneEventTime=20:40:12.588 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52569415, downTime=52569282, phoneEventTime=20:40:12.721 } moveCount:12
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached image for item 134
+I/flutter ( 7181): ImageService: Successfully cached image for item 134
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52569915, downTime=52569915, phoneEventTime=20:40:13.221 } moveCount:0
+I/flutter ( 7181): ImageService: Starting background fetch for item 139
+I/flutter ( 7181): ImageService: Starting background fetch for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 141
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52570064, downTime=52569915, phoneEventTime=20:40:13.370 } moveCount:10
+I/ScrollIdentify( 7181): on fling
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52570697, downTime=52570697, phoneEventTime=20:40:14.003 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52570830, downTime=52570697, phoneEventTime=20:40:14.136 } moveCount:9
+I/ScrollIdentify( 7181): on fling
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52571713, downTime=52571713, phoneEventTime=20:40:15.019 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52571896, downTime=52571713, phoneEventTime=20:40:15.202 } moveCount:6
+I/flutter ( 7181): EventsScreen: Loading from cache - 6 events
+I/flutter ( 7181): EventsScreen: Fetching fresh data from API
+I/flutter ( 7181): ItemsScreen: Loading from cache - 43 items
+I/flutter ( 7181): ImageService: Preloading images for 43 items
+I/flutter ( 7181): ImageService: Starting background fetch for item 151
+I/flutter ( 7181): ImageService: Starting background fetch for item 150
+I/flutter ( 7181): ItemsScreen: Fetching fresh data from API
+I/flutter ( 7181): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 19:37:12 GMT}
+W/WindowOnBackDispatcher( 7181): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 7181): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 7181): ImageService: Preloading images for 43 items
+I/flutter ( 7181): ImageService: Starting background fetch for item 101
+I/flutter ( 7181): ImageService: Starting background fetch for item 102
+I/flutter ( 7181): ImageService: Starting background fetch for item 103
+I/flutter ( 7181): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter ( 7181): ItemsScreen: Prefetch successful - 43 items
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52573611, downTime=52573611, phoneEventTime=20:40:16.917 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52573761, downTime=52573611, phoneEventTime=20:40:17.067 } moveCount:9
+I/ScrollIdentify( 7181): on fling
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52574344, downTime=52574344, phoneEventTime=20:40:17.650 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52574527, downTime=52574344, phoneEventTime=20:40:17.834 } moveCount:17
+I/ScrollIdentify( 7181): on fling
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52574844, downTime=52574844, phoneEventTime=20:40:18.150 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52575010, downTime=52574844, phoneEventTime=20:40:18.316 } moveCount:11
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): EventsScreen: Loading from cache - 2 events
+I/flutter ( 7181): EventsScreen: Fetching fresh data from API
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=52575493, downTime=52575493, phoneEventTime=20:40:18.800 } moveCount:0
+I/MIUIInput( 7181): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=52575659, downTime=52575493, phoneEventTime=20:40:18.965 } moveCount:7
+I/ScrollIdentify( 7181): on fling
+I/flutter ( 7181): CacheService: Cached image for item 116
+I/flutter ( 7181): ImageService: Successfully cached image for item 116
+I/flutter ( 7181): CacheService: Cached image for item 117
+I/flutter ( 7181): ImageService: Successfully cached image for item 117
+I/_member_flutter( 7181): Background concurrent mark compact GC freed 1604KB AllocSpace bytes, 24(21MB) LOS objects, 20% free, 93MB/117MB, paused 594us,5.459ms total 151.088ms
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter( 7181): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+I/flutter ( 7181): CacheService: Cached image for item 118
+I/flutter ( 7181): ImageService: Successfully cached image for item 118
+I/flutter ( 7181): ItemsScreen: Prefetch failed, falling back to individual calls: setState() called after dispose(): _ItemsScreenState#8e53c(lifecycle state: defunct, not mounted)
+I/flutter ( 7181): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter ( 7181): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter ( 7181): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter ( 7181): ImageService: Starting background fetch for item 119
+I/flutter ( 7181): ImageService: Starting background fetch for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 121
+I/flutter ( 7181): CacheService: Cached image for item 113
+I/flutter ( 7181): ImageService: Successfully cached image for item 113
+I/flutter ( 7181): CacheService: Cached image for item 115
+I/flutter ( 7181): ImageService: Successfully cached image for item 115
+I/flutter ( 7181): CacheService: Cached image for item 114
+I/flutter ( 7181): ImageService: Successfully cached image for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 116
+I/flutter ( 7181): ImageService: Starting background fetch for item 117
+I/flutter ( 7181): ImageService: Starting background fetch for item 118
+I/flutter ( 7181): CacheService: Cached image for item 137
+I/flutter ( 7181): ImageService: Successfully cached image for item 137
+I/flutter ( 7181): CacheService: Cached image for item 138
+I/flutter ( 7181): ImageService: Successfully cached image for item 138
+I/flutter ( 7181): CacheService: Cached image for item 136
+I/flutter ( 7181): ImageService: Successfully cached image for item 136
+I/flutter ( 7181): ImageService: Starting background fetch for item 142
+I/flutter ( 7181): ImageService: Starting background fetch for item 143
+I/flutter ( 7181): ImageService: Starting background fetch for item 144
+I/flutter ( 7181): CacheService: Cached properties for 43 items
+I/flutter ( 7181): ItemsScreen: Error fetching items: setState() called after dispose(): _ItemsScreenState#cfcd8(lifecycle state: defunct, not mounted)
+I/flutter ( 7181): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter ( 7181): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter ( 7181): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+E/flutter ( 7181): [ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: setState() called after dispose(): _ItemsScreenState#cfcd8(lifecycle state: defunct, not mounted)
+E/flutter ( 7181): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+E/flutter ( 7181): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+E/flutter ( 7181): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+E/flutter ( 7181): #0      State.setState.<anonymous closure> (package:flutter/src/widgets/framework.dart:1163:9)
+E/flutter ( 7181): #1      State.setState (package:flutter/src/widgets/framework.dart:1198:6)
+E/flutter ( 7181): #2      _ItemsScreenState._fetchAndCacheItems (package:tlr_member_flutter/screens/items_screen.dart:205:7)
+E/flutter ( 7181): <asynchronous suspension>
+E/flutter ( 7181): #3      _ItemsScreenState._handleRefresh (package:tlr_member_flutter/screens/items_screen.dart:236:5)
+E/flutter ( 7181): <asynchronous suspension>
+E/flutter ( 7181): #4      RefreshIndicatorState._show.<anonymous closure>.<anonymous closure> (package:flutter/src/material/refresh_indicator.dart:579:40)
+E/flutter ( 7181): <asynchronous suspension>
+E/flutter ( 7181): 
+I/flutter ( 7181): CacheService: Cached image for item 152
+I/flutter ( 7181): ImageService: Successfully cached image for item 152
+I/flutter ( 7181): ImageService: Completed preloading images
+I/flutter ( 7181): CacheService: Cached images for 0 items
+I/flutter ( 7181): CacheService: Cached image for item 141
+I/flutter ( 7181): ImageService: Successfully cached image for item 141
+I/flutter ( 7181): CacheService: Cached 6 events
+I/flutter ( 7181): CacheService: Cached 2 events
+I/flutter ( 7181): CacheService: Cached 43 items
+I/flutter ( 7181): CacheService: Cached image for item 151
+I/flutter ( 7181): ImageService: Successfully cached image for item 151
+I/flutter ( 7181): CacheService: Cached image for item 150
+I/flutter ( 7181): ImageService: Successfully cached image for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 149
+I/flutter ( 7181): ImageService: Starting background fetch for item 148
+I/flutter ( 7181): ImageService: Starting background fetch for item 147
+I/flutter ( 7181): CacheService: Cached image for item 139
+I/flutter ( 7181): ImageService: Successfully cached image for item 139
+I/flutter ( 7181): CacheService: Cached image for item 140
+I/flutter ( 7181): ImageService: Successfully cached image for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 146
+I/flutter ( 7181): CacheService: Cached image for item 102
+I/flutter ( 7181): ImageService: Successfully cached image for item 102
+I/flutter ( 7181): CacheService: Cached 6 events
+I/flutter ( 7181): CacheService: Cached image for item 101
+I/flutter ( 7181): ImageService: Successfully cached image for item 101
+I/flutter ( 7181): CacheService: Cached image for item 103
+I/flutter ( 7181): ImageService: Successfully cached image for item 103
+I/flutter ( 7181): ImageService: Starting background fetch for item 104
+I/flutter ( 7181): ImageService: Starting background fetch for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 106
+I/flutter ( 7181): CacheService: Cached 43 items
+I/flutter ( 7181): CacheService: Cached image for item 121
+I/flutter ( 7181): ImageService: Successfully cached image for item 121
+I/flutter ( 7181): CacheService: Cached image for item 119
+I/flutter ( 7181): ImageService: Successfully cached image for item 119
+I/flutter ( 7181): CacheService: Cached image for item 120
+I/flutter ( 7181): ImageService: Successfully cached image for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 122
+I/flutter ( 7181): ImageService: Starting background fetch for item 123
+I/flutter ( 7181): ImageService: Starting background fetch for item 132
+I/flutter ( 7181): CacheService: Cached image for item 116
+I/flutter ( 7181): ImageService: Successfully cached image for item 116
+I/flutter ( 7181): CacheService: Cached image for item 117
+I/flutter ( 7181): ImageService: Successfully cached image for item 117
+I/flutter ( 7181): CacheService: Cached image for item 118
+I/flutter ( 7181): ImageService: Successfully cached image for item 118
+I/flutter ( 7181): ImageService: Starting background fetch for item 119
+I/flutter ( 7181): ImageService: Starting background fetch for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 121
+I/flutter ( 7181): CacheService: Cached image for item 142
+I/flutter ( 7181): ImageService: Successfully cached image for item 142
+I/flutter ( 7181): CacheService: Cached image for item 143
+I/flutter ( 7181): ImageService: Successfully cached image for item 143
+I/flutter ( 7181): CacheService: Cached image for item 144
+I/flutter ( 7181): ImageService: Successfully cached image for item 144
+I/flutter ( 7181): ImageService: Starting background fetch for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 151
+I/flutter ( 7181): ItemsScreen: Prefetch failed, falling back to individual calls: setState() called after dispose(): _ItemsScreenState#8e53c(lifecycle state: defunct, not mounted)
+I/flutter ( 7181): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter ( 7181): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter ( 7181): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter ( 7181): CacheService: Cached properties for 43 items
+I/flutter ( 7181): CacheService: Cached image for item 148
+I/flutter ( 7181): ImageService: Successfully cached image for item 148
+I/flutter ( 7181): CacheService: Cached image for item 149
+I/flutter ( 7181): ImageService: Successfully cached image for item 149
+I/flutter ( 7181): CacheService: Cached image for item 147
+I/flutter ( 7181): ImageService: Successfully cached image for item 147
+I/flutter ( 7181): ImageService: Starting background fetch for item 144
+I/flutter ( 7181): ImageService: Starting background fetch for item 143
+I/flutter ( 7181): CacheService: Cached image for item 146
+I/flutter ( 7181): ImageService: Successfully cached image for item 146
+I/flutter ( 7181): ImageService: Starting background fetch for item 149
+I/flutter ( 7181): CacheService: Cached image for item 104
+I/flutter ( 7181): ImageService: Successfully cached image for item 104
+I/flutter ( 7181): CacheService: Cached image for item 106
+I/flutter ( 7181): ImageService: Successfully cached image for item 106
+I/flutter ( 7181): CacheService: Cached image for item 105
+I/flutter ( 7181): ImageService: Successfully cached image for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 107
+I/flutter ( 7181): ImageService: Starting background fetch for item 108
+I/flutter ( 7181): ImageService: Starting background fetch for item 109
+I/flutter ( 7181): CacheService: Cached properties for 43 items
+I/flutter ( 7181): ItemsScreen: Error fetching items: setState() called after dispose(): _ItemsScreenState#8e53c(lifecycle state: defunct, not mounted)
+I/flutter ( 7181): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter ( 7181): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter ( 7181): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+E/flutter ( 7181): [ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: setState() called after dispose(): _ItemsScreenState#8e53c(lifecycle state: defunct, not mounted)
+E/flutter ( 7181): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+E/flutter ( 7181): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+E/flutter ( 7181): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+E/flutter ( 7181): #0      State.setState.<anonymous closure> (package:flutter/src/widgets/framework.dart:1163:9)
+E/flutter ( 7181): #1      State.setState (package:flutter/src/widgets/framework.dart:1198:6)
+E/flutter ( 7181): #2      _ItemsScreenState._fetchAndCacheItems (package:tlr_member_flutter/screens/items_screen.dart:205:7)
+E/flutter ( 7181): <asynchronous suspension>
+E/flutter ( 7181): 
+I/flutter ( 7181): CacheService: Cached image for item 123
+I/flutter ( 7181): ImageService: Successfully cached image for item 123
+I/flutter ( 7181): CacheService: Cached image for item 132
+I/flutter ( 7181): ImageService: Successfully cached image for item 132
+I/flutter ( 7181): CacheService: Cached image for item 122
+I/flutter ( 7181): ImageService: Successfully cached image for item 122
+I/flutter ( 7181): ImageService: Starting background fetch for item 133
+I/flutter ( 7181): ImageService: Starting background fetch for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 135
+I/flutter ( 7181): CacheService: Cached image for item 119
+I/flutter ( 7181): ImageService: Successfully cached image for item 119
+I/flutter ( 7181): CacheService: Cached image for item 121
+I/flutter ( 7181): ImageService: Successfully cached image for item 121
+I/flutter ( 7181): CacheService: Cached image for item 120
+I/flutter ( 7181): ImageService: Successfully cached image for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 122
+I/flutter ( 7181): ImageService: Starting background fetch for item 123
+I/flutter ( 7181): ImageService: Starting background fetch for item 132
+I/flutter ( 7181): CacheService: Cached image for item 151
+I/flutter ( 7181): ImageService: Successfully cached image for item 151
+I/flutter ( 7181): CacheService: Cached image for item 150
+I/flutter ( 7181): ImageService: Successfully cached image for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 152
+I/flutter ( 7181): CacheService: Cached 43 items
+I/flutter ( 7181): CacheService: Cached images for 0 items
+I/flutter ( 7181): CacheService: Cached image for item 143
+I/flutter ( 7181): ImageService: Successfully cached image for item 143
+I/flutter ( 7181): CacheService: Cached image for item 144
+I/flutter ( 7181): ImageService: Successfully cached image for item 144
+I/flutter ( 7181): ImageService: Starting background fetch for item 142
+I/flutter ( 7181): ImageService: Starting background fetch for item 141
+I/flutter ( 7181): ImageService: Starting background fetch for item 140
+I/flutter ( 7181): CacheService: Cached image for item 149
+I/flutter ( 7181): ImageService: Successfully cached image for item 149
+I/flutter ( 7181): ImageService: Completed preloading images
+I/flutter ( 7181): CacheService: Cached image for item 108
+I/flutter ( 7181): ImageService: Successfully cached image for item 108
+I/flutter ( 7181): CacheService: Cached image for item 107
+I/flutter ( 7181): ImageService: Successfully cached image for item 107
+I/flutter ( 7181): CacheService: Cached image for item 109
+I/flutter ( 7181): ImageService: Successfully cached image for item 109
+I/flutter ( 7181): ImageService: Starting background fetch for item 110
+I/flutter ( 7181): ImageService: Starting background fetch for item 111
+I/flutter ( 7181): ImageService: Starting background fetch for item 112
+I/flutter ( 7181): CacheService: Cached image for item 133
+I/flutter ( 7181): ImageService: Successfully cached image for item 133
+I/flutter ( 7181): CacheService: Cached image for item 135
+I/flutter ( 7181): ImageService: Successfully cached image for item 135
+I/flutter ( 7181): CacheService: Cached image for item 134
+I/flutter ( 7181): ImageService: Successfully cached image for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 136
+I/flutter ( 7181): ImageService: Starting background fetch for item 137
+I/flutter ( 7181): ImageService: Starting background fetch for item 138
+I/flutter ( 7181): CacheService: Cached image for item 122
+I/flutter ( 7181): ImageService: Successfully cached image for item 122
+I/flutter ( 7181): CacheService: Cached image for item 132
+I/flutter ( 7181): ImageService: Successfully cached image for item 132
+I/flutter ( 7181): CacheService: Cached image for item 123
+I/flutter ( 7181): ImageService: Successfully cached image for item 123
+I/flutter ( 7181): ImageService: Starting background fetch for item 133
+I/flutter ( 7181): ImageService: Starting background fetch for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 135
+I/flutter ( 7181): CacheService: Cached image for item 152
+I/flutter ( 7181): ImageService: Successfully cached image for item 152
+I/flutter ( 7181): ImageService: Completed preloading images
+I/flutter ( 7181): CacheService: Cached properties for 43 items
+I/flutter ( 7181): ItemsScreen: Error fetching items: setState() called after dispose(): _ItemsScreenState#8e53c(lifecycle state: defunct, not mounted)
+I/flutter ( 7181): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter ( 7181): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter ( 7181): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+E/flutter ( 7181): [ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: setState() called after dispose(): _ItemsScreenState#8e53c(lifecycle state: defunct, not mounted)
+E/flutter ( 7181): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+E/flutter ( 7181): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+E/flutter ( 7181): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+E/flutter ( 7181): #0      State.setState.<anonymous closure> (package:flutter/src/widgets/framework.dart:1163:9)
+E/flutter ( 7181): #1      State.setState (package:flutter/src/widgets/framework.dart:1198:6)
+E/flutter ( 7181): #2      _ItemsScreenState._fetchAndCacheItems (package:tlr_member_flutter/screens/items_screen.dart:205:7)
+E/flutter ( 7181): <asynchronous suspension>
+E/flutter ( 7181): #3      _ItemsScreenState._handleRefresh (package:tlr_member_flutter/screens/items_screen.dart:236:5)
+E/flutter ( 7181): <asynchronous suspension>
+E/flutter ( 7181): #4      RefreshIndicatorState._show.<anonymous closure>.<anonymous closure> (package:flutter/src/material/refresh_indicator.dart:579:40)
+E/flutter ( 7181): <asynchronous suspension>
+E/flutter ( 7181): 
+I/flutter ( 7181): ImageService: Preloading images for 43 items
+I/flutter ( 7181): ImageService: Starting background fetch for item 101
+I/flutter ( 7181): ImageService: Starting background fetch for item 102
+I/flutter ( 7181): ImageService: Starting background fetch for item 103
+I/flutter ( 7181): CacheService: Cached image for item 142
+I/flutter ( 7181): ImageService: Successfully cached image for item 142
+I/flutter ( 7181): CacheService: Cached image for item 141
+I/flutter ( 7181): ImageService: Successfully cached image for item 141
+I/flutter ( 7181): CacheService: Cached image for item 140
+I/flutter ( 7181): ImageService: Successfully cached image for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 139
+I/flutter ( 7181): CacheService: Cached image for item 111
+I/flutter ( 7181): ImageService: Successfully cached image for item 111
+I/flutter ( 7181): CacheService: Cached image for item 110
+I/flutter ( 7181): ImageService: Successfully cached image for item 110
+I/flutter ( 7181): CacheService: Cached image for item 112
+I/flutter ( 7181): ImageService: Successfully cached image for item 112
+I/flutter ( 7181): ImageService: Starting background fetch for item 113
+I/flutter ( 7181): ImageService: Starting background fetch for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 115
+I/flutter ( 7181): CacheService: Cached image for item 137
+I/flutter ( 7181): ImageService: Successfully cached image for item 137
+I/flutter ( 7181): CacheService: Cached image for item 138
+I/flutter ( 7181): ImageService: Successfully cached image for item 138
+I/flutter ( 7181): CacheService: Cached image for item 136
+I/flutter ( 7181): ImageService: Successfully cached image for item 136
+I/flutter ( 7181): ImageService: Starting background fetch for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 141
+I/flutter ( 7181): CacheService: Cached image for item 135
+I/flutter ( 7181): ImageService: Successfully cached image for item 135
+I/flutter ( 7181): CacheService: Cached image for item 133
+I/flutter ( 7181): ImageService: Successfully cached image for item 133
+I/flutter ( 7181): CacheService: Cached image for item 134
+I/flutter ( 7181): ImageService: Successfully cached image for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 136
+I/flutter ( 7181): ImageService: Starting background fetch for item 137
+I/flutter ( 7181): ImageService: Starting background fetch for item 138
+I/flutter ( 7181): CacheService: Cached image for item 101
+I/flutter ( 7181): ImageService: Successfully cached image for item 101
+I/flutter ( 7181): CacheService: Cached image for item 102
+I/flutter ( 7181): ImageService: Successfully cached image for item 102
+I/flutter ( 7181): CacheService: Cached image for item 103
+I/flutter ( 7181): ImageService: Successfully cached image for item 103
+I/flutter ( 7181): ImageService: Starting background fetch for item 104
+I/flutter ( 7181): ImageService: Starting background fetch for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 106
+I/flutter ( 7181): CacheService: Cached image for item 139
+I/flutter ( 7181): ImageService: Successfully cached image for item 139
+I/flutter ( 7181): ImageService: Starting background fetch for item 135
+I/flutter ( 7181): ImageService: Starting background fetch for item 134
+I/flutter ( 7181): CacheService: Cached image for item 113
+I/flutter ( 7181): ImageService: Successfully cached image for item 113
+I/flutter ( 7181): CacheService: Cached image for item 115
+I/flutter ( 7181): ImageService: Successfully cached image for item 115
+I/flutter ( 7181): CacheService: Cached image for item 114
+I/flutter ( 7181): ImageService: Successfully cached image for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 116
+I/flutter ( 7181): ImageService: Starting background fetch for item 117
+I/flutter ( 7181): ImageService: Starting background fetch for item 118
+I/flutter ( 7181): CacheService: Cached image for item 141
+I/flutter ( 7181): ImageService: Successfully cached image for item 141
+I/flutter ( 7181): CacheService: Cached image for item 140
+I/flutter ( 7181): ImageService: Successfully cached image for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 142
+I/flutter ( 7181): ImageService: Starting background fetch for item 143
+I/flutter ( 7181): ImageService: Starting background fetch for item 144
+I/flutter ( 7181): CacheService: Cached image for item 138
+I/flutter ( 7181): ImageService: Successfully cached image for item 138
+I/flutter ( 7181): CacheService: Cached image for item 137
+I/flutter ( 7181): ImageService: Successfully cached image for item 137
+I/flutter ( 7181): CacheService: Cached image for item 136
+I/flutter ( 7181): ImageService: Successfully cached image for item 136
+I/flutter ( 7181): ImageService: Starting background fetch for item 139
+I/flutter ( 7181): ImageService: Starting background fetch for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 141
+I/flutter ( 7181): CacheService: Cached image for item 106
+I/flutter ( 7181): ImageService: Successfully cached image for item 106
+I/flutter ( 7181): CacheService: Cached image for item 104
+I/flutter ( 7181): ImageService: Successfully cached image for item 104
+I/flutter ( 7181): CacheService: Cached image for item 105
+I/flutter ( 7181): ImageService: Successfully cached image for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 107
+I/flutter ( 7181): ImageService: Starting background fetch for item 108
+I/flutter ( 7181): ImageService: Starting background fetch for item 109
+I/flutter ( 7181): CacheService: Cached image for item 135
+I/flutter ( 7181): ImageService: Successfully cached image for item 135
+I/flutter ( 7181): CacheService: Cached image for item 134
+I/flutter ( 7181): ImageService: Successfully cached image for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 133
+I/flutter ( 7181): ImageService: Starting background fetch for item 132
+I/flutter ( 7181): ImageService: Starting background fetch for item 123
+I/flutter ( 7181): CacheService: Cached image for item 116
+I/flutter ( 7181): ImageService: Successfully cached image for item 116
+I/flutter ( 7181): CacheService: Cached image for item 117
+I/flutter ( 7181): ImageService: Successfully cached image for item 117
+I/flutter ( 7181): CacheService: Cached image for item 118
+I/flutter ( 7181): ImageService: Successfully cached image for item 118
+I/flutter ( 7181): ImageService: Starting background fetch for item 119
+I/flutter ( 7181): ImageService: Starting background fetch for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 121
+I/flutter ( 7181): CacheService: Cached image for item 143
+I/flutter ( 7181): ImageService: Successfully cached image for item 143
+I/flutter ( 7181): CacheService: Cached image for item 142
+I/flutter ( 7181): ImageService: Successfully cached image for item 142
+I/flutter ( 7181): CacheService: Cached image for item 144
+I/flutter ( 7181): ImageService: Successfully cached image for item 144
+I/flutter ( 7181): ImageService: Starting background fetch for item 146
+I/flutter ( 7181): ImageService: Starting background fetch for item 147
+I/flutter ( 7181): ImageService: Starting background fetch for item 148
+I/flutter ( 7181): CacheService: Cached image for item 139
+I/flutter ( 7181): ImageService: Successfully cached image for item 139
+I/flutter ( 7181): CacheService: Cached image for item 141
+I/flutter ( 7181): ImageService: Successfully cached image for item 141
+I/flutter ( 7181): CacheService: Cached image for item 140
+I/flutter ( 7181): ImageService: Successfully cached image for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 142
+I/flutter ( 7181): ImageService: Starting background fetch for item 143
+I/flutter ( 7181): ImageService: Starting background fetch for item 144
+I/flutter ( 7181): CacheService: Cached image for item 107
+I/flutter ( 7181): ImageService: Successfully cached image for item 107
+I/flutter ( 7181): CacheService: Cached image for item 108
+I/flutter ( 7181): ImageService: Successfully cached image for item 108
+I/flutter ( 7181): CacheService: Cached image for item 109
+I/flutter ( 7181): ImageService: Successfully cached image for item 109
+I/flutter ( 7181): ImageService: Starting background fetch for item 110
+I/flutter ( 7181): ImageService: Starting background fetch for item 111
+I/flutter ( 7181): ImageService: Starting background fetch for item 112
+I/flutter ( 7181): CacheService: Cached image for item 123
+I/flutter ( 7181): ImageService: Successfully cached image for item 123
+I/flutter ( 7181): CacheService: Cached image for item 133
+I/flutter ( 7181): ImageService: Successfully cached image for item 133
+I/flutter ( 7181): CacheService: Cached image for item 132
+I/flutter ( 7181): ImageService: Successfully cached image for item 132
+I/flutter ( 7181): ImageService: Starting background fetch for item 122
+I/flutter ( 7181): CacheService: Cached image for item 119
+I/flutter ( 7181): ImageService: Successfully cached image for item 119
+I/flutter ( 7181): CacheService: Cached image for item 121
+I/flutter ( 7181): ImageService: Successfully cached image for item 121
+I/flutter ( 7181): CacheService: Cached image for item 120
+I/flutter ( 7181): ImageService: Successfully cached image for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 123
+I/flutter ( 7181): ImageService: Starting background fetch for item 132
+I/flutter ( 7181): CacheService: Cached image for item 148
+I/flutter ( 7181): ImageService: Successfully cached image for item 148
+I/flutter ( 7181): CacheService: Cached image for item 146
+I/flutter ( 7181): ImageService: Successfully cached image for item 146
+I/flutter ( 7181): CacheService: Cached image for item 147
+I/flutter ( 7181): ImageService: Successfully cached image for item 147
+I/flutter ( 7181): ImageService: Starting background fetch for item 149
+I/flutter ( 7181): ImageService: Starting background fetch for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 151
+I/flutter ( 7181): CacheService: Cached image for item 142
+I/flutter ( 7181): ImageService: Successfully cached image for item 142
+I/flutter ( 7181): CacheService: Cached image for item 144
+I/flutter ( 7181): ImageService: Successfully cached image for item 144
+I/flutter ( 7181): CacheService: Cached image for item 143
+I/flutter ( 7181): ImageService: Successfully cached image for item 143
+I/flutter ( 7181): ImageService: Starting background fetch for item 146
+I/flutter ( 7181): ImageService: Starting background fetch for item 147
+I/flutter ( 7181): ImageService: Starting background fetch for item 148
+I/flutter ( 7181): CacheService: Cached image for item 111
+I/flutter ( 7181): ImageService: Successfully cached image for item 111
+I/flutter ( 7181): CacheService: Cached image for item 110
+I/flutter ( 7181): ImageService: Successfully cached image for item 110
+I/flutter ( 7181): CacheService: Cached image for item 112
+I/flutter ( 7181): ImageService: Successfully cached image for item 112
+I/flutter ( 7181): ImageService: Starting background fetch for item 113
+I/flutter ( 7181): ImageService: Starting background fetch for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 115
+I/flutter ( 7181): CacheService: Cached image for item 122
+I/flutter ( 7181): ImageService: Successfully cached image for item 122
+I/flutter ( 7181): ImageService: Starting background fetch for item 119
+I/flutter ( 7181): ImageService: Starting background fetch for item 118
+I/flutter ( 7181): ImageService: Starting background fetch for item 117
+I/flutter ( 7181): CacheService: Cached image for item 123
+I/flutter ( 7181): ImageService: Successfully cached image for item 123
+I/flutter ( 7181): CacheService: Cached image for item 132
+I/flutter ( 7181): ImageService: Successfully cached image for item 132
+I/flutter ( 7181): ImageService: Starting background fetch for item 133
+I/flutter ( 7181): ImageService: Starting background fetch for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 135
+I/flutter ( 7181): CacheService: Cached image for item 149
+I/flutter ( 7181): ImageService: Successfully cached image for item 149
+I/flutter ( 7181): CacheService: Cached image for item 151
+I/flutter ( 7181): ImageService: Successfully cached image for item 151
+I/flutter ( 7181): CacheService: Cached image for item 150
+I/flutter ( 7181): ImageService: Successfully cached image for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 152
+I/flutter ( 7181): CacheService: Cached image for item 148
+I/flutter ( 7181): ImageService: Successfully cached image for item 148
+I/flutter ( 7181): CacheService: Cached image for item 146
+I/flutter ( 7181): ImageService: Successfully cached image for item 146
+I/flutter ( 7181): CacheService: Cached image for item 147
+I/flutter ( 7181): ImageService: Successfully cached image for item 147
+I/flutter ( 7181): ImageService: Starting background fetch for item 149
+I/flutter ( 7181): ImageService: Starting background fetch for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 151
+I/flutter ( 7181): CacheService: Cached image for item 113
+I/flutter ( 7181): ImageService: Successfully cached image for item 113
+I/flutter ( 7181): CacheService: Cached image for item 115
+I/flutter ( 7181): ImageService: Successfully cached image for item 115
+I/flutter ( 7181): CacheService: Cached image for item 114
+I/flutter ( 7181): ImageService: Successfully cached image for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 116
+I/flutter ( 7181): CacheService: Cached image for item 119
+I/flutter ( 7181): ImageService: Successfully cached image for item 119
+I/flutter ( 7181): CacheService: Cached image for item 117
+I/flutter ( 7181): ImageService: Successfully cached image for item 117
+I/flutter ( 7181): CacheService: Cached image for item 118
+I/flutter ( 7181): ImageService: Successfully cached image for item 118
+I/flutter ( 7181): ImageService: Starting background fetch for item 115
+I/flutter ( 7181): ImageService: Starting background fetch for item 114
+I/flutter ( 7181): CacheService: Cached image for item 133
+I/flutter ( 7181): ImageService: Successfully cached image for item 133
+I/flutter ( 7181): CacheService: Cached image for item 135
+I/flutter ( 7181): ImageService: Successfully cached image for item 135
+I/_member_flutter( 7181): Background concurrent mark compact GC freed 928KB AllocSpace bytes, 24(27MB) LOS objects, 20% free, 95MB/119MB, paused 362us,5.348ms total 51.368ms
+I/flutter ( 7181): CacheService: Cached image for item 134
+I/flutter ( 7181): ImageService: Successfully cached image for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 136
+I/flutter ( 7181): ImageService: Starting background fetch for item 137
+I/flutter ( 7181): ImageService: Starting background fetch for item 138
+I/flutter ( 7181): CacheService: Cached image for item 152
+I/flutter ( 7181): ImageService: Successfully cached image for item 152
+I/flutter ( 7181): ImageService: Completed preloading images
+I/flutter ( 7181): CacheService: Cached image for item 151
+I/flutter ( 7181): ImageService: Successfully cached image for item 151
+I/flutter ( 7181): CacheService: Cached image for item 149
+I/flutter ( 7181): ImageService: Successfully cached image for item 149
+I/flutter ( 7181): CacheService: Cached image for item 150
+I/flutter ( 7181): ImageService: Successfully cached image for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 152
+I/flutter ( 7181): CacheService: Cached image for item 116
+I/flutter ( 7181): ImageService: Successfully cached image for item 116
+I/flutter ( 7181): ImageService: Starting background fetch for item 119
+I/flutter ( 7181): ImageService: Starting background fetch for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 121
+I/flutter ( 7181): CacheService: Cached image for item 115
+I/flutter ( 7181): ImageService: Successfully cached image for item 115
+I/flutter ( 7181): CacheService: Cached image for item 114
+I/flutter ( 7181): ImageService: Successfully cached image for item 114
+I/flutter ( 7181): ImageService: Starting background fetch for item 113
+I/flutter ( 7181): ImageService: Starting background fetch for item 112
+I/flutter ( 7181): ImageService: Starting background fetch for item 111
+I/flutter ( 7181): CacheService: Cached image for item 138
+I/flutter ( 7181): ImageService: Successfully cached image for item 138
+I/flutter ( 7181): CacheService: Cached image for item 136
+I/flutter ( 7181): ImageService: Successfully cached image for item 136
+I/flutter ( 7181): CacheService: Cached image for item 137
+I/flutter ( 7181): ImageService: Successfully cached image for item 137
+I/flutter ( 7181): ImageService: Starting background fetch for item 139
+I/flutter ( 7181): ImageService: Starting background fetch for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 141
+I/flutter ( 7181): CacheService: Cached image for item 152
+I/flutter ( 7181): ImageService: Successfully cached image for item 152
+I/flutter ( 7181): ImageService: Completed preloading images
+I/flutter ( 7181): CacheService: Cached image for item 119
+I/flutter ( 7181): ImageService: Successfully cached image for item 119
+I/flutter ( 7181): CacheService: Cached image for item 121
+I/flutter ( 7181): ImageService: Successfully cached image for item 121
+I/flutter ( 7181): CacheService: Cached image for item 120
+I/flutter ( 7181): ImageService: Successfully cached image for item 120
+I/flutter ( 7181): ImageService: Starting background fetch for item 122
+I/flutter ( 7181): ImageService: Starting background fetch for item 123
+I/flutter ( 7181): ImageService: Starting background fetch for item 132
+I/flutter ( 7181): CacheService: Cached image for item 113
+I/flutter ( 7181): ImageService: Successfully cached image for item 113
+I/flutter ( 7181): CacheService: Cached image for item 111
+I/flutter ( 7181): ImageService: Successfully cached image for item 111
+I/flutter ( 7181): CacheService: Cached image for item 112
+I/flutter ( 7181): ImageService: Successfully cached image for item 112
+I/flutter ( 7181): ImageService: Starting background fetch for item 110
+I/flutter ( 7181): ImageService: Starting background fetch for item 109
+I/flutter ( 7181): ImageService: Starting background fetch for item 108
+I/flutter ( 7181): CacheService: Cached image for item 139
+I/flutter ( 7181): ImageService: Successfully cached image for item 139
+I/flutter ( 7181): CacheService: Cached image for item 141
+I/flutter ( 7181): ImageService: Successfully cached image for item 141
+I/flutter ( 7181): CacheService: Cached image for item 140
+I/flutter ( 7181): ImageService: Successfully cached image for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 142
+I/flutter ( 7181): ImageService: Starting background fetch for item 143
+I/flutter ( 7181): ImageService: Starting background fetch for item 144
+I/flutter ( 7181): CacheService: Cached image for item 122
+I/flutter ( 7181): ImageService: Successfully cached image for item 122
+I/flutter ( 7181): CacheService: Cached image for item 123
+I/flutter ( 7181): ImageService: Successfully cached image for item 123
+I/flutter ( 7181): CacheService: Cached image for item 132
+I/flutter ( 7181): ImageService: Successfully cached image for item 132
+I/flutter ( 7181): ImageService: Starting background fetch for item 133
+I/flutter ( 7181): ImageService: Starting background fetch for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 135
+I/flutter ( 7181): CacheService: Cached image for item 110
+I/flutter ( 7181): ImageService: Successfully cached image for item 110
+I/flutter ( 7181): CacheService: Cached image for item 109
+I/flutter ( 7181): ImageService: Successfully cached image for item 109
+I/flutter ( 7181): CacheService: Cached image for item 108
+I/flutter ( 7181): ImageService: Successfully cached image for item 108
+I/flutter ( 7181): ImageService: Starting background fetch for item 107
+I/flutter ( 7181): ImageService: Starting background fetch for item 106
+I/flutter ( 7181): ImageService: Starting background fetch for item 105
+I/flutter ( 7181): CacheService: Cached image for item 142
+I/flutter ( 7181): ImageService: Successfully cached image for item 142
+I/flutter ( 7181): CacheService: Cached image for item 143
+I/flutter ( 7181): ImageService: Successfully cached image for item 143
+I/flutter ( 7181): CacheService: Cached image for item 144
+I/flutter ( 7181): ImageService: Successfully cached image for item 144
+I/flutter ( 7181): ImageService: Starting background fetch for item 146
+I/flutter ( 7181): ImageService: Starting background fetch for item 147
+I/flutter ( 7181): ImageService: Starting background fetch for item 148
+I/flutter ( 7181): CacheService: Cached image for item 133
+I/flutter ( 7181): ImageService: Successfully cached image for item 133
+I/flutter ( 7181): CacheService: Cached image for item 135
+I/flutter ( 7181): ImageService: Successfully cached image for item 135
+I/flutter ( 7181): CacheService: Cached image for item 134
+I/flutter ( 7181): ImageService: Successfully cached image for item 134
+I/flutter ( 7181): ImageService: Starting background fetch for item 136
+I/flutter ( 7181): ImageService: Starting background fetch for item 137
+I/flutter ( 7181): ImageService: Starting background fetch for item 138
+I/flutter ( 7181): CacheService: Cached image for item 107
+I/flutter ( 7181): ImageService: Successfully cached image for item 107
+I/flutter ( 7181): CacheService: Cached image for item 106
+I/flutter ( 7181): ImageService: Successfully cached image for item 106
+I/flutter ( 7181): CacheService: Cached image for item 105
+I/flutter ( 7181): ImageService: Successfully cached image for item 105
+I/flutter ( 7181): ImageService: Starting background fetch for item 104
+I/flutter ( 7181): ImageService: Starting background fetch for item 103
+I/flutter ( 7181): ImageService: Starting background fetch for item 102
+I/flutter ( 7181): CacheService: Cached image for item 148
+I/flutter ( 7181): ImageService: Successfully cached image for item 148
+I/flutter ( 7181): CacheService: Cached image for item 146
+I/flutter ( 7181): ImageService: Successfully cached image for item 146
+I/flutter ( 7181): CacheService: Cached image for item 147
+I/flutter ( 7181): ImageService: Successfully cached image for item 147
+I/flutter ( 7181): ImageService: Starting background fetch for item 149
+I/flutter ( 7181): ImageService: Starting background fetch for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 151
+I/flutter ( 7181): CacheService: Cached image for item 136
+I/flutter ( 7181): ImageService: Successfully cached image for item 136
+I/flutter ( 7181): CacheService: Cached image for item 138
+I/flutter ( 7181): ImageService: Successfully cached image for item 138
+I/flutter ( 7181): CacheService: Cached image for item 137
+I/flutter ( 7181): ImageService: Successfully cached image for item 137
+I/flutter ( 7181): ImageService: Starting background fetch for item 139
+I/flutter ( 7181): ImageService: Starting background fetch for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 141
+I/flutter ( 7181): CacheService: Cached image for item 104
+I/flutter ( 7181): ImageService: Successfully cached image for item 104
+I/flutter ( 7181): CacheService: Cached image for item 102
+I/flutter ( 7181): ImageService: Successfully cached image for item 102
+I/flutter ( 7181): CacheService: Cached image for item 103
+I/flutter ( 7181): ImageService: Successfully cached image for item 103
+I/flutter ( 7181): ImageService: Starting background fetch for item 101
+I/flutter ( 7181): CacheService: Cached image for item 151
+I/flutter ( 7181): ImageService: Successfully cached image for item 151
+I/flutter ( 7181): CacheService: Cached image for item 149
+I/flutter ( 7181): ImageService: Successfully cached image for item 149
+I/flutter ( 7181): CacheService: Cached image for item 150
+I/flutter ( 7181): ImageService: Successfully cached image for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 152
+I/flutter ( 7181): CacheService: Cached image for item 139
+I/flutter ( 7181): ImageService: Successfully cached image for item 139
+I/flutter ( 7181): CacheService: Cached image for item 141
+I/flutter ( 7181): ImageService: Successfully cached image for item 141
+I/flutter ( 7181): CacheService: Cached image for item 140
+I/flutter ( 7181): ImageService: Successfully cached image for item 140
+I/flutter ( 7181): ImageService: Starting background fetch for item 142
+I/flutter ( 7181): ImageService: Starting background fetch for item 143
+I/flutter ( 7181): ImageService: Starting background fetch for item 144
+I/flutter ( 7181): CacheService: Cached image for item 101
+I/flutter ( 7181): ImageService: Successfully cached image for item 101
+I/flutter ( 7181): ImageService: Completed preloading images
+I/flutter ( 7181): CacheService: Cached image for item 152
+I/flutter ( 7181): ImageService: Successfully cached image for item 152
+I/flutter ( 7181): ImageService: Completed preloading images
+I/flutter ( 7181): CacheService: Cached image for item 143
+I/flutter ( 7181): ImageService: Successfully cached image for item 143
+I/flutter ( 7181): CacheService: Cached image for item 144
+I/flutter ( 7181): ImageService: Successfully cached image for item 144
+I/flutter ( 7181): CacheService: Cached image for item 142
+I/flutter ( 7181): ImageService: Successfully cached image for item 142
+I/flutter ( 7181): ImageService: Starting background fetch for item 146
+I/flutter ( 7181): ImageService: Starting background fetch for item 147
+I/flutter ( 7181): ImageService: Starting background fetch for item 148
+I/flutter ( 7181): CacheService: Cached image for item 148
+I/flutter ( 7181): ImageService: Successfully cached image for item 148
+I/flutter ( 7181): CacheService: Cached image for item 146
+I/flutter ( 7181): ImageService: Successfully cached image for item 146
+I/flutter ( 7181): CacheService: Cached image for item 147
+I/flutter ( 7181): ImageService: Successfully cached image for item 147
+I/flutter ( 7181): ImageService: Starting background fetch for item 149
+I/flutter ( 7181): ImageService: Starting background fetch for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 151
+I/flutter ( 7181): CacheService: Cached image for item 149
+I/flutter ( 7181): ImageService: Successfully cached image for item 149
+I/flutter ( 7181): CacheService: Cached image for item 151
+I/flutter ( 7181): ImageService: Successfully cached image for item 151
+I/flutter ( 7181): CacheService: Cached image for item 150
+I/flutter ( 7181): ImageService: Successfully cached image for item 150
+I/flutter ( 7181): ImageService: Starting background fetch for item 152
+I/flutter ( 7181): CacheService: Cached image for item 152
+I/flutter ( 7181): ImageService: Successfully cached image for item 152
+I/flutter ( 7181): ImageService: Completed preloading images
+Lost connection to device.

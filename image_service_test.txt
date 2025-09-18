@@ -1,0 +1,41 @@
+Resolving dependencies...
+Downloading packages...
+  characters 1.4.0 (1.4.1 available)
+  flutter_secure_storage_linux 1.2.3 (2.0.1 available)
+  flutter_secure_storage_macos 3.1.3 (4.0.0 available)
+  flutter_secure_storage_platform_interface 1.1.2 (2.0.1 available)
+  flutter_secure_storage_web 1.2.1 (2.0.0 available)
+  flutter_secure_storage_windows 3.1.2 (4.0.0 available)
+  js 0.6.7 (0.7.2 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  meta 1.16.0 (1.17.0 available)
+  mobile_scanner 5.2.3 (7.0.1 available)
+  test_api 0.7.6 (0.7.7 available)
+Got dependencies!
+11 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Launching lib/main.dart on 2409BRN2CY in debug mode...
+Running Gradle task 'assembleDebug'...                          
+lib/screens/item_detail_screen.dart:305:9: Error: The getter '_labelImage' isn't defined for the type '_ItemDetailScreenState'.
+ - '_ItemDetailScreenState' is from 'package:tlr_member_flutter/screens/item_detail_screen.dart' ('lib/screens/item_detail_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named '_labelImage'.
+    if (_labelImage == null) {
+        ^^^^^^^^^^^
+Target kernel_snapshot_program failed: Exception
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileFlutterBuildDebug'.
+> Process 'command '/opt/homebrew/share/flutter/bin/flutter'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 2s
+Running Gradle task 'assembleDebug'...                           2,871ms
+Error: Gradle task assembleDebug failed with exit code 1

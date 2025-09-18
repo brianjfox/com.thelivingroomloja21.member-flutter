@@ -1,0 +1,501 @@
+Resolving dependencies...
+Downloading packages...
+  characters 1.4.0 (1.4.1 available)
+  flutter_secure_storage_linux 1.2.3 (2.0.1 available)
+  flutter_secure_storage_macos 3.1.3 (4.0.0 available)
+  flutter_secure_storage_platform_interface 1.1.2 (2.0.1 available)
+  flutter_secure_storage_web 1.2.1 (2.0.0 available)
+  flutter_secure_storage_windows 3.1.2 (4.0.0 available)
+  js 0.6.7 (0.7.2 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  meta 1.16.0 (1.17.0 available)
+  mobile_scanner 5.2.3 (7.0.1 available)
+  test_api 0.7.6 (0.7.7 available)
+Got dependencies!
+11 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Launching lib/main.dart on 2409BRN2CY in debug mode...
+Running Gradle task 'assembleDebug'...                              5.1s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...           7.1s
+D/FlutterJNI(27965): Beginning load of flutter...
+D/FlutterJNI(27965): flutter (null) was loaded normally!
+I/flutter (27965): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+Syncing files to device 2409BRN2CY...                               57ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on 2409BRN2CY is available at: http://127.0.0.1:54930/RsPJafM50Yw=/
+I/flutter (27965): 🔐 AuthService: Initializing...
+I/WindowExtensionsImpl(27965): Initializing Window Extensions, vendor API level=6, activity embedding enabled=true
+I/_member_flutter(27965): Compiler allocated 6698KB to compile void android.view.ViewRootImpl.performTraversals()
+D/BufferQueueConsumer(27965): [](id:6d3d00000000,api:0,p:-1,c:27965) connect: controlledByApp=false
+D/BLASTBufferQueue(27965): [VRI[MainActivity]#0](f:0,a:0) constructor()
+D/BLASTBufferQueue(27965): [VRI[MainActivity]#0](f:0,a:0) update width=720 height=1640 format=-3 mTransformHint=0
+D/VRI[MainActivity](27965): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4965 android.view.ViewRootImpl.doTraversal:3571 android.view.ViewRootImpl$TraversalRunnable.run:11761 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 
+D/SurfaceView(27965): UPDATE null, mIsCastMode = false
+D/BufferQueueConsumer(27965): [](id:6d3d00000001,api:0,p:-1,c:27965) connect: controlledByApp=false
+D/BLASTBufferQueue(27965): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:0) constructor()
+D/BLASTBufferQueue(27965): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:0) update width=720 height=1640 format=4 mTransformHint=0
+E/_member_flutter(27965): checkIfsupportxIntfps do not binder to joyose
+D/MAGT_SYNC_FRAME(27965): MAGT Sync: MAGT is not supported. Disabling Sync.
+D/_member_flutter(27965): Can't load libmbrainSDK
+The Flutter DevTools debugger and profiler on 2409BRN2CY is available at: http://127.0.0.1:9100?uri=http://127.0.0.1:54930/RsPJafM50Yw=/
+I/Choreographer(27965): first vsync insert message into MessageQueue Head
+D/SurfaceView(27965): UPDATE Surface(name=SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1733)/@0x97a370c, mIsProjectionMode = false
+I/GrallocExtra(27965): gralloc_extra_query:is_SW3D 0
+I/GrallocExtra(27965): gralloc_extra_query:is_SW3D 0
+W/libc    (27965): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue(27965): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:1) acquireNextBufferLocked size=720x1640 mFrameNumber=1 applyTransaction=true mTimestamp=45490460561018(auto) mPendingTransactions.size=0 graphicBufferId=120108760432650 transform=0
+D/_member_flutter(27965): Can't load libmbrainSDK
+I/Choreographer(27965): Skipped 52 frames!  The application may be doing too much work on its main thread.
+D/UserSceneDetector(27965): invoke error.
+D/ProfileInstaller(27965): Installing profile for com.thelivingroomloja21.tlr_member_flutter
+D/VRI[MainActivity](27965): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4965 android.view.ViewRootImpl.doTraversal:3571 android.view.ViewRootImpl$TraversalRunnable.run:11761 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 
+D/VRI[MainActivity](27965): Setup new sync=wmsSync-VRI[MainActivity]#1
+D/UserSceneDetector(27965): invoke error.
+D/HWUI    (27965): makeCurrent grContext:0xb400007861a29ad0 reset mTextureAvailable
+D/_member_flutter(27965): MiuiProcessManagerServiceStub setSchedFifo
+I/MiuiProcessManagerImpl(27965): setSchedFifo pid:27965, mode:3
+W/libc    (27965): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue(27965): [VRI[MainActivity]#0](f:0,a:1) acquireNextBufferLocked size=720x1640 mFrameNumber=1 applyTransaction=true mTimestamp=45490718075402(auto) mPendingTransactions.size=0 graphicBufferId=120108760432658 transform=0
+D/VRI[MainActivity](27965): vri.reportDrawFinished
+I/HWUI    (27965): Davey! duration=932ms; Flags=1, FrameTimelineVsyncId=2192594, IntendedVsync=45489785665871, Vsync=45490651434255, InputEventId=0, HandleInputStart=45490654704095, AnimationStart=45490654709941, PerformTraversalsStart=45490654712402, DrawStart=45490673339479, FrameDeadline=45489805665871, FrameInterval=45490653439172, FrameStartTime=16649392, SyncQueued=45490678783479, SyncStart=45490678992402, IssueDrawCommandsStart=45490697974479, SwapBuffers=45490717567787, FrameCompleted=45490718839787, DequeueBufferDuration=2068616, QueueBufferDuration=614231, GpuCompleted=45490718490864, SwapBuffersCompleted=45490718839787, DisplayPresentTime=0, CommandSubmissionCompleted=45490717567787, 
+I/HandWritingStubImpl(27965): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(27965): getCurrentKeyboardType: 1
+I/HandWritingStubImpl(27965): getCurrentKeyboardType: 1
+I/flutter (27965): 🔐 AuthService: Checking biometric availability...
+I/flutter (27965): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter (27965): 🔐 AuthService: Biometric available: true, enabled: true
+I/flutter (27965): 🔐 AuthService: Initialization complete - biometric enabled: true
+I/flutter (27965): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter (27965): 🔐 AuthProvider: Initialized
+I/flutter (27965): 🔐 AuthProvider: biometricAvailable: true
+I/flutter (27965): 🔐 AuthProvider: biometricEnabled: true
+I/flutter (27965): 🔐 AuthProvider: isAuthenticated: true
+W/_member_flutter(27965): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter(27965): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+W/_member_flutter(27965): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45723992, downTime=45723992, phoneEventTime=18:46:07.298 } moveCount:0
+W/MirrorManager(27965): this model don't Support
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45724124, downTime=45723992, phoneEventTime=18:46:07.430 } moveCount:2
+E/_member_flutter(27965): DynamicFPS DF open fail: No such file or directory
+E/_member_flutter(27965): FrameInsert open fail: No such file or directory
+I/flutter (27965): 🔐 LoginScreen: Starting biometric login
+I/flutter (27965): 🔐 AuthProvider: Starting biometric login
+I/flutter (27965): 🔐 AuthService: Starting biometric login
+I/flutter (27965): 🔐 AuthService: Biometric enabled: true
+I/flutter (27965): 🔐 AuthService: Biometric data found: true
+I/flutter (27965): 🔐 AuthService: Found biometric data, parsing...
+I/flutter (27965): 🔐 AuthService: Starting local biometric authentication...
+W/WindowOnBackDispatcher(27965): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(27965): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+W/WindowOnBackDispatcher(27965): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(27965): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (27965): 🔐 AuthService: Local biometric result: true
+I/flutter (27965): 🔐 AuthService: Authenticating with server...
+I/HandWritingStubImpl(27965): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(27965): getCurrentKeyboardType: 1
+E/LB      (27965): fail to open file: No such file or directory
+E/LB      (27965): fail to open node: No such file or directory
+E/LB      (27965): fail to open node: No such file or directory
+I/flutter (27965): 401 auth failure in call to /api/auth/authenticate-biometric
+I/flutter (27965): 🔐 AuthProvider: Handling unauthorized access
+I/flutter (27965): 🔐 AuthService: Biometric login error: DioException [bad response]: This exception was thrown because the response has a status code of 401 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (27965): The status code of 401 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (27965): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (27965): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (27965): 🔐 AuthService: Biometric enrollment invalid (401), disabling biometric
+I/flutter (27965): 401 auth failure in call to /api/auth/revoke-biometric-enrollment
+I/flutter (27965): 🔐 AuthProvider: Handling unauthorized access
+I/flutter (27965): 🔐 AuthProvider: Biometric login result: false
+I/flutter (27965): 🔐 AuthProvider: Biometric login failed, biometric enabled: false
+I/flutter (27965): 🔐 LoginScreen: Biometric login result: false
+I/flutter (27965): 🔐 LoginScreen: Biometric login failed, showing error
+W/WindowOnBackDispatcher(27965): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(27965): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45728676, downTime=45728676, phoneEventTime=18:46:11.982 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45728792, downTime=45728676, phoneEventTime=18:46:12.098 } moveCount:3
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45730492, downTime=45730492, phoneEventTime=18:46:13.798 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45730608, downTime=45730492, phoneEventTime=18:46:13.914 } moveCount:3
+I/ImeTracker(27965): com.thelivingroomloja21.tlr_member_flutter:543cacdf: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+I/HandWritingStubImpl(27965): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(27965): getCurrentKeyboardType: 1
+D/InputMethodManager(27965): showSoftInput() view=io.flutter.embedding.android.FlutterView{64e5ff VFE...... .F....ID 0,0-720,1640 #2 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+W/libc    (27965): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/InputConnectionAdaptor(27965): The input method toggled cursor monitoring on
+D/InsetsController(27965): show(ime(), fromIme=true)
+D/ViewRootImplStubImpl(27965): requestedTypes: 8
+D/ViewRootImplStubImpl(27965): onAnimationStart
+W/InteractionJankMonitor(27965): Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.thelivingroomloja21.tlr_member_flutter
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.0
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.04734346
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.15945263
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.2909137
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.4188816
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.53311545
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.63018084
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.71010965
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.77454114
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.825702
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.8658772
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.8971655
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9213795
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9400274
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.95433414
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9652776
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9736287
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.97998965
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9848275
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.98850256
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.99129164
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.99340665
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.99500954
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.99622375
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.99714315
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.99783903
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.99836564
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.99876404
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 1.0
+D/ViewRootImplStubImpl(27965): onAnimationEnd,canceled: false
+D/InsetsController(27965): cancelAnimation of types: 8, animType: 0, host: com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity invokeCallback=false reason=android.view.InsetsController.notifyFinished:1792 android.view.InsetsAnimationControlImpl.applyChangeInsets:310 android.view.InsetsController.lambda$new$3:870 android.view.InsetsController.$r8$lambda$meqKUiuVHZJFS86fhQQzBBmdABw:0 android.view.InsetsController$$ExternalSyntheticLambda11.run:0 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 android.view.Choreographer.doCallbacks:1307 android.view.Choreographer.doFrame:1170 android.view.Choreographer$FrameDisplayEventReceiver.run:1776 
+I/ImeTracker(27965): com.thelivingroomloja21.tlr_member_flutter:543cacdf: onShown
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45735320, downTime=45735320, phoneEventTime=18:46:18.626 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45735436, downTime=45735320, phoneEventTime=18:46:18.742 } moveCount:4
+I/HandWritingStubImpl(27965): getCurrentKeyboardType: 1
+I/ImeTracker(27965): com.thelivingroomloja21.tlr_member_flutter:c50add63: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+D/InputMethodManager(27965): showSoftInput() view=io.flutter.embedding.android.FlutterView{64e5ff VFE...... .F...... 0,0-720,1640 #2 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputConnectionAdaptor(27965): The input method toggled cursor monitoring on
+D/InputConnectionAdaptor(27965): The input method toggled cursor monitoring off
+D/InputConnectionAdaptor(27965): The input method toggled cursor monitoring on
+D/InsetsController(27965): show(ime(), fromIme=true)
+I/ImeTracker(27965): com.thelivingroomloja21.tlr_member_flutter:c50add63: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(27965): com.thelivingroomloja21.tlr_member_flutter:ebe2e363: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+D/InsetsController(27965): hide(ime(), fromIme=true)
+D/ViewRootImplStubImpl(27965): requestedTypes: 8
+D/InputConnectionAdaptor(27965): The input method toggled cursor monitoring off
+D/ViewRootImplStubImpl(27965): onAnimationStart
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.0
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.05344266
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.17735939
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.31802464
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.45080283
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.5660354
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.66146517
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.738259
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.7989301
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.8462466
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.8828298
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9109277
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9324096
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.94877905
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9612223
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.97066444
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9778202
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9832373
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.98733515
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9904336
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9927752
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9945443
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.99588066
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9968899
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.997652
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9982274
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 0.9986619
+D/ViewRootImplStubImpl(27965): onAnimationUpdate, value: 1.0
+D/ViewRootImplStubImpl(27965): onAnimationEnd,canceled: false
+D/InsetsController(27965): cancelAnimation of types: 8, animType: 1, host: com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity invokeCallback=false reason=android.view.InsetsController.notifyFinished:1792 android.view.InsetsAnimationControlImpl.applyChangeInsets:310 android.view.InsetsController.lambda$new$3:870 android.view.InsetsController.$r8$lambda$meqKUiuVHZJFS86fhQQzBBmdABw:0 android.view.InsetsController$$ExternalSyntheticLambda11.run:0 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 android.view.Choreographer.doCallbacks:1307 android.view.Choreographer.doFrame:1170 android.view.Choreographer$FrameDisplayEventReceiver.run:1776 
+I/ImeTracker(27965): com.thelivingroomloja21.tlr_member_flutter:28d82462: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+I/ImeTracker(27965): com.thelivingroomloja21.tlr_member_flutter:ebe2e363: onHidden
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45746077, downTime=45746077, phoneEventTime=18:46:29.383 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45746243, downTime=45746077, phoneEventTime=18:46:29.549 } moveCount:4
+I/flutter (27965): 🔐 AuthService: Attempting login for bfox@brianjfox.com
+I/flutter (27965): 🌐 ApiService: Making login request to /auth/authenticate
+I/flutter (27965): 🌐 ApiService: Base URL: https://api.thelivingroomloja21.com/api
+I/flutter (27965): 🌐 ApiService: Username: bfox@brianjfox.com
+I/flutter (27965): 🌐 ApiService: Response status: 200
+I/flutter (27965): 🌐 ApiService: Response data: {success: true, message: Authentication successful, data: {user: {email: bfox@brianjfox.com, fname: Brian, lname: Fox, dob: 1959-12-11T00:00:00.000Z, phone: +18056378642, nif: 308549171, address: Rua Tenete Valadim 7 4B, Cascais, 2750-502, status: ACTIVE, is_admin: 1, language_pref: EN, created_at: 2025-08-10T18:26:51.000Z, updated_at: 2025-09-17T17:46:09.000Z}, token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJmb3hAYnJpYW5qZm94LmNvbSIsImlzX2FkbWluIjoxLCJuYW1lIjoiQnJpYW4gRm94IiwiaWF0IjoxNzU4MTMxMTg5LCJleHAiOjE3NTgyMTc1ODl9.oh-MtKl5Bs4n3Q7ezLQfJ3E2zArab9-T3E0Rn9CRfTQ}}
+I/flutter (27965): 🔐 AuthService: Login response - success: true, message: Authentication successful
+I/flutter (27965): 🔐 AuthService: Login successful, setting user and token
+I/flutter (27965): 🔐 AuthService: User data stored, returning true
+I/flutter (27965): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter (27965): 🔐 LoginScreen: Login successful
+I/flutter (27965): 🔐 LoginScreen: biometricAvailable: true
+I/flutter (27965): 🔐 LoginScreen: biometricEnabled: false
+I/flutter (27965): 🔐 LoginScreen: Showing biometric setup alert
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45749708, downTime=45749708, phoneEventTime=18:46:33.014 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45749823, downTime=45749708, phoneEventTime=18:46:33.129 } moveCount:1
+I/flutter (27965): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter (27965): EventsScreen: Fetching fresh data from API
+I/flutter (27965): CacheService: Cleared events cache
+I/flutter (27965): EventsScreen: Fetching fresh data from API
+I/flutter (27965): CacheService: Cleared items cache
+I/flutter (27965): CacheService: Cleared item properties cache
+I/flutter (27965): ItemsScreen: Fetching fresh data from API
+I/flutter (27965): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 17:41:07 GMT}
+I/flutter (27965): CacheService: Cleared item images cache
+I/flutter (27965): ItemsScreen: Fetching fresh data from API
+I/flutter (27965): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 17:41:07 GMT}
+W/WindowOnBackDispatcher(27965): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(27965): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (27965): CacheService: Cached 2 events
+I/flutter (27965): CacheService: Cached 2 events
+I/flutter (27965): CacheService: Cached 6 events
+I/flutter (27965): CacheService: Cached 6 events
+I/flutter (27965): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (27965): ItemsScreen: Prefetch successful - 43 items
+I/flutter (27965): ItemsScreen: No images from prefetch, loading individual images for first 5 items
+I/flutter (27965): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (27965): ItemsScreen: Prefetch successful - 43 items
+I/flutter (27965): ItemsScreen: No images from prefetch, loading individual images for first 5 items
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45756051, downTime=45756051, phoneEventTime=18:46:39.358 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45756151, downTime=45756051, phoneEventTime=18:46:39.457 } moveCount:2
+I/flutter (27965): EventsScreen: Loading from cache - 6 events
+I/flutter (27965): EventsScreen: Fetching fresh data from API
+I/flutter (27965): ItemsScreen: Fetching fresh data from API
+I/flutter (27965): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 17:41:07 GMT}
+W/WindowOnBackDispatcher(27965): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(27965): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (27965): CacheService: Cached 6 events
+I/flutter (27965): CacheService: Cached 2 events
+I/flutter (27965): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (27965): ItemsScreen: Prefetch successful - 43 items
+I/flutter (27965): ItemsScreen: No images from prefetch, loading individual images for first 5 items
+I/flutter (27965): ItemsScreen: Loaded image for item 101
+I/flutter (27965): ItemsScreen: Loaded image for item 101
+I/flutter (27965): ItemsScreen: Loaded image for item 101
+I/flutter (27965): ItemsScreen: Loaded image for item 102
+I/flutter (27965): ItemsScreen: Loaded image for item 102
+I/flutter (27965): ItemsScreen: Loaded image for item 102
+I/flutter (27965): ItemsScreen: Loaded image for item 103
+I/flutter (27965): ItemsScreen: Loaded image for item 103
+I/flutter (27965): ItemsScreen: Loaded image for item 103
+I/flutter (27965): ItemsScreen: Loaded image for item 104
+I/flutter (27965): ItemsScreen: Loaded image for item 104
+I/flutter (27965): ItemsScreen: Loaded image for item 104
+I/flutter (27965): ItemsScreen: Loaded image for item 105
+I/flutter (27965): CacheService: Cached 43 items
+I/flutter (27965): CacheService: Cached properties for 43 items
+I/flutter (27965): CacheService: Cached images for 5 items
+I/flutter (27965): ItemsScreen: Loaded image for item 105
+I/flutter (27965): CacheService: Cached 43 items
+I/flutter (27965): CacheService: Cached properties for 43 items
+I/_member_flutter(27965): Background concurrent mark compact GC freed 2096KB AllocSpace bytes, 53(3084KB) LOS objects, 56% free, 4676KB/10MB, paused 244us,5.184ms total 37.515ms
+W/_member_flutter(27965): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/_member_flutter(27965): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter(27965): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+I/flutter (27965): CacheService: Cached images for 5 items
+I/flutter (27965): ItemsScreen: Prefetch failed, falling back to individual calls: setState() called after dispose(): _ItemsScreenState#29f5b(lifecycle state: defunct, not mounted)
+I/flutter (27965): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (27965): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (27965): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (27965): ItemsScreen: Loaded image for item 105
+I/flutter (27965): CacheService: Cached 43 items
+I/flutter (27965): CacheService: Cached 43 items
+I/flutter (27965): CacheService: Cached properties for 43 items
+I/flutter (27965): CacheService: Cached properties for 43 items
+I/flutter (27965): ItemsScreen: Error fetching items: setState() called after dispose(): _ItemsScreenState#29f5b(lifecycle state: defunct, not mounted)
+I/flutter (27965): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (27965): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (27965): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (27965): ItemsScreen: Error loading items: setState() called after dispose(): _ItemsScreenState#29f5b(lifecycle state: defunct, not mounted)
+I/flutter (27965): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (27965): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (27965): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+E/flutter (27965): [ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: setState() called after dispose(): _ItemsScreenState#29f5b(lifecycle state: defunct, not mounted)
+E/flutter (27965): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+E/flutter (27965): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+E/flutter (27965): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+E/flutter (27965): #0      State.setState.<anonymous closure> (package:flutter/src/widgets/framework.dart:1163:9)
+E/flutter (27965): #1      State.setState (package:flutter/src/widgets/framework.dart:1198:6)
+E/flutter (27965): #2      _ItemsScreenState._loadItems (package:tlr_member_flutter/screens/items_screen.dart:89:7)
+E/flutter (27965): <asynchronous suspension>
+E/flutter (27965): 
+I/flutter (27965): CacheService: Cached images for 5 items
+E/FlutterJNI(27965): Failed to decode image
+E/FlutterJNI(27965): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(27965): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+E/FlutterJNI(27965): Failed to decode image
+E/FlutterJNI(27965): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(27965): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+E/FlutterJNI(27965): Failed to decode image
+E/FlutterJNI(27965): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(27965): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+I/flutter (27965): Flutter Error: Exception: Invalid image data
+
+══╡ EXCEPTION CAUGHT BY IMAGE RESOURCE SERVICE ╞════════════════════════════════════════════════════
+The following _Exception was thrown resolving an image codec:
+Exception: Invalid image data
+
+When the exception was thrown, this was the stack:
+#0      _futurize (dart:ui/painting.dart:7991:5)
+#1      ImageDescriptor.encoded (dart:ui/painting.dart:7785:12)
+#2      instantiateImageCodecWithSize (dart:ui/painting.dart:2558:60)
+#3      PaintingBinding.instantiateImageCodecWithSize (package:flutter/src/painting/binding.dart:147:15)
+#4      MemoryImage._loadAsync (package:flutter/src/painting/image_provider.dart:1699:18)
+<asynchronous suspension>
+#5      MultiFrameImageStreamCompleter._handleCodecReady (package:flutter/src/painting/image_stream.dart:1021:3)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+I/flutter (27965): Flutter Error: Exception: Invalid image data
+Another exception was thrown: Exception: Invalid image data
+I/flutter (27965): Flutter Error: Exception: Invalid image data
+Another exception was thrown: Exception: Invalid image data
+D/VRI[MainActivity](27965): vri.reportNextDraw android.view.ViewRootImpl.handleResized:2773 android.view.ViewRootImpl.-$$Nest$mhandleResized:0 android.view.ViewRootImpl$W.resized:12912 android.app.servertransaction.WindowStateResizeItem.execute:64 android.app.servertransaction.WindowStateTransactionItem.execute:59 
+D/VRI[MainActivity](27965): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+D/BLASTBufferQueue(27965): [VRI[MainActivity]#0](f:0,a:4) update width=1640 height=720 format=-3 mTransformHint=4
+D/BLASTBufferQueue(27965): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:4) update width=1640 height=720 format=4 mTransformHint=4
+D/VRI[MainActivity](27965): Setup new sync=wmsSync-VRI[MainActivity]#4
+D/BLASTBufferQueue(27965): [VRI[MainActivity]#0](f:0,a:5) producer disconnected before acquireNextBufferLocked
+D/VRI[MainActivity](27965): vri.reportDrawFinished
+E/Surface (27965): freeAllBuffers: 1 buffers were freed while being dequeued!
+E/_member_flutter(27965): checkIfsupportxIntfps do not binder to joyose
+D/VRI[MainActivity](27965): vri.reportNextDraw android.view.ViewRootImpl.handleResized:2773 android.view.ViewRootImpl.-$$Nest$mhandleResized:0 android.view.ViewRootImpl$W.resized:12912 android.app.servertransaction.WindowStateResizeItem.execute:64 android.app.servertransaction.WindowStateTransactionItem.execute:59 
+D/VRI[MainActivity](27965): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+D/BLASTBufferQueue(27965): [VRI[MainActivity]#0](f:0,a:2) update width=720 height=1640 format=-3 mTransformHint=0
+D/BLASTBufferQueue(27965): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:3) update width=720 height=1640 format=4 mTransformHint=0
+D/VRI[MainActivity](27965): Setup new sync=wmsSync-VRI[MainActivity]#7
+D/BLASTBufferQueue(27965): [VRI[MainActivity]#0](f:0,a:3) producer disconnected before acquireNextBufferLocked
+D/VRI[MainActivity](27965): vri.reportDrawFinished
+E/FlutterJNI(27965): Failed to decode image
+E/FlutterJNI(27965): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(27965): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+E/Surface (27965): freeAllBuffers: 1 buffers were freed while being dequeued!
+E/_member_flutter(27965): checkIfsupportxIntfps do not binder to joyose
+Another exception was thrown: Exception: Invalid image data
+I/flutter (27965): Flutter Error: Exception: Invalid image data
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45786368, downTime=45786368, phoneEventTime=18:47:09.674 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45786517, downTime=45786368, phoneEventTime=18:47:09.823 } moveCount:10
+I/ScrollIdentify(27965): on fling
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45787034, downTime=45787034, phoneEventTime=18:47:10.341 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45787133, downTime=45787034, phoneEventTime=18:47:10.439 } moveCount:3
+I/ScrollIdentify(27965): on fling
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45787734, downTime=45787734, phoneEventTime=18:47:11.040 } moveCount:0
+E/FlutterJNI(27965): Failed to decode image
+E/FlutterJNI(27965): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(27965): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+I/flutter (27965): Flutter Error: Exception: Invalid image data
+Another exception was thrown: Exception: Invalid image data
+E/FlutterJNI(27965): Failed to decode image
+E/FlutterJNI(27965): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(27965): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+I/flutter (27965): Flutter Error: Exception: Invalid image data
+Another exception was thrown: Exception: Invalid image data
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45788399, downTime=45787734, phoneEventTime=18:47:11.706 } moveCount:60
+I/ScrollIdentify(27965): on fling
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45788716, downTime=45788716, phoneEventTime=18:47:12.023 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45788865, downTime=45788716, phoneEventTime=18:47:12.171 } moveCount:12
+I/ScrollIdentify(27965): on fling
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45789232, downTime=45789232, phoneEventTime=18:47:12.538 } moveCount:0
+E/FlutterJNI(27965): Failed to decode image
+E/FlutterJNI(27965): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(27965): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+I/flutter (27965): Flutter Error: Exception: Invalid image data
+Another exception was thrown: Exception: Invalid image data
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45789731, downTime=45789232, phoneEventTime=18:47:13.037 } moveCount:46
+I/ScrollIdentify(27965): on fling
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45789982, downTime=45789982, phoneEventTime=18:47:13.288 } moveCount:0
+E/FlutterJNI(27965): Failed to decode image
+E/FlutterJNI(27965): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(27965): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+I/flutter (27965): Flutter Error: Exception: Invalid image data
+Another exception was thrown: Exception: Invalid image data
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45790131, downTime=45789982, phoneEventTime=18:47:13.438 } moveCount:10
+I/ScrollIdentify(27965): on fling
+E/FlutterJNI(27965): Failed to decode image
+E/FlutterJNI(27965): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(27965): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+E/FlutterJNI(27965): Failed to decode image
+E/FlutterJNI(27965): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(27965): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+Another exception was thrown: Exception: Invalid image data
+I/flutter (27965): Flutter Error: Exception: Invalid image data
+I/flutter (27965): Flutter Error: Exception: Invalid image data
+Another exception was thrown: Exception: Invalid image data
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45791097, downTime=45791097, phoneEventTime=18:47:14.403 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45791280, downTime=45791097, phoneEventTime=18:47:14.586 } moveCount:5
+W/WindowOnBackDispatcher(27965): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(27965): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/VRI[MainActivity](27965): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+E/FlutterJNI(27965): Failed to decode image
+E/FlutterJNI(27965): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(27965): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(27965): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+I/flutter (27965): ItemDetailScreen: Error fetching user for tasting note: DioException [bad response]: This exception was thrown because the response has a status code of 400 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (27965): The status code of 400 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (27965): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (27965): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45795877, downTime=45795877, phoneEventTime=18:47:19.183 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45796075, downTime=45795877, phoneEventTime=18:47:19.381 } moveCount:21
+I/ScrollIdentify(27965): on fling
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45796509, downTime=45796509, phoneEventTime=18:47:19.816 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45796925, downTime=45796509, phoneEventTime=18:47:20.231 } moveCount:47
+I/ScrollIdentify(27965): on fling
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45797025, downTime=45797025, phoneEventTime=18:47:20.331 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45797191, downTime=45797025, phoneEventTime=18:47:20.497 } moveCount:17
+I/ScrollIdentify(27965): on fling
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45797474, downTime=45797474, phoneEventTime=18:47:20.780 } moveCount:0
+I/MIUIInput(27965): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45797607, downTime=45797474, phoneEventTime=18:47:20.913 } moveCount:13
+I/ScrollIdentify(27965): on fling
+Lost connection to device.

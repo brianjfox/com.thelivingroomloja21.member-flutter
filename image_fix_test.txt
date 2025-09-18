@@ -1,0 +1,358 @@
+Resolving dependencies...
+Downloading packages...
+  characters 1.4.0 (1.4.1 available)
+  flutter_secure_storage_linux 1.2.3 (2.0.1 available)
+  flutter_secure_storage_macos 3.1.3 (4.0.0 available)
+  flutter_secure_storage_platform_interface 1.1.2 (2.0.1 available)
+  flutter_secure_storage_web 1.2.1 (2.0.0 available)
+  flutter_secure_storage_windows 3.1.2 (4.0.0 available)
+  js 0.6.7 (0.7.2 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  meta 1.16.0 (1.17.0 available)
+  mobile_scanner 5.2.3 (7.0.1 available)
+  test_api 0.7.6 (0.7.7 available)
+Got dependencies!
+11 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Launching lib/main.dart on 2409BRN2CY in debug mode...
+Running Gradle task 'assembleDebug'...                              5.2s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...           6.3s
+D/FlutterJNI(26481): Beginning load of flutter...
+D/FlutterJNI(26481): flutter (null) was loaded normally!
+I/flutter (26481): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+Syncing files to device 2409BRN2CY...                               39ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on 2409BRN2CY is available at: http://127.0.0.1:54701/hPFnYD7PPiI=/
+I/flutter (26481): 🔐 AuthService: Initializing...
+The Flutter DevTools debugger and profiler on 2409BRN2CY is available at: http://127.0.0.1:9100?uri=http://127.0.0.1:54701/hPFnYD7PPiI=/
+I/WindowExtensionsImpl(26481): Initializing Window Extensions, vendor API level=6, activity embedding enabled=true
+I/_member_flutter(26481): Compiler allocated 6698KB to compile void android.view.ViewRootImpl.performTraversals()
+D/BufferQueueConsumer(26481): [](id:677100000000,api:0,p:-1,c:26481) connect: controlledByApp=false
+D/BLASTBufferQueue(26481): [VRI[MainActivity]#0](f:0,a:0) constructor()
+D/BLASTBufferQueue(26481): [VRI[MainActivity]#0](f:0,a:0) update width=1640 height=720 format=-3 mTransformHint=7
+D/VRI[MainActivity](26481): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4965 android.view.ViewRootImpl.doTraversal:3571 android.view.ViewRootImpl$TraversalRunnable.run:11761 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 
+D/SurfaceView(26481): UPDATE null, mIsCastMode = false
+D/BufferQueueConsumer(26481): [](id:677100000001,api:0,p:-1,c:26481) connect: controlledByApp=false
+D/BLASTBufferQueue(26481): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:0) constructor()
+D/BLASTBufferQueue(26481): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:0) update width=1640 height=720 format=4 mTransformHint=7
+E/_member_flutter(26481): checkIfsupportxIntfps do not binder to joyose
+D/MAGT_SYNC_FRAME(26481): MAGT Sync: MAGT is not supported. Disabling Sync.
+D/_member_flutter(26481): Can't load libmbrainSDK
+I/Choreographer(26481): first vsync insert message into MessageQueue Head
+D/SurfaceView(26481): UPDATE Surface(name=SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1671)/@0x5174855, mIsProjectionMode = false
+I/GrallocExtra(26481): gralloc_extra_query:is_SW3D 0
+I/GrallocExtra(26481): gralloc_extra_query:is_SW3D 0
+W/libc    (26481): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue(26481): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:1) acquireNextBufferLocked size=1640x720 mFrameNumber=1 applyTransaction=true mTimestamp=45373703290241(auto) mPendingTransactions.size=0 graphicBufferId=113735028965386 transform=0
+D/_member_flutter(26481): Can't load libmbrainSDK
+I/Choreographer(26481): Skipped 47 frames!  The application may be doing too much work on its main thread.
+D/UserSceneDetector(26481): invoke error.
+D/VRI[MainActivity](26481): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4965 android.view.ViewRootImpl.doTraversal:3571 android.view.ViewRootImpl$TraversalRunnable.run:11761 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 
+D/VRI[MainActivity](26481): Setup new sync=wmsSync-VRI[MainActivity]#1
+D/UserSceneDetector(26481): invoke error.
+D/HWUI    (26481): makeCurrent grContext:0xb400007861a29ad0 reset mTextureAvailable
+D/_member_flutter(26481): MiuiProcessManagerServiceStub setSchedFifo
+I/MiuiProcessManagerImpl(26481): setSchedFifo pid:26481, mode:3
+W/libc    (26481): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue(26481): [VRI[MainActivity]#0](f:0,a:1) acquireNextBufferLocked size=1640x720 mFrameNumber=1 applyTransaction=true mTimestamp=45373919633857(auto) mPendingTransactions.size=0 graphicBufferId=113735028965394 transform=4
+D/VRI[MainActivity](26481): vri.reportDrawFinished
+D/ProfileInstaller(26481): Installing profile for com.thelivingroomloja21.tlr_member_flutter
+I/HWUI    (26481): Davey! duration=860ms; Flags=1, FrameTimelineVsyncId=2179023, IntendedVsync=45373059657097, Vsync=45373842253862, InputEventId=0, HandleInputStart=45373857216088, AnimationStart=45373857221934, PerformTraversalsStart=45373857224318, DrawStart=45373890014241, FrameDeadline=45373079657097, FrameInterval=45373855563703, FrameStartTime=16650995, SyncQueued=45373894267165, SyncStart=45373894509857, IssueDrawCommandsStart=45373900320703, SwapBuffers=45373919120703, FrameCompleted=45373920452011, DequeueBufferDuration=1378692, QueueBufferDuration=661154, GpuCompleted=45373919965318, SwapBuffersCompleted=45373920452011, DisplayPresentTime=0, CommandSubmissionCompleted=45373919120703, 
+I/HandWritingStubImpl(26481): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(26481): getCurrentKeyboardType: 1
+I/HandWritingStubImpl(26481): getCurrentKeyboardType: 1
+I/flutter (26481): 🔐 AuthService: Checking biometric availability...
+I/flutter (26481): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter (26481): 🔐 AuthService: Biometric available: true, enabled: true
+I/flutter (26481): 🔐 AuthService: Initialization complete - biometric enabled: true
+I/flutter (26481): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter (26481): 🔐 AuthProvider: Initialized
+I/flutter (26481): 🔐 AuthProvider: biometricAvailable: true
+I/flutter (26481): 🔐 AuthProvider: biometricEnabled: true
+I/flutter (26481): 🔐 AuthProvider: isAuthenticated: true
+W/_member_flutter(26481): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter(26481): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+W/_member_flutter(26481): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45398971, downTime=45398971, phoneEventTime=18:40:42.277 } moveCount:0
+W/MirrorManager(26481): this model don't Support
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45398988, downTime=45398971, phoneEventTime=18:40:42.294 } moveCount:0
+D/VRI[MainActivity](26481): vri.reportNextDraw android.view.ViewRootImpl.handleResized:2773 android.view.ViewRootImpl.-$$Nest$mhandleResized:0 android.view.ViewRootImpl$W.resized:12912 android.app.servertransaction.WindowStateResizeItem.execute:64 android.app.servertransaction.WindowStateTransactionItem.execute:59 
+D/UserSceneDetector(26481): invoke error.
+D/VRI[MainActivity](26481): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+D/VRI[MainActivity](26481): Setup new sync=wmsSync-VRI[MainActivity]#4
+W/libc    (26481): Access denied finding property "ro.vendor.display.iris_x7.support"
+E/_member_flutter(26481): DynamicFPS DF open fail: No such file or directory
+E/_member_flutter(26481): FrameInsert open fail: No such file or directory
+D/BLASTBufferQueue(26481): [VRI[MainActivity]#0](f:0,a:2) producer disconnected before acquireNextBufferLocked
+D/VRI[MainActivity](26481): vri.reportDrawFinished
+D/VRI[MainActivity](26481): vri.reportNextDraw android.view.ViewRootImpl.handleResized:2773 android.view.ViewRootImpl.-$$Nest$mhandleResized:0 android.view.ViewRootImpl$W.resized:12912 android.app.servertransaction.WindowStateResizeItem.execute:64 android.app.servertransaction.WindowStateTransactionItem.execute:59 
+D/VRI[MainActivity](26481): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+D/BLASTBufferQueue(26481): [VRI[MainActivity]#0](f:0,a:2) update width=720 height=1640 format=-3 mTransformHint=0
+D/BLASTBufferQueue(26481): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:2) update width=720 height=1640 format=4 mTransformHint=0
+D/VRI[MainActivity](26481): Setup new sync=wmsSync-VRI[MainActivity]#7
+D/BLASTBufferQueue(26481): [VRI[MainActivity]#0](f:0,a:3) producer disconnected before acquireNextBufferLocked
+D/VRI[MainActivity](26481): vri.reportDrawFinished
+E/Surface (26481): freeAllBuffers: 1 buffers were freed while being dequeued!
+E/_member_flutter(26481): checkIfsupportxIntfps do not binder to joyose
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45404111, downTime=45404111, phoneEventTime=18:40:47.417 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45404227, downTime=45404111, phoneEventTime=18:40:47.533 } moveCount:1
+I/flutter (26481): 🔐 LoginScreen: Starting biometric login
+I/flutter (26481): 🔐 AuthProvider: Starting biometric login
+I/flutter (26481): 🔐 AuthService: Starting biometric login
+I/flutter (26481): 🔐 AuthService: Biometric enabled: true
+I/flutter (26481): 🔐 AuthService: Biometric data found: true
+I/flutter (26481): 🔐 AuthService: Found biometric data, parsing...
+I/flutter (26481): 🔐 AuthService: Starting local biometric authentication...
+W/WindowOnBackDispatcher(26481): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(26481): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+E/LB      (26481): fail to open file: No such file or directory
+E/LB      (26481): fail to open node: No such file or directory
+E/LB      (26481): fail to open node: No such file or directory
+W/WindowOnBackDispatcher(26481): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(26481): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (26481): 🔐 AuthService: Local biometric result: true
+I/flutter (26481): 🔐 AuthService: Authenticating with server...
+I/HandWritingStubImpl(26481): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(26481): getCurrentKeyboardType: 1
+I/flutter (26481): 🔐 AuthService: Server response - success: true, message: Biometric authentication successful
+I/flutter (26481): 🔐 AuthService: Biometric login successful, setting user and token
+I/flutter (26481): 🔐 AuthService: Biometric login completed successfully
+I/flutter (26481): 🔐 AuthProvider: Biometric login result: true
+I/flutter (26481): 🔐 AuthProvider: Biometric login successful, user set
+I/flutter (26481): 🔐 LoginScreen: Biometric login result: true
+I/flutter (26481): 🔐 LoginScreen: Biometric login successful, navigating to dashboard
+I/flutter (26481): EventsScreen: Loading from cache - 2 events
+I/flutter (26481): EventsScreen: Fetching fresh data from API
+I/flutter (26481): ItemsScreen: Loading from cache - 43 items
+I/flutter (26481): ItemsScreen: Fetching fresh data from API
+I/flutter (26481): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 17:36:08 GMT}
+I/flutter (26481): EventsScreen: Loading from cache - 2 events
+I/flutter (26481): EventsScreen: Fetching fresh data from API
+I/flutter (26481): ItemsScreen: Loading from cache - 43 items
+I/flutter (26481): ItemsScreen: Fetching fresh data from API
+I/flutter (26481): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 17:36:08 GMT}
+W/WindowOnBackDispatcher(26481): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(26481): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (26481): CacheService: Cached 2 events
+I/flutter (26481): CacheService: Cached 6 events
+I/flutter (26481): CacheService: Cached 2 events
+I/flutter (26481): CacheService: Cached 6 events
+I/flutter (26481): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (26481): ItemsScreen: Prefetch successful - 43 items
+I/flutter (26481): ItemsScreen: No images from prefetch, loading individual images for first 5 items
+I/flutter (26481): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (26481): ItemsScreen: Prefetch successful - 43 items
+I/flutter (26481): ItemsScreen: No images from prefetch, loading individual images for first 5 items
+I/flutter (26481): ApiService: Error getting wine label image for 101: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 101: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 102: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 102: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 103: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 103: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 104: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 104: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 105: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 105: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): CacheService: Cached 43 items
+I/flutter (26481): CacheService: Cached 43 items
+I/flutter (26481): CacheService: Cached properties for 43 items
+I/flutter (26481): CacheService: Cached properties for 43 items
+I/flutter (26481): CacheService: Cached images for 0 items
+I/flutter (26481): CacheService: Cached images for 0 items
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45415468, downTime=45415468, phoneEventTime=18:40:58.775 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45415584, downTime=45415468, phoneEventTime=18:40:58.890 } moveCount:3
+I/flutter (26481): EventsScreen: Loading from cache - 6 events
+I/flutter (26481): EventsScreen: Fetching fresh data from API
+I/flutter (26481): ItemsScreen: Loading from cache - 43 items
+I/flutter (26481): ItemsScreen: Fetching fresh data from API
+I/flutter (26481): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 17:40:56 GMT}
+W/WindowOnBackDispatcher(26481): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(26481): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (26481): CacheService: Cached 2 events
+I/flutter (26481): CacheService: Cached 6 events
+I/flutter (26481): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (26481): ItemsScreen: Prefetch successful - 43 items
+I/flutter (26481): ItemsScreen: No images from prefetch, loading individual images for first 5 items
+I/flutter (26481): ApiService: Error getting wine label image for 101: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 102: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 103: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 104: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 105: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): CacheService: Cached 43 items
+I/flutter (26481): CacheService: Cached properties for 43 items
+I/flutter (26481): CacheService: Cached images for 0 items
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45420031, downTime=45420031, phoneEventTime=18:41:03.337 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45420229, downTime=45420031, phoneEventTime=18:41:03.535 } moveCount:10
+I/ScrollIdentify(26481): on fling
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45420746, downTime=45420746, phoneEventTime=18:41:04.052 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45420995, downTime=45420746, phoneEventTime=18:41:04.301 } moveCount:24
+I/ScrollIdentify(26481): on fling
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45421745, downTime=45421745, phoneEventTime=18:41:05.051 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45421944, downTime=45421745, phoneEventTime=18:41:05.250 } moveCount:17
+I/ScrollIdentify(26481): on fling
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45422511, downTime=45422511, phoneEventTime=18:41:05.817 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45422744, downTime=45422511, phoneEventTime=18:41:06.051 } moveCount:23
+I/ScrollIdentify(26481): on fling
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45423160, downTime=45423160, phoneEventTime=18:41:06.466 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45423310, downTime=45423160, phoneEventTime=18:41:06.616 } moveCount:11
+I/ScrollIdentify(26481): on fling
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45423993, downTime=45423993, phoneEventTime=18:41:07.299 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45424292, downTime=45423993, phoneEventTime=18:41:07.598 } moveCount:20
+I/ScrollIdentify(26481): on fling
+I/flutter (26481): CacheService: Cleared items cache
+I/flutter (26481): ItemsScreen: Fetching fresh data from API
+I/flutter (26481): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 17:40:59 GMT}
+I/flutter (26481): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (26481): ItemsScreen: Prefetch successful - 43 items
+I/flutter (26481): ItemsScreen: No images from prefetch, loading individual images for first 5 items
+I/flutter (26481): ApiService: Error getting wine label image for 101: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 102: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 103: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ApiService: Error getting wine label image for 104: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45425175, downTime=45425175, phoneEventTime=18:41:08.481 } moveCount:0
+I/flutter (26481): ApiService: Error getting wine label image for 105: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): CacheService: Cached 43 items
+I/flutter (26481): CacheService: Cached properties for 43 items
+I/flutter (26481): CacheService: Cached images for 0 items
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45425308, downTime=45425175, phoneEventTime=18:41:08.614 } moveCount:5
+I/flutter (26481): Flutter Error: A RenderFlex overflowed by 80 pixels on the right.
+
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during layout:
+A RenderFlex overflowed by 80 pixels on the right.
+
+The relevant error-causing widget was:
+  DropdownButtonFormField<String>
+  DropdownButtonFormField:file:///Users/bfox/CLIENTS/TLR/com.thelivingroomloja21.flutter/lib/screens/items_screen.dart:571:25
+
+To inspect this widget in Flutter DevTools, visit:
+http://127.0.0.1:9100/#/inspector?uri=http%3A%2F%2F127.0.0.1%3A54701%2FhPFnYD7PPiI%3D%2F&inspectorRef=inspector-0
+
+The overflowing RenderFlex has an orientation of Axis.horizontal.
+The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and
+black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
+Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the
+RenderFlex to fit within the available space instead of being sized to their natural size.
+This is considered an error condition because it indicates that there is content that cannot be
+seen. If the content is legitimately bigger than the available space, consider clipping it with a
+ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex,
+like a ListView.
+The specific RenderFlex in question is: RenderFlex#cbee2 OVERFLOWING:
+  creator: Row ← Padding ← SizedBox ← DefaultTextStyle ← _Decorator ← InputDecorator ← Listener ←
+    _GestureSemantics ← RawGestureDetector ← GestureDetector ← MouseRegion ← Semantics ← ⋯
+  parentData: offset=Offset(0.0, 0.0) (can use size)
+  constraints: BoxConstraints(w=238.0, h=24.0)
+  size: Size(238.0, 24.0)
+  direction: horizontal
+  mainAxisAlignment: spaceBetween
+  mainAxisSize: min
+  crossAxisAlignment: center
+  textDirection: ltr
+  verticalDirection: down
+  spacing: 0.0
+◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+I/Choreographer(26481): Skipped 36 frames!  The application may be doing too much work on its main thread.
+D/UserSceneDetector(26481): invoke error.
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45427774, downTime=45427774, phoneEventTime=18:41:11.080 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45428172, downTime=45427774, phoneEventTime=18:41:11.478 } moveCount:6
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45429106, downTime=45429106, phoneEventTime=18:41:12.413 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45429404, downTime=45429106, phoneEventTime=18:41:12.710 } moveCount:4
+I/ScrollIdentify(26481): on fling
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45430387, downTime=45430387, phoneEventTime=18:41:13.694 } moveCount:0
+W/_member_flutter(26481): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/_member_flutter(26481): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter(26481): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45430670, downTime=45430387, phoneEventTime=18:41:13.976 } moveCount:6
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45436981, downTime=45436981, phoneEventTime=18:41:20.287 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45437114, downTime=45436981, phoneEventTime=18:41:20.420 } moveCount:4
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45438664, downTime=45438664, phoneEventTime=18:41:21.970 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45438829, downTime=45438664, phoneEventTime=18:41:22.135 } moveCount:4
+W/WindowOnBackDispatcher(26481): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(26481): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/VRI[MainActivity](26481): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+I/flutter (26481): ApiService: Error getting wine label image for 101: DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/flutter (26481): ItemDetailScreen: Error fetching user for tasting note: DioException [bad response]: This exception was thrown because the response has a status code of 400 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (26481): The status code of 400 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (26481): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (26481): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45448138, downTime=45448138, phoneEventTime=18:41:31.444 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45448587, downTime=45448138, phoneEventTime=18:41:31.893 } moveCount:45
+I/ScrollIdentify(26481): on fling
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=45448804, downTime=45448804, phoneEventTime=18:41:32.110 } moveCount:0
+I/MIUIInput(26481): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=45449036, downTime=45448804, phoneEventTime=18:41:32.342 } moveCount:23
+I/ScrollIdentify(26481): on fling
+Lost connection to device.

@@ -1,0 +1,981 @@
+Resolving dependencies...
+Downloading packages...
+  characters 1.4.0 (1.4.1 available)
+  flutter_secure_storage_linux 1.2.3 (2.0.1 available)
+  flutter_secure_storage_macos 3.1.3 (4.0.0 available)
+  flutter_secure_storage_platform_interface 1.1.2 (2.0.1 available)
+  flutter_secure_storage_web 1.2.1 (2.0.0 available)
+  flutter_secure_storage_windows 3.1.2 (4.0.0 available)
+  js 0.6.7 (0.7.2 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  meta 1.16.0 (1.17.0 available)
+  mobile_scanner 5.2.3 (7.0.1 available)
+  test_api 0.7.6 (0.7.7 available)
+Got dependencies!
+11 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Launching lib/main.dart on 2409BRN2CY in debug mode...
+Running Gradle task 'assembleDebug'...                              6.0s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...           7.1s
+D/FlutterJNI(29812): Beginning load of flutter...
+D/FlutterJNI(29812): flutter (null) was loaded normally!
+I/flutter (29812): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+Syncing files to device 2409BRN2CY...                              110ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on 2409BRN2CY is available at: http://127.0.0.1:55432/MTZjtmP0WP0=/
+I/flutter (29812): 🔐 AuthService: Initializing...
+The Flutter DevTools debugger and profiler on 2409BRN2CY is available at: http://127.0.0.1:9100?uri=http://127.0.0.1:55432/MTZjtmP0WP0=/
+I/WindowExtensionsImpl(29812): Initializing Window Extensions, vendor API level=6, activity embedding enabled=true
+I/_member_flutter(29812): Compiler allocated 6698KB to compile void android.view.ViewRootImpl.performTraversals()
+D/BufferQueueConsumer(29812): [](id:747400000000,api:0,p:-1,c:29812) connect: controlledByApp=false
+D/BLASTBufferQueue(29812): [VRI[MainActivity]#0](f:0,a:0) constructor()
+D/BLASTBufferQueue(29812): [VRI[MainActivity]#0](f:0,a:0) update width=720 height=1640 format=-3 mTransformHint=0
+D/VRI[MainActivity](29812): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4965 android.view.ViewRootImpl.doTraversal:3571 android.view.ViewRootImpl$TraversalRunnable.run:11761 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 
+D/SurfaceView(29812): UPDATE null, mIsCastMode = false
+D/BufferQueueConsumer(29812): [](id:747400000001,api:0,p:-1,c:29812) connect: controlledByApp=false
+D/BLASTBufferQueue(29812): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:0) constructor()
+D/BLASTBufferQueue(29812): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:0) update width=720 height=1640 format=4 mTransformHint=0
+E/_member_flutter(29812): checkIfsupportxIntfps do not binder to joyose
+D/MAGT_SYNC_FRAME(29812): MAGT Sync: MAGT is not supported. Disabling Sync.
+D/_member_flutter(29812): Can't load libmbrainSDK
+I/Choreographer(29812): first vsync insert message into MessageQueue Head
+D/SurfaceView(29812): UPDATE Surface(name=SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1797)/@0x5174855, mIsProjectionMode = false
+I/GrallocExtra(29812): gralloc_extra_query:is_SW3D 0
+I/GrallocExtra(29812): gralloc_extra_query:is_SW3D 0
+W/libc    (29812): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue(29812): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:1) acquireNextBufferLocked size=720x1640 mFrameNumber=1 applyTransaction=true mTimestamp=46006996426587(auto) mPendingTransactions.size=0 graphicBufferId=128041565028362 transform=0
+D/_member_flutter(29812): Can't load libmbrainSDK
+I/Choreographer(29812): Skipped 47 frames!  The application may be doing too much work on its main thread.
+D/UserSceneDetector(29812): invoke error.
+D/VRI[MainActivity](29812): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4965 android.view.ViewRootImpl.doTraversal:3571 android.view.ViewRootImpl$TraversalRunnable.run:11761 android.view.Choreographer$CallbackRecord.run:1808 android.view.Choreographer$CallbackRecord.run:1817 
+D/VRI[MainActivity](29812): Setup new sync=wmsSync-VRI[MainActivity]#1
+D/UserSceneDetector(29812): invoke error.
+D/HWUI    (29812): makeCurrent grContext:0xb400007861a294d0 reset mTextureAvailable
+D/_member_flutter(29812): MiuiProcessManagerServiceStub setSchedFifo
+I/MiuiProcessManagerImpl(29812): setSchedFifo pid:29812, mode:3
+W/libc    (29812): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue(29812): [VRI[MainActivity]#0](f:0,a:1) acquireNextBufferLocked size=720x1640 mFrameNumber=1 applyTransaction=true mTimestamp=46007194913895(auto) mPendingTransactions.size=0 graphicBufferId=128041565028370 transform=0
+D/VRI[MainActivity](29812): vri.reportDrawFinished
+I/HWUI    (29812): Davey! duration=847ms; Flags=1, FrameTimelineVsyncId=2215838, IntendedVsync=46006347873339, Vsync=46007129988025, InputEventId=0, HandleInputStart=46007143336125, AnimationStart=46007143339433, PerformTraversalsStart=46007143340433, DrawStart=46007165065587, FrameDeadline=46006367873339, FrameInterval=46007142498587, FrameStartTime=16640738, SyncQueued=46007168942895, SyncStart=46007169266202, IssueDrawCommandsStart=46007174322818, SwapBuffers=46007194244664, FrameCompleted=46007195689895, DequeueBufferDuration=2674846, QueueBufferDuration=592076, GpuCompleted=46007195075510, SwapBuffersCompleted=46007195689895, DisplayPresentTime=0, CommandSubmissionCompleted=46007194244664, 
+D/ProfileInstaller(29812): Installing profile for com.thelivingroomloja21.tlr_member_flutter
+I/HandWritingStubImpl(29812): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(29812): getCurrentKeyboardType: 1
+I/HandWritingStubImpl(29812): getCurrentKeyboardType: 1
+I/flutter (29812): 🔐 AuthService: Checking biometric availability...
+I/flutter (29812): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter (29812): 🔐 AuthService: Biometric available: true, enabled: true
+I/flutter (29812): 🔐 AuthService: Initialization complete - biometric enabled: true
+I/flutter (29812): 🔐 AuthService: Biometric check - canCheckBiometrics: true, isDeviceSupported: true, result: true
+I/flutter (29812): 🔐 AuthProvider: Initialized
+I/flutter (29812): 🔐 AuthProvider: biometricAvailable: true
+I/flutter (29812): 🔐 AuthProvider: biometricEnabled: true
+I/flutter (29812): 🔐 AuthProvider: isAuthenticated: true
+W/_member_flutter(29812): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter(29812): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+W/_member_flutter(29812): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49003832, downTime=49003808, phoneEventTime=19:40:47.138 } moveCount:0
+W/MirrorManager(29812): this model don't Support
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49004073, downTime=49003808, phoneEventTime=19:40:47.379 } moveCount:2
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49005189, downTime=49005189, phoneEventTime=19:40:48.495 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49005322, downTime=49005189, phoneEventTime=19:40:48.628 } moveCount:1
+I/flutter (29812): 🔐 LoginScreen: Starting biometric login
+I/flutter (29812): 🔐 AuthProvider: Starting biometric login
+I/flutter (29812): 🔐 AuthService: Starting biometric login
+I/flutter (29812): 🔐 AuthService: Biometric enabled: true
+I/flutter (29812): 🔐 AuthService: Biometric data found: true
+I/flutter (29812): 🔐 AuthService: Found biometric data, parsing...
+I/flutter (29812): 🔐 AuthService: Starting local biometric authentication...
+W/WindowOnBackDispatcher(29812): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(29812): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+E/_member_flutter(29812): DynamicFPS DF open fail: No such file or directory
+E/_member_flutter(29812): FrameInsert open fail: No such file or directory
+E/LB      (29812): fail to open file: No such file or directory
+E/LB      (29812): fail to open node: No such file or directory
+E/LB      (29812): fail to open node: No such file or directory
+W/WindowOnBackDispatcher(29812): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(29812): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (29812): 🔐 AuthService: Local biometric result: true
+I/flutter (29812): 🔐 AuthService: Authenticating with server...
+I/HandWritingStubImpl(29812): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(29812): getCurrentKeyboardType: 1
+I/flutter (29812): 🔐 AuthService: Server response - success: true, message: Biometric authentication successful
+I/flutter (29812): 🔐 AuthService: Biometric login successful, setting user and token
+I/flutter (29812): 🔐 AuthService: Biometric login completed successfully
+I/flutter (29812): 🔐 AuthProvider: Biometric login result: true
+I/flutter (29812): 🔐 AuthProvider: Biometric login successful, user set
+I/flutter (29812): 🔐 LoginScreen: Biometric login result: true
+I/flutter (29812): 🔐 LoginScreen: Biometric login successful, navigating to dashboard
+I/flutter (29812): EventsScreen: Fetching fresh data from API
+I/flutter (29812): CacheService: Cleared events cache
+I/flutter (29812): EventsScreen: Fetching fresh data from API
+I/flutter (29812): CacheService: Cleared items cache
+I/flutter (29812): CacheService: Cleared item properties cache
+I/flutter (29812): ItemsScreen: Fetching fresh data from API
+I/flutter (29812): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 17:46:41 GMT}
+I/flutter (29812): CacheService: Cleared item images cache
+I/flutter (29812): ItemsScreen: Fetching fresh data from API
+I/flutter (29812): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 17:46:41 GMT}
+W/WindowOnBackDispatcher(29812): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(29812): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (29812): CacheService: Cached 2 events
+I/flutter (29812): CacheService: Cached 2 events
+I/flutter (29812): CacheService: Cached 6 events
+I/flutter (29812): CacheService: Cached 6 events
+I/flutter (29812): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (29812): ItemsScreen: Prefetch successful - 43 items
+I/flutter (29812): ItemsScreen: No images from prefetch, starting background image loading
+I/flutter (29812): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (29812): ItemsScreen: Prefetch successful - 43 items
+I/flutter (29812): ItemsScreen: No images from prefetch, starting background image loading
+I/flutter (29812): CacheService: Cached 43 items
+I/flutter (29812): CacheService: Cached 43 items
+I/flutter (29812): CacheService: Cached properties for 43 items
+I/flutter (29812): CacheService: Cached properties for 43 items
+I/flutter (29812): CacheService: Cached images for 0 items
+I/flutter (29812): CacheService: Cached images for 0 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49014292, downTime=49014292, phoneEventTime=19:40:57.599 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49014408, downTime=49014292, phoneEventTime=19:40:57.714 } moveCount:2
+I/flutter (29812): EventsScreen: Loading from cache - 6 events
+I/flutter (29812): EventsScreen: Fetching fresh data from API
+I/flutter (29812): ItemsScreen: Loading from cache - 43 items
+I/flutter (29812): ItemsScreen: Fetching fresh data from API
+I/flutter (29812): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 18:40:54 GMT}
+W/WindowOnBackDispatcher(29812): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(29812): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 149
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 149: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached 2 events
+I/flutter (29812): CacheService: Cached 6 events
+I/flutter (29812): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (29812): ItemsScreen: Prefetch successful - 43 items
+I/flutter (29812): ItemsScreen: No images from prefetch, starting background image loading
+W/_member_flutter(29812): Reducing the number of considered missed Gc histogram windows from 299 to 100
+I/flutter (29812): CacheService: Cached 43 items
+W/_member_flutter(29812): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/_member_flutter(29812): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter(29812): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+I/flutter (29812): CacheService: Cached properties for 43 items
+I/flutter (29812): CacheService: Cached images for 0 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 150
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49019920, downTime=49019920, phoneEventTime=19:41:03.226 } moveCount:0
+I/flutter (29812): ItemsScreen: Error loading image for item 150: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49020169, downTime=49019920, phoneEventTime=19:41:03.475 } moveCount:4
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49020802, downTime=49020802, phoneEventTime=19:41:04.108 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49021035, downTime=49020802, phoneEventTime=19:41:04.341 } moveCount:6
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 149
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 151
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49022001, downTime=49022001, phoneEventTime=19:41:05.307 } moveCount:0
+I/flutter (29812): ItemsScreen: Error loading image for item 151: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49022201, downTime=49022001, phoneEventTime=19:41:05.508 } moveCount:4
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 150
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49023683, downTime=49023683, phoneEventTime=19:41:06.989 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49023866, downTime=49023683, phoneEventTime=19:41:07.172 } moveCount:5
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 151
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49025931, downTime=49025931, phoneEventTime=19:41:09.237 } moveCount:0
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 116
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49026064, downTime=49025931, phoneEventTime=19:41:09.370 } moveCount:2
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49026714, downTime=49026714, phoneEventTime=19:41:10.020 } moveCount:0
+I/flutter (29812): ItemsScreen: Error loading image for item 116: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49026930, downTime=49026714, phoneEventTime=19:41:10.236 } moveCount:5
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49027396, downTime=49027396, phoneEventTime=19:41:10.702 } moveCount:0
+I/MiInputConsumer(29812): optimized resample latency: 32985486 ns
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49027579, downTime=49027396, phoneEventTime=19:41:10.885 } moveCount:5
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49027913, downTime=49027913, phoneEventTime=19:41:11.219 } moveCount:0
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 133
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49028095, downTime=49027913, phoneEventTime=19:41:11.402 } moveCount:5
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 104
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49028445, downTime=49028445, phoneEventTime=19:41:11.751 } moveCount:0
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 122
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49028645, downTime=49028445, phoneEventTime=19:41:11.951 } moveCount:3
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 113
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49029111, downTime=49029111, phoneEventTime=19:41:12.417 } moveCount:0
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49029378, downTime=49029111, phoneEventTime=19:41:12.684 } moveCount:4
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): ItemsScreen: Error loading image for item 104: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 116
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 139
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 113: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Error loading image for item 122: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Error loading image for item 133: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 119
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 146
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 139: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 101
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 119: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Error loading image for item 146: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 142
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 110
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 101: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Error loading image for item 142: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 152
+I/flutter (29812): ItemsScreen: Error loading image for item 110: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 104
+I/_member_flutter(29812): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 12(14MB) LOS objects, 49% free, 10000KB/19MB, paused 386us,7.403ms total 50.715ms
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 133
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 113
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49034157, downTime=49034157, phoneEventTime=19:41:17.463 } moveCount:0
+I/flutter (29812): ItemsScreen: Error loading image for item 152: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49034473, downTime=49034157, phoneEventTime=19:41:17.779 } moveCount:5
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 122
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 136
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49034756, downTime=49034756, phoneEventTime=19:41:18.062 } moveCount:0
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 107
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49034989, downTime=49034756, phoneEventTime=19:41:18.295 } moveCount:2
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 107: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 139
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 136: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 119
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49036139, downTime=49036139, phoneEventTime=19:41:19.445 } moveCount:0
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 101
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49036338, downTime=49036139, phoneEventTime=19:41:19.645 } moveCount:3
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 146
+I/flutter (29812): CacheService: Cached images for 1 items
+I/_member_flutter(29812): Background concurrent mark compact GC freed 226KB AllocSpace bytes, 8(9568KB) LOS objects, 49% free, 7744KB/15MB, paused 242us,6.332ms total 33.956ms
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49036738, downTime=49036738, phoneEventTime=19:41:20.044 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49036987, downTime=49036738, phoneEventTime=19:41:20.293 } moveCount:3
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 110
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 142
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49037854, downTime=49037854, phoneEventTime=19:41:21.160 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49038053, downTime=49037854, phoneEventTime=19:41:21.359 } moveCount:6
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 107
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 152
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 136
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 117
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49041967, downTime=49041967, phoneEventTime=19:41:25.273 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49042166, downTime=49041967, phoneEventTime=19:41:25.472 } moveCount:4
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): ItemsScreen: Error loading image for item 117: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49043549, downTime=49043549, phoneEventTime=19:41:26.856 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49043814, downTime=49043549, phoneEventTime=19:41:27.121 } moveCount:5
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 117
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49044198, downTime=49044198, phoneEventTime=19:41:27.504 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49044397, downTime=49044198, phoneEventTime=19:41:27.703 } moveCount:3
+I/ScrollIdentify(29812): on fling
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 105
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 123
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 102
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 105: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 147
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 111
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 102: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Error loading image for item 111: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Error loading image for item 147: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Error loading image for item 123: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 134
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 143
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 148
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 143: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 140
+I/flutter (29812): ItemsScreen: Error loading image for item 148: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 137
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 105
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 102
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 140: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 108
+I/flutter (29812): ItemsScreen: Error loading image for item 137: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Error loading image for item 108: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 111
+I/flutter (29812): ItemsScreen: Error loading image for item 134: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 114
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 123
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 147
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 114: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 143
+I/_member_flutter(29812): Background concurrent mark compact GC freed 128KB AllocSpace bytes, 11(12MB) LOS objects, 49% free, 9780KB/19MB, paused 283us,5.001ms total 37.602ms
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 148
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 134
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 140
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 108
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 137
+I/_member_flutter(29812): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 8(9464KB) LOS objects, 49% free, 7608KB/14MB, paused 307us,7.038ms total 44.406ms
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 120
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 114
+I/flutter (29812): ItemsScreen: Error loading image for item 120: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 120
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 118
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 118: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 106
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 106: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 132
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 118
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 141
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 132: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 141: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 106
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 135
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 138
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 112
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 132
+I/flutter (29812): ItemsScreen: Error loading image for item 138: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Error loading image for item 112: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 103
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 135: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 141
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 103: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 144
+I/flutter (29812): ItemsScreen: Error loading image for item 144: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 115
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 112
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 121
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 138
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 135
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Error loading image for item 121: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 103
+I/flutter (29812): ItemsScreen: Error loading image for item 115: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 144
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 109
+I/flutter (29812): ItemsScreen: Error loading image for item 109: setState() called after dispose(): _ItemsScreenState#9c73f(lifecycle state: defunct, not mounted)
+I/flutter (29812): This error happens if you call setState() on a State object for a widget that no longer appears in the widget tree (e.g., whose parent widget no longer includes the widget in its build). This error can occur when code calls setState() from a timer or an animation callback.
+I/flutter (29812): The preferred solution is to cancel the timer or stop listening to the animation in the dispose() callback. Another solution is to check the "mounted" property of this object before calling setState() to ensure the object is still in the tree.
+I/flutter (29812): This error might indicate a memory leak if setState() is being called because another object is retaining a reference to this State object after it has been removed from the tree. To avoid memory leaks, consider breaking the reference to this object during dispose().
+I/_member_flutter(29812): Background concurrent mark compact GC freed 128KB AllocSpace bytes, 6(5628KB) LOS objects, 49% free, 11MB/23MB, paused 447us,5.304ms total 42.138ms
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 121
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 115
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 109
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49300082, downTime=49300082, phoneEventTime=19:45:43.388 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49300215, downTime=49300082, phoneEventTime=19:45:43.521 } moveCount:12
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49300615, downTime=49300615, phoneEventTime=19:45:43.922 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49300798, downTime=49300615, phoneEventTime=19:45:44.104 } moveCount:8
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49301114, downTime=49301114, phoneEventTime=19:45:44.420 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49301330, downTime=49301114, phoneEventTime=19:45:44.636 } moveCount:8
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49301697, downTime=49301697, phoneEventTime=19:45:45.004 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49301896, downTime=49301697, phoneEventTime=19:45:45.202 } moveCount:10
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49302263, downTime=49302263, phoneEventTime=19:45:45.569 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49302446, downTime=49302263, phoneEventTime=19:45:45.752 } moveCount:12
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49306310, downTime=49306310, phoneEventTime=19:45:49.616 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49306542, downTime=49306310, phoneEventTime=19:45:49.848 } moveCount:15
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49306876, downTime=49306876, phoneEventTime=19:45:50.182 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49307075, downTime=49306876, phoneEventTime=19:45:50.381 } moveCount:10
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49307641, downTime=49307641, phoneEventTime=19:45:50.947 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49307824, downTime=49307641, phoneEventTime=19:45:51.130 } moveCount:11
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49308707, downTime=49308707, phoneEventTime=19:45:52.014 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49308857, downTime=49308707, phoneEventTime=19:45:52.163 } moveCount:7
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49309607, downTime=49309607, phoneEventTime=19:45:52.914 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49309789, downTime=49309607, phoneEventTime=19:45:53.095 } moveCount:14
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49310339, downTime=49310339, phoneEventTime=19:45:53.645 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49310489, downTime=49310339, phoneEventTime=19:45:53.795 } moveCount:9
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49311188, downTime=49311188, phoneEventTime=19:45:54.495 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49311355, downTime=49311188, phoneEventTime=19:45:54.661 } moveCount:9
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49312038, downTime=49312038, phoneEventTime=19:45:55.344 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49312204, downTime=49312038, phoneEventTime=19:45:55.510 } moveCount:11
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49312637, downTime=49312637, phoneEventTime=19:45:55.943 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49312820, downTime=49312637, phoneEventTime=19:45:56.126 } moveCount:14
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49313470, downTime=49313470, phoneEventTime=19:45:56.777 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49313636, downTime=49313470, phoneEventTime=19:45:56.942 } moveCount:10
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49314086, downTime=49314086, phoneEventTime=19:45:57.392 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49314435, downTime=49314086, phoneEventTime=19:45:57.741 } moveCount:22
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49314752, downTime=49314752, phoneEventTime=19:45:58.058 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49314851, downTime=49314752, phoneEventTime=19:45:58.157 } moveCount:1
+W/WindowOnBackDispatcher(29812): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(29812): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/VRI[MainActivity](29812): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+E/FlutterJNI(29812): Failed to decode image
+E/FlutterJNI(29812): android.graphics.ImageDecoder$DecodeException: Failed to create image decoder with message 'unimplemented'Input contained an error.
+E/FlutterJNI(29812): 	at android.graphics.ImageDecoder.nCreate(Native Method)
+E/FlutterJNI(29812): 	at android.graphics.ImageDecoder.-$$Nest$smnCreate(Unknown Source:0)
+E/FlutterJNI(29812): 	at android.graphics.ImageDecoder$ByteBufferSource.createImageDecoder(ImageDecoder.java:254)
+E/FlutterJNI(29812): 	at android.graphics.ImageDecoder.decodeBitmapImpl(ImageDecoder.java:1860)
+E/FlutterJNI(29812): 	at android.graphics.ImageDecoder.decodeBitmap(ImageDecoder.java:1852)
+E/FlutterJNI(29812): 	at io.flutter.embedding.engine.FlutterJNI.decodeImage(FlutterJNI.java:557)
+I/flutter (29812): ItemDetailScreen: Error fetching user for tasting note: DioException [bad response]: This exception was thrown because the response has a status code of 400 and RequestOptions.validateStatus was configured to throw for this status code.
+I/flutter (29812): The status code of 400 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+I/flutter (29812): Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+I/flutter (29812): In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49318582, downTime=49318582, phoneEventTime=19:46:01.888 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49318798, downTime=49318582, phoneEventTime=19:46:02.105 } moveCount:20
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49319398, downTime=49319398, phoneEventTime=19:46:02.705 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49319597, downTime=49319398, phoneEventTime=19:46:02.904 } moveCount:20
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49319864, downTime=49319864, phoneEventTime=19:46:03.170 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49320047, downTime=49319864, phoneEventTime=19:46:03.353 } moveCount:17
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49320413, downTime=49320413, phoneEventTime=19:46:03.719 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49320646, downTime=49320413, phoneEventTime=19:46:03.953 } moveCount:25
+I/ScrollIdentify(29812): on fling
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49325975, downTime=49325975, phoneEventTime=19:46:09.281 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49326091, downTime=49325975, phoneEventTime=19:46:09.398 } moveCount:3
+I/flutter (29812): CacheService: Cleared events cache
+I/flutter (29812): EventsScreen: Fetching fresh data from API
+I/flutter (29812): CacheService: Cleared items cache
+W/WindowOnBackDispatcher(29812): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(29812): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (29812): EventsScreen: Fetching fresh data from API
+I/flutter (29812): ItemsScreen: Fetching fresh data from API
+I/flutter (29812): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 18:41:01 GMT}
+I/flutter (29812): CacheService: Cleared item properties cache
+I/flutter (29812): ItemsScreen: Fetching fresh data from API
+I/flutter (29812): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 18:41:01 GMT}
+D/VRI[MainActivity](29812): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+I/flutter (29812): CacheService: Cached 2 events
+I/flutter (29812): CacheService: Cached 6 events
+I/flutter (29812): CacheService: Cached 2 events
+I/flutter (29812): CacheService: Cached 6 events
+I/flutter (29812): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (29812): ItemsScreen: Prefetch successful - 43 items
+I/flutter (29812): ItemsScreen: No images from prefetch, starting background image loading
+I/flutter (29812): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (29812): ItemsScreen: Prefetch successful - 43 items
+I/flutter (29812): ItemsScreen: No images from prefetch, starting background image loading
+I/flutter (29812): CacheService: Cached 43 items
+I/flutter (29812): CacheService: Cached 43 items
+I/flutter (29812): CacheService: Cached properties for 43 items
+I/flutter (29812): CacheService: Cached properties for 43 items
+I/flutter (29812): CacheService: Cached images for 0 items
+I/flutter (29812): CacheService: Cached images for 0 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 149
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49330837, downTime=49330837, phoneEventTime=19:46:14.143 } moveCount:0
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 149
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 150
+I/flutter (29812): CacheService: Cached images for 1 items
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49332302, downTime=49330837, phoneEventTime=19:46:15.608 } moveCount:27
+I/flutter (29812): CacheService: Cleared items cache
+I/flutter (29812): ItemsScreen: Fetching fresh data from API
+I/flutter (29812): ApiService: Fetching prefetch data with headers: {If-Modified-Since: Wed, 17 Sep 2025 18:46:10 GMT}
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=49332602, downTime=49332602, phoneEventTime=19:46:15.909 } moveCount:0
+I/MIUIInput(29812): [MotionEvent] ViewRootImpl windowName 'com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=49333151, downTime=49332602, phoneEventTime=19:46:16.457 } moveCount:12
+I/flutter (29812): ApiService: Prefetch data received - items: 43, properties: 344, labels: 0
+I/flutter (29812): ItemsScreen: Prefetch successful - 43 items
+I/flutter (29812): ItemsScreen: No images from prefetch, starting background image loading
+I/flutter (29812): CacheService: Cached 43 items
+I/flutter (29812): CacheService: Cached properties for 43 items
+I/flutter (29812): CacheService: Cached images for 0 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 151
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 150
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 146
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 116
+W/_member_flutter(29812): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~K4R2G2lq-w8Je8qnGVqxvw==/cn.wps.moffice_eng-W5L3-G5j4_Jm-M5VPwDUgg==/base.apk' with 1 weak references
+W/_member_flutter(29812): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/base.apk' with 1 weak references
+W/_member_flutter(29812): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EMjeXoljil4mzvjZp-w6aQ==/com.google.android.marvin.talkback-PI1IeIKVVAcDTy69hZQ62Q==/split_config.arm64_v8a.apk' with 1 weak references
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 151
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 149
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 119
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 101
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 133
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 150
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 107
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 104
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 151
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 116
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 113
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 122
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 139
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 104
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 110
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 133
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 113
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 142
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 152
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 122
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 101
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 139
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 136
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 110
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 146
+I/flutter (29812): CacheService: Cached images for 1 items
+I/_member_flutter(29812): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 8(10064KB) LOS objects, 49% free, 7748KB/15MB, paused 473us,5.551ms total 45.909ms
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 142
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 119
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 152
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 107
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 136
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 116
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 133
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 113
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 104
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 122
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 146
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 139
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 101
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 110
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 117
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 147
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 119
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 152
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 142
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 102
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 148
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 107
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 136
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 117
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 108
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 105
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 111
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 123
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 134
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 102
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 105
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 143
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 111
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 137
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 140
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 120
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 123
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 147
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 143
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 114
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 148
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 117
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 134
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 140
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 137
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 108
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 114
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 102
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 111
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 147
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 105
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 123
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 148
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 134
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 143
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 120
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 140
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 118
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 137
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 108
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 114
+I/_member_flutter(29812): Background concurrent mark compact GC freed 128KB AllocSpace bytes, 8(8584KB) LOS objects, 49% free, 9356KB/18MB, paused 295us,5.281ms total 46.695ms
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 106
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 118
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 103
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 106
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 132
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 141
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 120
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 135
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 121
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 112
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 132
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 138
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 141
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 109
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 112
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 144
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 103
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 138
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 135
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 118
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 115
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 144
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 106
+I/_member_flutter(29812): Background concurrent mark compact GC freed 128KB AllocSpace bytes, 10(14MB) LOS objects, 49% free, 6236KB/12MB, paused 439us,5.615ms total 41.084ms
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 132
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 141
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 115
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 121
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 112
+I/_member_flutter(29812): Background concurrent mark compact GC freed 160KB AllocSpace bytes, 6(4808KB) LOS objects, 49% free, 10MB/21MB, paused 377us,6.246ms total 44.602ms
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 135
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 103
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 109
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 138
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 144
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 115
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 121
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): CacheService: Cached images for 1 items
+I/flutter (29812): ItemsScreen: Successfully loaded image for item 109
+I/flutter (29812): CacheService: Cached images for 1 items
+D/VRI[MainActivity](29812): vri.reportNextDraw android.view.ViewRootImpl.handleResized:2773 android.view.ViewRootImpl.-$$Nest$mhandleResized:0 android.view.ViewRootImpl$W.resized:12912 android.app.servertransaction.WindowStateResizeItem.execute:64 android.app.servertransaction.WindowStateTransactionItem.execute:59 
+D/VRI[MainActivity](29812): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+D/BLASTBufferQueue(29812): [VRI[MainActivity]#0](f:0,a:1) update width=1640 height=720 format=-3 mTransformHint=4
+D/BLASTBufferQueue(29812): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:5) update width=1640 height=720 format=4 mTransformHint=4
+D/VRI[MainActivity](29812): Setup new sync=wmsSync-VRI[MainActivity]#4
+W/libc    (29812): Access denied finding property "ro.vendor.display.iris_x7.support"
+D/BLASTBufferQueue(29812): [VRI[MainActivity]#0](f:0,a:2) producer disconnected before acquireNextBufferLocked
+D/VRI[MainActivity](29812): vri.reportDrawFinished
+E/Surface (29812): freeAllBuffers: 1 buffers were freed while being dequeued!
+E/_member_flutter(29812): checkIfsupportxIntfps do not binder to joyose
+I/Choreographer(29812): Skipped 47 frames!  The application may be doing too much work on its main thread.
+D/UserSceneDetector(29812): invoke error.
+D/VRI[MainActivity](29812): vri.reportNextDraw android.view.ViewRootImpl.handleResized:2773 android.view.ViewRootImpl.-$$Nest$mhandleResized:0 android.view.ViewRootImpl$W.resized:12912 android.app.servertransaction.WindowStateResizeItem.execute:64 android.app.servertransaction.WindowStateTransactionItem.execute:59 
+D/VRI[MainActivity](29812): getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+D/BLASTBufferQueue(29812): [VRI[MainActivity]#0](f:0,a:3) update width=720 height=1640 format=-3 mTransformHint=0
+D/BLASTBufferQueue(29812): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:3) update width=720 height=1640 format=4 mTransformHint=0
+D/VRI[MainActivity](29812): Setup new sync=wmsSync-VRI[MainActivity]#7
+D/BLASTBufferQueue(29812): [VRI[MainActivity]#0](f:0,a:4) producer disconnected before acquireNextBufferLocked
+D/VRI[MainActivity](29812): vri.reportDrawFinished
+E/Surface (29812): freeAllBuffers: 1 buffers were freed while being dequeued!
+E/_member_flutter(29812): checkIfsupportxIntfps do not binder to joyose
+D/VRI[MainActivity](29812): visibilityChanged oldVisibility=true newVisibility=false
+D/BLASTBufferQueue(29812): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1](f:0,a:2) destructor()
+D/BufferQueueConsumer(29812): [SurfaceView[com.thelivingroomloja21.tlr_member_flutter/com.thelivingroomloja21.tlr_member_flutter.MainActivity]#1(BLAST Consumer)1](id:747400000001,api:0,p:-1,c:29812) disconnect
+D/BLASTBufferQueue(29812): [VRI[MainActivity]#0](f:0,a:2) destructor()
+D/BufferQueueConsumer(29812): [VRI[MainActivity]#0(BLAST Consumer)0](id:747400000000,api:0,p:-1,c:29812) disconnect
+Lost connection to device.
