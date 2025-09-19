@@ -43,11 +43,15 @@ class AuthProvider with ChangeNotifier {
     }
   }
 
-  void _handleUnauthorized() {
+  void _handleUnauthorized() async {
     debugPrint('🔐 AuthProvider: Handling unauthorized access');
     _user = null;
     _isAuthenticated = false;
     _biometricEnabled = false;
+    
+    // Recheck biometric availability after unauthorized access
+    _biometricAvailable = await _authService.isBiometricAvailable();
+    
     notifyListeners();
     
     // Navigate to login screen with unauthorized message
@@ -116,6 +120,10 @@ class AuthProvider with ChangeNotifier {
       _user = null;
       _isAuthenticated = false;
       _biometricEnabled = false;
+      
+      // Recheck biometric availability after logout
+      _biometricAvailable = await _authService.isBiometricAvailable();
+      
       notifyListeners();
     } catch (e) {
       debugPrint('Logout error: $e');

@@ -23,13 +23,13 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   final ImageService _imageService = ImageService();
   
   Item? _item;
-  Map<int, List<Map<String, dynamic>>> _itemProperties = {};
+  Map<int, List<Map<String, dynamic>>>? _itemProperties;
   bool _isLoading = true;
   bool _isError = false;
   String? _errorMessage;
   
   // Tasting notes state
-  List<Map<String, dynamic>> _tastingNotes = [];
+  List<Map<String, dynamic>>? _tastingNotes;
   Map<String, User> _tastingNoteUsers = {};
   bool _tastingNotesExpanded = false;
   bool _showTastingNotePrompt = false;
@@ -41,6 +41,9 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   
   // Properties state
   bool _propertiesExpanded = false;
+  
+  // Purchase state
+  bool _isPurchasing = false;
 
   @override
   void initState() {
@@ -48,7 +51,8 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     _loadItemDetails();
   }
 
-  Future<void> _loadItemDetails() async {
+  Future<void> _loadItemDetails([int? itemId]) async {
+    final targetItemId = itemId ?? widget.itemId;
     setState(() {
       _isLoading = true;
       _isError = false;
@@ -66,33 +70,63 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         return;
       }
 
-      // First, try to get cached image
-      String? labelImage;
-      try {
-        final cachedImages = await CacheService.getCachedItemImages();
-        labelImage = cachedImages?[widget.itemId];
-        debugPrint('ItemDetailScreen: Cached image for item ${widget.itemId}: ${labelImage != null ? "found" : "not found"}');
-      } catch (e) {
-        debugPrint('ItemDetailScreen: Error getting cached image: $e');
+      debugPrint('ItemDetailScreen: Loading details for item $targetItemId');
+
+      // Check cache first for item and properties
+      final cachedItems = await CacheService.getCachedItems();
+      final cachedProperties = await CacheService.getCachedItemProperties();
+      
+      Item? item;
+      List<Map<String, dynamic>> properties = [];
+      
+      // Try to get item from cache first
+      if (cachedItems != null) {
+        item = cachedItems.firstWhere(
+          (cachedItem) => cachedItem.id == targetItemId,
+          orElse: () => Item(
+            id: -1, 
+            code: '', 
+            name: '', 
+            description: '', 
+            cost: 0, 
+            price: 0, 
+            isAlcohol: false, 
+            createdAt: DateTime.now().toIso8601String(), 
+            updatedAt: DateTime.now().toIso8601String(),
+            onHand: 0
+          ),
+        );
+        if (item.id != -1) {
+          debugPrint('ItemDetailScreen: Found item $targetItemId in cache');
+        }
+      }
+      
+      // Try to get properties from cache
+      if (cachedProperties != null && cachedProperties.containsKey(targetItemId)) {
+        properties = cachedProperties[targetItemId]!;
+        debugPrint('ItemDetailScreen: Found properties for item $targetItemId in cache');
       }
 
-      // Load item details, properties, and tasting notes in parallel
-      final results = await Future.wait([
-        _apiService.getItem(widget.itemId),
-        _apiService.getItemProperties(widget.itemId),
-        _apiService.getTastingNotes(widget.itemId).catchError((e) {
-          debugPrint('ItemDetailScreen: Error loading tasting notes: $e');
-          return <Map<String, dynamic>>[];
-        }),
-      ]);
+      // If we don't have cached data, fetch from API
+      if (item == null || item.id == -1) {
+        debugPrint('ItemDetailScreen: Item $targetItemId not in cache, fetching from API');
+        item = await _apiService.getItem(targetItemId);
+      }
+      
+      if (properties.isEmpty) {
+        debugPrint('ItemDetailScreen: Properties for item $targetItemId not in cache, fetching from API');
+        properties = await _apiService.getItemProperties(targetItemId);
+      }
 
-      final item = results[0] as Item;
-      final properties = results[1] as List<Map<String, dynamic>>;
-      final tastingNotes = results[2] as List<Map<String, dynamic>>;
+      // Always fetch tasting notes (they change frequently)
+      final tastingNotes = await _apiService.getTastingNotes(targetItemId).catchError((e) {
+        debugPrint('ItemDetailScreen: Error loading tasting notes: $e');
+        return <Map<String, dynamic>>[];
+      });
 
       setState(() {
-        _item = item;
-        _itemProperties[widget.itemId] = properties;
+        _item = item!;
+        _itemProperties = {targetItemId: properties};
         _tastingNotes = tastingNotes;
         _isLoading = false;
       });
@@ -149,11 +183,11 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     }
 
     try {
-      await _apiService.createTastingNote(widget.itemId, _tastingNoteText.trim());
+      await _apiService.createTastingNote(_item!.id, _tastingNoteText.trim());
       _showSnackBar('Tasting note saved successfully!', Colors.green);
       
       // Reload tasting notes to show the new one
-      final notes = await _apiService.getTastingNotes(widget.itemId);
+      final notes = await _apiService.getTastingNotes(_item!.id);
       setState(() {
         _tastingNotes = notes;
         _showTastingNoteInput = false;
@@ -182,7 +216,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
       _showSnackBar('Tasting note updated successfully!', Colors.green);
       
       // Reload tasting notes to show the updated one
-      final notes = await _apiService.getTastingNotes(widget.itemId);
+      final notes = await _apiService.getTastingNotes(_item!.id);
       setState(() {
         _tastingNotes = notes;
         _editingNoteId = null;
@@ -206,7 +240,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
       _showSnackBar('Tasting note deleted successfully!', Colors.green);
       
       // Reload tasting notes to show the updated list
-      final notes = await _apiService.getTastingNotes(widget.itemId);
+      final notes = await _apiService.getTastingNotes(_item!.id);
       setState(() {
         _tastingNotes = notes;
       });
@@ -236,7 +270,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     try {
       // Get wine details from item properties for better search
       final wineDetails = <String, dynamic>{};
-      final properties = _itemProperties[widget.itemId] ?? [];
+      final properties = _itemProperties?[_item!.id] ?? [];
       
       for (final prop in properties) {
         final name = prop['property_name']?.toString().toLowerCase() ?? '';
@@ -255,11 +289,11 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         wineDetails['wine_name'] = _item!.name;
       }
 
-      final result = await _apiService.fetchTastingNotes(widget.itemId);
+      final result = await _apiService.fetchTastingNotes(_item!.id, wineDetails: wineDetails);
       
       if (result['success'] == true) {
         // Refresh tasting notes to see if any were added
-        final notes = await _apiService.getTastingNotes(widget.itemId);
+        final notes = await _apiService.getTastingNotes(_item!.id);
         setState(() {
           _tastingNotes = notes;
         });
@@ -278,7 +312,9 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
           _showSnackBar('Tasting notes fetched successfully!', Colors.green);
         }
       } else {
-        _showSnackBar(result['message'] ?? 'Failed to fetch tasting notes', Colors.red);
+        final message = result['message'] ?? 'Failed to fetch tasting notes';
+        debugPrint('ItemDetailScreen: Fetch tasting notes failed: $message');
+        _showSnackBar(message, Colors.red);
       }
     } catch (e) {
       _showSnackBar('Failed to fetch tasting notes', Colors.red);
@@ -317,8 +353,8 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(12),
-        child: _imageService.buildItemImageWidget(
-          widget.itemId,
+        child: _imageService.buildItemImageWidgetAsync(
+          _item!.id,
           width: 200,
           height: 200,
           fit: BoxFit.contain,
@@ -491,7 +527,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   }
 
   Widget _buildProperties() {
-    final properties = _itemProperties[widget.itemId];
+    final properties = _itemProperties?[_item?.id];
     if (properties == null || properties.isEmpty) {
       return const SizedBox.shrink();
     }
@@ -568,7 +604,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   }
 
   Widget _buildTastingNotes() {
-    if (_tastingNotes.isEmpty) {
+    if (_tastingNotes?.isEmpty ?? true) {
       // Show admin fetch button if no tasting notes and user is admin
       final authProvider = Provider.of<AuthProvider>(context, listen: false);
       if (authProvider.isAuthenticated && authProvider.user!.isAdmin) {
@@ -655,7 +691,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
-                children: _tastingNotes.map((note) => _buildTastingNoteCard(note)).toList(),
+                  children: (_tastingNotes ?? []).map((note) => _buildTastingNoteCard(note)).toList(),
               ),
             ),
           ],
@@ -887,8 +923,15 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                         // Properties
                         _buildProperties(),
                         
+                        const SizedBox(height: 16),
+                        
                         // Tasting notes
                         _buildTastingNotes(),
+                        
+                        const SizedBox(height: 16),
+                        
+                        // Purchase button
+                        _buildPurchaseButton(),
                         
                         const SizedBox(height: 16),
                       ],
@@ -897,4 +940,306 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
       ),
     );
   }
+
+  Widget _buildPurchaseButton() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: SizedBox(
+        width: double.infinity,
+        child: ElevatedButton.icon(
+          onPressed: _isPurchasing ? null : _showPurchaseDialog,
+          icon: _isPurchasing 
+            ? const SizedBox(
+                width: 20,
+                height: 20,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                ),
+              )
+            : const Icon(Icons.shopping_cart),
+          label: Text(_isPurchasing ? 'Processing...' : 'Purchase Item'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF388E3C),
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _showPurchaseDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Purchase Item'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (_item != null) ...[
+                Text(
+                  _item!.name,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Price: €${_item!.price.toStringAsFixed(2)}',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: const Color(0xFF388E3C),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  'Scan the barcode to purchase this item. If you scan a different item, it will load that item instead.',
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Item Code: ${_item!.code}',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: Colors.grey[600],
+                    fontFamily: 'monospace',
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+            ElevatedButton.icon(
+              onPressed: _scanBarcodeForPurchase,
+              icon: const Icon(Icons.qr_code_scanner),
+              label: const Text('Scan Barcode'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF388E3C),
+                foregroundColor: Colors.white,
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _scanBarcodeForPurchase() async {
+    Navigator.of(context).pop(); // Close the dialog first
+    
+    final result = await context.push('/scan?return=true');
+    if (result != null && result is String) {
+      final scannedBarcode = result;
+      debugPrint('ItemDetailScreen: Scanned barcode for purchase: $scannedBarcode');
+      
+      try {
+        // Get the item that corresponds to the scanned barcode
+        final scannedItem = await _apiService.getItemByBarcode(scannedBarcode);
+        
+        if (scannedItem.id != _item!.id) {
+          // Different item was scanned - load the correct item (like items list behavior)
+          debugPrint('ItemDetailScreen: Scanned barcode belongs to different item (${scannedItem.id} vs ${_item!.id})');
+          
+          // Load the new item into the current screen
+          await _loadNewItem(scannedItem.id);
+          
+          // Show message about item change
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('You\'ve changed the item to ${scannedItem.name}'),
+              backgroundColor: Colors.blue,
+              duration: const Duration(seconds: 3),
+            ),
+          );
+        } else {
+          // Same item was scanned - proceed with purchase
+          debugPrint('ItemDetailScreen: Scanned barcode matches current item, proceeding with purchase');
+          
+          setState(() {
+            _isPurchasing = true;
+          });
+
+          try {
+            final authProvider = Provider.of<AuthProvider>(context, listen: false);
+            final user = authProvider.user;
+            
+            if (user == null) {
+              throw Exception('User not authenticated');
+            }
+
+            debugPrint('ItemDetailScreen: Creating purchase for item ${_item!.id} with barcode $scannedBarcode');
+
+            final purchase = await _apiService.createPurchase(
+              userEmail: user.email,
+              itemId: _item!.id,
+              priceAsked: _item!.price,
+              pricePaid: _item!.price, // For now, assume full price is paid
+              barcode: scannedBarcode,
+            );
+
+            debugPrint('ItemDetailScreen: Purchase created successfully: ${purchase.id}');
+
+            if (mounted) {
+              // Navigate to purchases list
+              context.go('/tabs/purchases');
+            }
+          } catch (e) {
+            debugPrint('ItemDetailScreen: Error creating purchase: $e');
+            
+            if (mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Failed to complete purchase: ${e.toString()}'),
+                  backgroundColor: Colors.red,
+                  duration: const Duration(seconds: 3),
+                ),
+              );
+            }
+          } finally {
+            if (mounted) {
+              setState(() {
+                _isPurchasing = false;
+              });
+            }
+          }
+        }
+      } catch (e) {
+        debugPrint('ItemDetailScreen: Error processing scanned barcode: $e');
+        
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Failed to process barcode: ${e.toString()}'),
+              backgroundColor: Colors.red,
+              duration: const Duration(seconds: 3),
+            ),
+          );
+        }
+      }
+    }
+  }
+
+  Future<void> _loadNewItem(int newItemId) async {
+    debugPrint('ItemDetailScreen: Loading new item with ID: $newItemId');
+    
+    setState(() {
+      _isLoading = true;
+      _isError = false;
+      _errorMessage = null;
+      _item = null;
+      _itemProperties = null;
+      _tastingNotes = null;
+    });
+
+    try {
+      // Check if user is authenticated before making API calls
+      final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      if (!authProvider.isAuthenticated) {
+        setState(() {
+          _isError = true;
+          _errorMessage = 'User not authenticated';
+          _isLoading = false;
+        });
+        return;
+      }
+
+      debugPrint('ItemDetailScreen: Loading details for new item $newItemId');
+
+      // Check cache first for item and properties
+      final cachedItems = await CacheService.getCachedItems();
+      final cachedProperties = await CacheService.getCachedItemProperties();
+      
+      Item? item;
+      List<Map<String, dynamic>> properties = [];
+      
+      // Try to get item from cache first
+      if (cachedItems != null) {
+        item = cachedItems.firstWhere(
+          (cachedItem) => cachedItem.id == newItemId,
+          orElse: () => Item(
+            id: -1, 
+            code: '', 
+            name: '', 
+            description: '', 
+            cost: 0, 
+            price: 0, 
+            isAlcohol: false, 
+            createdAt: DateTime.now().toIso8601String(), 
+            updatedAt: DateTime.now().toIso8601String(),
+            onHand: 0
+          ),
+        );
+        if (item.id != -1) {
+          debugPrint('ItemDetailScreen: Found new item $newItemId in cache');
+        }
+      }
+      
+      // Try to get properties from cache
+      if (cachedProperties != null && cachedProperties.containsKey(newItemId)) {
+        properties = cachedProperties[newItemId]!;
+        debugPrint('ItemDetailScreen: Found properties for new item $newItemId in cache');
+      }
+
+      // If we don't have cached data, fetch from API
+      if (item == null || item.id == -1) {
+        debugPrint('ItemDetailScreen: New item $newItemId not in cache, fetching from API');
+        item = await _apiService.getItem(newItemId);
+      }
+      
+      if (properties.isEmpty) {
+        debugPrint('ItemDetailScreen: Properties for new item $newItemId not in cache, fetching from API');
+        properties = await _apiService.getItemProperties(newItemId);
+      }
+
+      // Always fetch tasting notes (they change frequently)
+      final tastingNotes = await _apiService.getTastingNotes(newItemId).catchError((e) {
+        debugPrint('ItemDetailScreen: Error loading tasting notes: $e');
+        return <Map<String, dynamic>>[];
+      });
+
+      setState(() {
+        _item = item!;
+        _itemProperties = {newItemId: properties};
+        _tastingNotes = tastingNotes;
+        _isLoading = false;
+      });
+
+      // Fetch user information for tasting notes that don't have complete user data
+      for (final note in tastingNotes) {
+        if (note['user'] != null && !_tastingNoteUsers.containsKey(note['user'])) {
+          _fetchUserForTastingNote(note['user']);
+        }
+      }
+      
+      debugPrint('ItemDetailScreen: Successfully loaded new item: ${_item?.name}');
+    } catch (e) {
+      debugPrint('ItemDetailScreen: Error loading new item: $e');
+      
+      if (mounted) {
+        setState(() {
+          _isError = true;
+          _errorMessage = 'Failed to load item: ${e.toString()}';
+          _isLoading = false;
+        });
+        
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to load item: ${e.toString()}'),
+            backgroundColor: Colors.red,
+            duration: const Duration(seconds: 3),
+          ),
+        );
+      }
+    }
+  }
+
 }

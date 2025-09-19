@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:device_info_plus/device_info_plus.dart';
@@ -42,11 +43,16 @@ class ApiService {
           final endpoint = error.requestOptions.path;
           debugPrint('401 auth failure in call to /api$endpoint');
           
-          // Clear token
-          _authToken = null;
-          
-          // Call the unauthorized callback if set
-          _onUnauthorized?.call();
+          // Don't trigger unauthorized callback for login/authentication endpoints
+          // as these are expected to return 401 for invalid credentials
+          if (!endpoint.contains('/auth/authenticate') && 
+              !endpoint.contains('/auth/authenticate-biometric')) {
+            // Clear token
+            _authToken = null;
+            
+            // Call the unauthorized callback if set
+            _onUnauthorized?.call();
+          }
         }
         handler.next(error);
       },
@@ -78,8 +84,24 @@ class ApiService {
     
     debugPrint('🌐 ApiService: Response status: ${response.statusCode}');
     debugPrint('🌐 ApiService: Response data: ${response.data}');
+    debugPrint('🌐 ApiService: Response data type: ${response.data.runtimeType}');
     
-    return AuthResponse.fromJson(response.data);
+    // Check if response is successful
+    if (response.statusCode == 200) {
+      debugPrint('🌐 ApiService: Login successful, parsing response...');
+      try {
+        final authResponse = AuthResponse.fromJson(response.data);
+        debugPrint('🌐 ApiService: Parsed AuthResponse - success: ${authResponse.success}, message: ${authResponse.message}');
+        return authResponse;
+      } catch (e) {
+        debugPrint('🌐 ApiService: Error parsing AuthResponse: $e');
+        debugPrint('🌐 ApiService: Raw response data: ${response.data}');
+        rethrow;
+      }
+    } else {
+      debugPrint('🌐 ApiService: Login failed with status: ${response.statusCode}');
+      throw Exception('Login failed with status: ${response.statusCode}');
+    }
   }
 
   Future<BiometricEnrollmentResponse> initiateBiometricEnrollment(String email, String password) async {
@@ -113,12 +135,14 @@ class ApiService {
     required String deviceId,
     required String platform,
   }) async {
+    debugPrint('ApiService: Authenticating with biometric - email: $email, enrollmentToken: $enrollmentToken, deviceId: $deviceId, platform: $platform');
     final response = await _dio.post('/auth/authenticate-biometric', data: {
       'email': email,
       'enrollmentToken': enrollmentToken,
       'deviceId': deviceId,
       'platform': platform,
     });
+    debugPrint('ApiService: Biometric authentication response: ${response.data}');
     return AuthResponse.fromJson(response.data);
   }
 
@@ -271,8 +295,15 @@ class ApiService {
   }
 
   Future<Map<String, dynamic>> fetchTastingNotes(int id, {Map<String, dynamic>? wineDetails}) async {
-    final response = await _dio.post('/tasting-notes/fetch/$id', data: wineDetails ?? {});
-    return response.data;
+    try {
+      debugPrint('ApiService: Fetching tasting notes for item $id with details: $wineDetails');
+      final response = await _dio.post('/tasting-notes/fetch/$id', data: wineDetails ?? {});
+      debugPrint('ApiService: Fetch tasting notes response: ${response.data}');
+      return response.data;
+    } catch (e) {
+      debugPrint('ApiService: Error fetching tasting notes for item $id: $e');
+      rethrow;
+    }
   }
 
   Future<Map<String, dynamic>> makeLabelImage(int id, {String? mode}) async {
@@ -507,27 +538,53 @@ class ApiService {
   // Wine Learning API (for label images)
   Future<String?> getWineLabelImage(int itemId) async {
     try {
-      // First try to get existing images
-      final response = await _dio.get('/wine-learning/wine-images/$itemId');
-      final data = response.data['data'] as List<dynamic>?;
-      if (data != null && data.isNotEmpty) {
-        // Look for label image first, then front image
-        for (final image in data) {
-          if (image['image_type'] == 'label') {
-            return image['image_data'] as String?;
-          }
+      debugPrint('ApiService: Getting label image for item $itemId using new endpoint');
+      
+      // Use the new direct label image endpoint
+      final response = await _dio.get('/wine-learning/label-image/$itemId');
+      
+      // The new endpoint returns JSON with base64 data
+      if (response.data is Map<String, dynamic>) {
+        final data = response.data as Map<String, dynamic>;
+        if (data['success'] == true && data['data'] != null) {
+          return data['data'] as String;
         }
-        for (final image in data) {
-          if (image['image_type'] == 'front') {
-            return image['image_data'] as String?;
-          }
-        }
-        // If no specific type, return the first image
-        return data.first['image_data'] as String?;
+      } else if (response.data is String) {
+        // Fallback for direct string response
+        return response.data;
+      } else if (response.data is List<int>) {
+        // If it's binary data, convert to base64
+        return base64Encode(response.data);
       }
+      
       return null;
     } catch (e) {
       debugPrint('ApiService: Error getting wine label image for $itemId: $e');
+      
+      // Fallback to the old method if the new endpoint fails
+      try {
+        debugPrint('ApiService: Falling back to old wine-images endpoint for item $itemId');
+        final response = await _dio.get('/wine-learning/wine-images/$itemId');
+        final data = response.data['data'] as List<dynamic>?;
+        if (data != null && data.isNotEmpty) {
+          // Look for label image first, then front image
+          for (final image in data) {
+            if (image['image_type'] == 'label') {
+              return image['image_data'] as String?;
+            }
+          }
+          for (final image in data) {
+            if (image['image_type'] == 'front') {
+              return image['image_data'] as String?;
+            }
+          }
+          // If no specific type, return the first image
+          return data.first['image_data'] as String?;
+        }
+      } catch (fallbackError) {
+        debugPrint('ApiService: Fallback also failed for item $itemId: $fallbackError');
+      }
+      
       return null;
     }
   }
@@ -546,6 +603,36 @@ class ApiService {
     } catch (e) {
       debugPrint('ApiService: Error generating label image for $itemId: $e');
       return null;
+    }
+  }
+
+  // Wine Learning API
+  Future<Map<String, dynamic>> learnWineFromImages({
+    required String frontImage,
+    String? backImage,
+    String? scannedBarcode,
+  }) async {
+    try {
+      debugPrint('ApiService: Learning wine from images with barcode: $scannedBarcode');
+      
+      final requestData = <String, dynamic>{
+        'frontImage': frontImage,
+      };
+      
+      if (backImage != null) {
+        requestData['backImage'] = backImage;
+      }
+      
+      if (scannedBarcode != null) {
+        requestData['scannedBarcode'] = scannedBarcode;
+      }
+      
+      final response = await _dio.post('/wine-learning/learn-wine', data: requestData);
+      debugPrint('ApiService: Wine learning response: ${response.data}');
+      return response.data;
+    } catch (e) {
+      debugPrint('ApiService: Error learning wine from images: $e');
+      rethrow;
     }
   }
 

@@ -13,6 +13,7 @@ import '../screens/settings_screen.dart';
 import '../screens/item_detail_screen.dart';
 import '../screens/event_detail_screen.dart';
 import '../screens/barcode_scanner_screen.dart';
+import '../screens/wine_learning_screen.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -101,7 +102,17 @@ class AppRouter {
       ),
       GoRoute(
         path: '/scan',
-        builder: (context, state) => const BarcodeScannerScreen(),
+        builder: (context, state) {
+          final returnResult = state.uri.queryParameters['return'] == 'true';
+          return BarcodeScannerScreen(returnResult: returnResult);
+        },
+      ),
+      GoRoute(
+        path: '/wine-learning',
+        builder: (context, state) {
+          final barcode = state.uri.queryParameters['barcode'];
+          return WineLearningScreen(initialBarcode: barcode);
+        },
       ),
     ],
   );

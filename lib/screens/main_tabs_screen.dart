@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'dashboard_screen.dart';
 import 'items_screen.dart';
 import 'events_screen.dart';
 import 'purchases_screen.dart';
+import '../providers/auth_provider.dart';
 
 class MainTabsScreen extends StatefulWidget {
   final int initialIndex;
@@ -88,6 +90,19 @@ class _MainTabsScreenState extends State<MainTabsScreen> {
       appBar: AppBar(
         title: Text(_getAppBarTitle()),
         actions: [
+          // Wine Learning button (admin only)
+          Consumer<AuthProvider>(
+            builder: (context, authProvider, child) {
+              if (authProvider.user?.isAdmin == true) {
+                return IconButton(
+                  icon: const Icon(Icons.auto_awesome),
+                  onPressed: () => context.go('/wine-learning'),
+                  tooltip: 'Wine Learning',
+                );
+              }
+              return const SizedBox.shrink();
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () => context.go('/tabs/settings'),

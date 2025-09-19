@@ -1,0 +1,21 @@
+{
+  "name": "com.thelivingroomloja21.flutter",
+  "version": "1.0.0",
+  "description": "TLR Flutter App Icon Management",
+  "scripts": {
+    "icons:generate": "./manage_icons.sh generate",
+    "icons:deploy": "./manage_icons.sh deploy",
+    "icons:preview": "./manage_icons.sh preview",
+    "icons:info": "./manage_icons.sh info",
+    "icons:clean": "./manage_icons.sh clean",
+    "icons:all": "./manage_icons.sh all"
+  },
+  "keywords": [
+    "flutter",
+    "icons",
+    "app-icons",
+    "tlr"
+  ],
+  "author": "TLR Team",
+  "license": "MIT"
+}

@@ -5,7 +5,9 @@ import '../services/api_service.dart';
 import '../models/item.dart';
 
 class BarcodeScannerScreen extends StatefulWidget {
-  const BarcodeScannerScreen({super.key});
+  final bool returnResult;
+  
+  const BarcodeScannerScreen({super.key, this.returnResult = false});
 
   @override
   State<BarcodeScannerScreen> createState() => _BarcodeScannerScreenState();
@@ -46,6 +48,14 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     try {
       debugPrint('BarcodeScannerScreen: Scanning barcode: ${barcode.rawValue}');
       
+      if (widget.returnResult) {
+        // Return the barcode result for purchase flow
+        if (mounted) {
+          Navigator.of(context).pop(barcode.rawValue);
+        }
+        return;
+      }
+      
       // Try to find the item by barcode
       final item = await _apiService.getItemByBarcode(barcode.rawValue!);
       
@@ -57,8 +67,13 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
       debugPrint('BarcodeScannerScreen: Error finding item: $e');
       
       if (mounted) {
-        // Show item not found dialog
-        _showItemNotFoundDialog(barcode.rawValue!);
+        if (widget.returnResult) {
+          // For purchase flow, still return the barcode even if item not found
+          Navigator.of(context).pop(barcode.rawValue);
+        } else {
+          // Show item not found dialog
+          _showItemNotFoundDialog(barcode.rawValue!);
+        }
       }
     } finally {
       if (mounted) {
@@ -100,7 +115,7 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
               ),
               const SizedBox(height: 16),
               Text(
-                'Would you like to add this item to our database?',
+                'Would you like to learn about this wine using AI?',
                 style: Theme.of(context).textTheme.bodyMedium,
                 textAlign: TextAlign.center,
               ),
@@ -117,13 +132,13 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pop();
-                _showAddItemDialog(barcode);
+                _navigateToWineLearning(barcode);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF388E3C),
                 foregroundColor: Colors.white,
               ),
-              child: const Text('Add Item'),
+              child: const Text('Learn Wine'),
             ),
           ],
         );
@@ -131,66 +146,9 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     );
   }
 
-  void _showAddItemDialog(String barcode) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Add New Item'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Icon(
-                Icons.add_box,
-                size: 48,
-                color: Color(0xFF388E3C),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'This feature will allow you to add new items to the database.',
-                style: Theme.of(context).textTheme.bodyMedium,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'Barcode: $barcode',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'monospace',
-                ),
-              ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-                _resumeScanning();
-              },
-              child: const Text('Cancel'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-                // TODO: Implement add item functionality
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Add item functionality coming soon'),
-                    backgroundColor: Color(0xFF388E3C),
-                  ),
-                );
-                _resumeScanning();
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF388E3C),
-                foregroundColor: Colors.white,
-              ),
-              child: const Text('Add Item'),
-            ),
-          ],
-        );
-      },
-    );
+  void _navigateToWineLearning(String barcode) {
+    // Navigate to wine learning screen with the scanned barcode
+    context.go('/wine-learning?barcode=$barcode');
   }
 
   void _resumeScanning() {

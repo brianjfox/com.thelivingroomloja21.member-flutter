@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
@@ -24,6 +25,16 @@ class _LoginScreenState extends State<LoginScreen> {
     _usernameController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  String _getBiometricLabel() {
+    if (Platform.isIOS) {
+      return 'Login with Face ID';
+    } else if (Platform.isAndroid) {
+      return 'Login with Touch ID';
+    } else {
+      return 'Login with Biometrics';
+    }
   }
 
   Future<void> _handleLogin() async {
@@ -91,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (mounted) {
       if (result['success']) {
-        _showSuccessSnackBar('Biometric authentication enabled! You can use Face ID or Touch ID next time.');
+        _showSuccessSnackBar('Biometric authentication enabled! You can use ${Platform.isIOS ? 'Face ID' : Platform.isAndroid ? 'Touch ID' : 'biometric authentication'} next time.');
         context.go('/tabs/dashboard');
       } else {
         _showErrorDialog(result['message']);
@@ -200,6 +211,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             const SizedBox(height: 32),
                             TextFormField(
                               controller: _usernameController,
+			      autofillHints: const [AutofillHints.email],
                               keyboardType: TextInputType.emailAddress,
                               decoration: const InputDecoration(
                                 labelText: 'Email',
@@ -282,7 +294,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         child: OutlinedButton.icon(
                                           onPressed: authProvider.isLoading ? null : _handleBiometricLogin,
                                           icon: const Icon(Icons.fingerprint),
-                                          label: const Text('Login with Biometrics'),
+                                          label: Text(_getBiometricLabel()),
                                         ),
                                       ),
                                     ],
@@ -326,8 +338,8 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Center(
                 child: AlertDialog(
                   title: const Text('Enable Biometric Authentication'),
-                  content: const Text(
-                    'Would you like to enable biometric authentication for quick login? You can use Face ID or Touch ID instead of entering your password.',
+                  content: Text(
+                    'Would you like to enable biometric authentication for quick login? You can use ${Platform.isIOS ? 'Face ID' : Platform.isAndroid ? 'Touch ID' : 'biometric authentication'} instead of entering your password.',
                   ),
                   actions: [
                     TextButton(

@@ -11,7 +11,18 @@ class AuthService {
   static const String _biometricKey = 'biometric_enabled';
   static const String _biometricDataKey = 'biometric_data';
   
-  final FlutterSecureStorage _secureStorage = const FlutterSecureStorage();
+  final FlutterSecureStorage _secureStorage = const FlutterSecureStorage(
+    aOptions: AndroidOptions(
+      encryptedSharedPreferences: true,
+      sharedPreferencesName: 'tlr_secure_prefs',
+      preferencesKeyPrefix: 'tlr_',
+    ),
+    iOptions: IOSOptions(
+      accessibility: KeychainAccessibility.first_unlock_this_device,
+      synchronizable: false, // Don't sync across devices for security
+      // Removed groupId to avoid entitlement issues
+    ),
+  );
   final LocalAuthentication _localAuth = LocalAuthentication();
   final ApiService _apiService = ApiService();
 
@@ -37,6 +48,11 @@ class AuthService {
     try {
       debugPrint('🔐 AuthService: Checking biometric availability...');
       await _checkBiometricAvailability();
+      
+      // Verify biometric persistence after app updates
+      final persistenceCheck = await verifyBiometricPersistence();
+      debugPrint('🔐 AuthService: Biometric persistence check: ${persistenceCheck['persistenceStatus']}');
+      
       debugPrint('🔐 AuthService: Initialization complete - biometric enabled: $_biometricEnabled');
     } catch (e) {
       debugPrint('🔐 AuthService: Error checking biometric availability: $e');
@@ -91,9 +107,25 @@ class AuthService {
       await _secureStorage.delete(key: _userKey);
     }
 
-    // Check biometric status
-    final biometricEnabled = await _secureStorage.read(key: _biometricKey);
-    _biometricEnabled = biometricEnabled == 'true';
+    // Check biometric status with enhanced logging
+    try {
+      final biometricEnabled = await _secureStorage.read(key: _biometricKey);
+      final biometricData = await _secureStorage.read(key: _biometricDataKey);
+      
+      debugPrint('🔐 AuthService: Biometric enabled flag: $biometricEnabled');
+      debugPrint('🔐 AuthService: Biometric data exists: ${biometricData != null}');
+      
+      _biometricEnabled = biometricEnabled == 'true' && biometricData != null;
+      
+      if (_biometricEnabled) {
+        debugPrint('🔐 AuthService: Biometric authentication is enabled and data is available');
+      } else {
+        debugPrint('🔐 AuthService: Biometric authentication is disabled or data is missing');
+      }
+    } catch (e) {
+      debugPrint('🔐 AuthService: Error loading biometric status: $e');
+      _biometricEnabled = false;
+    }
   }
 
   Future<bool> login(String username, String password) async {
@@ -101,6 +133,7 @@ class AuthService {
       debugPrint('🔐 AuthService: Attempting login for $username');
       final response = await _apiService.login(username, password);
       debugPrint('🔐 AuthService: Login response - success: ${response.success}, message: ${response.message}');
+      debugPrint('🔐 AuthService: Login response data - user: ${response.data.user.email}, token length: ${response.data.token.length}');
       
       if (response.success) {
         debugPrint('🔐 AuthService: Login successful, setting user and token');
@@ -118,10 +151,11 @@ class AuthService {
         debugPrint('🔐 AuthService: User data stored, returning true');
         return true;
       }
-      debugPrint('🔐 AuthService: Login failed - success was false');
+      debugPrint('🔐 AuthService: Login failed - success was false, message: ${response.message}');
       return false;
     } catch (e) {
       debugPrint('🔐 AuthService: Login error: $e');
+      debugPrint('🔐 AuthService: Login error type: ${e.runtimeType}');
       return false;
     }
   }
@@ -145,11 +179,15 @@ class AuthService {
       }
       
       debugPrint('🔐 AuthService: Found biometric data, parsing...');
+      debugPrint('🔐 AuthService: Raw biometric data: $biometricData');
+      
       final data = jsonDecode(biometricData);
       final email = data['email'] as String;
       final enrollmentToken = data['enrollmentToken'] as String;
       final deviceId = data['deviceId'] as String;
       final platform = data['platform'] as String;
+      
+      debugPrint('🔐 AuthService: Parsed biometric data - email: $email, enrollmentToken: $enrollmentToken, deviceId: $deviceId, platform: $platform');
       
       debugPrint('🔐 AuthService: Starting local biometric authentication...');
       // Authenticate with biometric
@@ -329,6 +367,7 @@ class AuthService {
         'platform': platform,
       };
       
+      debugPrint('🔐 AuthService: Storing biometric data: ${jsonEncode(biometricDataToStore)}');
       await _secureStorage.write(
         key: _biometricDataKey,
         value: jsonEncode(biometricDataToStore),
@@ -409,4 +448,48 @@ class AuthService {
       };
     }
   }
+
+  /// Verifies that biometric data persists across app updates
+  Future<Map<String, dynamic>> verifyBiometricPersistence() async {
+    try {
+      debugPrint('🔐 AuthService: Verifying biometric persistence...');
+      
+      final biometricEnabled = await _secureStorage.read(key: _biometricKey);
+      final biometricData = await _secureStorage.read(key: _biometricDataKey);
+      
+      final isEnabled = biometricEnabled == 'true';
+      final hasData = biometricData != null;
+      
+      debugPrint('🔐 AuthService: Persistence check - enabled: $isEnabled, hasData: $hasData');
+      
+      return {
+        'success': true,
+        'biometricEnabled': isEnabled,
+        'hasBiometricData': hasData,
+        'persistenceStatus': isEnabled && hasData ? 'PERSISTENT' : 'MISSING',
+        'message': isEnabled && hasData 
+          ? 'Biometric data is properly persisted'
+          : 'Biometric data is missing or incomplete',
+      };
+    } catch (e) {
+      debugPrint('🔐 AuthService: Error verifying biometric persistence: $e');
+      return {
+        'success': false,
+        'message': 'Failed to verify biometric persistence: ${e.toString()}',
+      };
+    }
+  }
+
+  /// Forces a re-check of biometric availability and persistence
+  Future<void> refreshBiometricStatus() async {
+    try {
+      debugPrint('🔐 AuthService: Refreshing biometric status...');
+      await _checkBiometricAvailability();
+      await _loadStoredAuth();
+      debugPrint('🔐 AuthService: Biometric status refreshed - enabled: $_biometricEnabled');
+    } catch (e) {
+      debugPrint('🔐 AuthService: Error refreshing biometric status: $e');
+    }
+  }
+
 }

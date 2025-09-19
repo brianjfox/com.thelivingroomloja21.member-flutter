@@ -168,7 +168,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
           _isLoading = false;
         });
         
-        // Preload images in background
+        // Preload images in background (only for items that need fetching)
         if (prefetchItems.isNotEmpty) {
           _imageService.preloadImages(prefetchItems.map((item) => item.id).toList());
         }
@@ -194,6 +194,11 @@ class _ItemsScreenState extends State<ItemsScreen> {
         _itemProperties = properties;
         _isLoading = false;
       });
+      
+      // Preload images in background (only for items that need fetching)
+      if (items.isNotEmpty) {
+        _imageService.preloadImages(items.map((item) => item.id).toList());
+      }
       
       _updateFilteredItems();
       _loadAvailableRegions();
@@ -489,6 +494,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
                 if (_showFilters) ...[
                   const SizedBox(height: 16),
                   Container(
+                    width: double.infinity,
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: Colors.grey[50],
@@ -565,6 +571,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
                         ),
                         DropdownButtonFormField<String>(
                           value: _selectedRegion.isEmpty ? null : _selectedRegion,
+                          isExpanded: true,
                           decoration: const InputDecoration(
                             hintText: 'Select region...',
                             border: OutlineInputBorder(),
@@ -586,9 +593,14 @@ class _ItemsScreenState extends State<ItemsScreen> {
                                 value: region,
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Flexible(child: Text(region)),
+                                    Expanded(
+                                      child: Text(
+                                        region,
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                      ),
+                                    ),
                                     const SizedBox(width: 8),
                                     Text('($count)', style: TextStyle(color: Colors.grey[600])),
                                   ],
@@ -775,7 +787,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
                                               borderRadius: BorderRadius.circular(4),
                                               color: Colors.grey[50],
                                             ),
-                                          child: _imageService.buildItemImageWidget(
+                                          child: _imageService.buildItemImageWidgetAsync(
                                             item.id,
                                             width: 60,
                                             height: 60,
