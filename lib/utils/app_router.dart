@@ -90,7 +90,7 @@ class AppRouter {
         path: '/item/:id',
         builder: (context, state) {
           final id = int.parse(state.pathParameters['id']!);
-          return ItemDetailScreen(itemId: id);
+          return ItemDetailScreen(key: ValueKey('item_$id'), itemId: id);
         },
       ),
       GoRoute(

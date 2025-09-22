@@ -49,9 +49,27 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
       debugPrint('BarcodeScannerScreen: Scanning barcode: ${barcode.rawValue}');
       
       if (widget.returnResult) {
-        // Return the barcode result for purchase flow
-        if (mounted) {
-          Navigator.of(context).pop(barcode.rawValue);
+        // For purchase flow, we need to check if it's a different item and handle navigation
+        try {
+          final item = await _apiService.getItemByBarcode(barcode.rawValue!);
+          
+          if (mounted) {
+            // Return both the barcode and the item info
+            Navigator.of(context).pop({
+              'barcode': barcode.rawValue,
+              'item': item,
+            });
+          }
+        } catch (e) {
+          debugPrint('BarcodeScannerScreen: Error finding item for purchase flow: $e');
+          
+          if (mounted) {
+            // Return just the barcode if item not found
+            Navigator.of(context).pop({
+              'barcode': barcode.rawValue,
+              'item': null,
+            });
+          }
         }
         return;
       }

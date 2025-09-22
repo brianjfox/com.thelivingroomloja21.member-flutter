@@ -243,29 +243,30 @@ class _WineLearningScreenState extends State<WineLearningScreen> {
 
                   const SizedBox(height: 16),
 
-                  // Process Button
-                  ElevatedButton.icon(
-                    onPressed: _canProcess() ? _processWineLearning : null,
-                    icon: _isProcessing
-                        ? const SizedBox(
-                            width: 20,
-                            height: 20,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                            ),
-                          )
-                        : const Icon(Icons.auto_awesome),
-                    label: Text(_isProcessing ? 'Processing...' : 'Learn Wine'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF388E3C),
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  // Process Button - only show if no learning result yet
+                  if (_learningResult == null)
+                    ElevatedButton.icon(
+                      onPressed: _canProcess() ? _processWineLearning : null,
+                      icon: _isProcessing
+                          ? const SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                              ),
+                            )
+                          : const Icon(Icons.auto_awesome),
+                      label: Text(_isProcessing ? 'Processing...' : 'Learn Wine'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF388E3C),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                      ),
                     ),
-                  ),
 
-                  const SizedBox(height: 16),
+                  if (_learningResult == null) const SizedBox(height: 16),
 
                   // Results Section
                   if (_learningResult != null)

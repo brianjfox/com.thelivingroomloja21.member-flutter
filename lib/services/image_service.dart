@@ -146,6 +146,13 @@ class ImageService {
     debugPrint('ImageService: Cleared memory cache');
   }
 
+  /// Clear cache for a specific item
+  void clearImageCache(int itemId) {
+    _imageCache.remove(itemId);
+    _loadingItems.remove(itemId);
+    debugPrint('ImageService: Cleared cache for item $itemId');
+  }
+
   /// Clear all caches (memory and persistent)
   Future<void> clearAllCaches() async {
     _imageCache.clear();

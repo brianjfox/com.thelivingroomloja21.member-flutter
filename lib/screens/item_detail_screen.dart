@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -44,10 +45,14 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   
   // Purchase state
   bool _isPurchasing = false;
+  
+  // Label generation state
+  bool _isGeneratingLabel = false;
 
   @override
   void initState() {
     super.initState();
+    debugPrint('ItemDetailScreen: initState called with itemId: ${widget.itemId}');
     _loadItemDetails();
   }
 
@@ -71,10 +76,17 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
       }
 
       debugPrint('ItemDetailScreen: Loading details for item $targetItemId');
+      debugPrint('ItemDetailScreen: Widget itemId: ${widget.itemId}');
 
       // Check cache first for item and properties
       final cachedItems = await CacheService.getCachedItems();
       final cachedProperties = await CacheService.getCachedItemProperties();
+      
+      debugPrint('ItemDetailScreen: Cache check - cachedItems count: ${cachedItems?.length ?? 0}');
+      if (cachedItems != null) {
+        final cachedItem = cachedItems.where((item) => item.id == targetItemId).firstOrNull;
+        debugPrint('ItemDetailScreen: Found cached item: ${cachedItem?.name} (ID: ${cachedItem?.id})');
+      }
       
       Item? item;
       List<Map<String, dynamic>> properties = [];
@@ -124,12 +136,14 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         return <Map<String, dynamic>>[];
       });
 
-      setState(() {
-        _item = item!;
-        _itemProperties = {targetItemId: properties};
-        _tastingNotes = tastingNotes;
-        _isLoading = false;
-      });
+        setState(() {
+          _item = item!;
+          _itemProperties = {targetItemId: properties};
+          _tastingNotes = tastingNotes;
+          _isLoading = false;
+        });
+        
+        debugPrint('ItemDetailScreen: State updated with item: ${_item?.name} (ID: ${_item?.id})');
 
       // Fetch user information for tasting notes that don't have complete user data
       for (final note in tastingNotes) {
@@ -336,8 +350,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   }
 
   Widget _buildLabelImage() {
-    // Always use ImageService for image display
-
     return Container(
       height: 200,
       width: double.infinity,
@@ -353,17 +365,259 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(12),
-        child: _imageService.buildItemImageWidgetAsync(
-          _item!.id,
-          width: 200,
-          height: 200,
-          fit: BoxFit.contain,
-        ),
+        child: _buildLabelImageWithGenerateButton(),
       ),
     );
   }
 
+  Widget _buildLabelImageWithGenerateButton() {
+    return FutureBuilder<String?>(
+      future: _imageService.getImageForItem(_item!.id),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Container(
+            width: 200,
+            height: 200,
+            color: Colors.grey[100],
+            child: Center(
+              child: SizedBox(
+                width: 20,
+                height: 20,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.grey[400]!),
+                ),
+              ),
+            ),
+          );
+        } else if (snapshot.hasData && snapshot.data != null) {
+          // Image exists, show it with long-press for admin users
+          final authProvider = Provider.of<AuthProvider>(context, listen: false);
+          final user = authProvider.user;
+          
+          if (user?.isAdmin == true) {
+            // Admin user - wrap with GestureDetector for long-press
+            return GestureDetector(
+              onLongPress: _showRegenerateLabelDialog,
+              child: _imageService.buildImageWidget(
+                snapshot.data!,
+                width: 200,
+                height: 200,
+                fit: BoxFit.contain,
+              ),
+            );
+          } else {
+            // Regular user - show image without long-press
+            return _imageService.buildImageWidget(
+              snapshot.data!,
+              width: 200,
+              height: 200,
+              fit: BoxFit.contain,
+            );
+          }
+        } else {
+          // No image - check if user is admin to show generate button
+          final authProvider = Provider.of<AuthProvider>(context, listen: false);
+          final user = authProvider.user;
+          
+          if (user?.isAdmin == true) {
+            // Admin user - show generate label button
+            return Container(
+              width: 200,
+              height: 200,
+              color: Colors.grey[100],
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.image_not_supported,
+                      color: Colors.grey[400],
+                      size: 48,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'No Label Image',
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: 14,
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    ElevatedButton.icon(
+                      onPressed: _isGeneratingLabel ? null : _generateLabelImage,
+                      icon: _isGeneratingLabel
+                          ? const SizedBox(
+                              width: 16,
+                              height: 16,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                              ),
+                            )
+                          : const Icon(Icons.auto_awesome),
+                      label: Text(_isGeneratingLabel ? 'Generating...' : 'Generate Label'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF388E3C),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          } else {
+            // Regular user - show placeholder
+            return Container(
+              width: 200,
+              height: 200,
+              color: Colors.grey[100],
+              child: Center(
+                child: Icon(
+                  Icons.wine_bar,
+                  color: Colors.grey[400],
+                  size: 48,
+                ),
+              ),
+            );
+          }
+        }
+      },
+    );
+  }
+
   // Image handling is now done by ImageService
+
+  Future<void> _generateLabelImage() async {
+    if (_item == null) return;
+    
+    setState(() {
+      _isGeneratingLabel = true;
+    });
+
+    try {
+      debugPrint('ItemDetailScreen: Generating label image for item ${_item!.id}');
+      
+      // Call the API to generate the label image
+      final imageData = await _apiService.generateLabelImage(_item!.id);
+      
+      if (imageData != null) {
+        debugPrint('ItemDetailScreen: Label image generated successfully');
+        
+        // Update the cache with the new image
+        await CacheService.setCachedImage(_item!.id, imageData);
+        
+        // Clear the ImageService memory cache for this item to force refresh
+        _imageService.clearImageCache(_item!.id);
+        
+        // Show success message
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Label image generated successfully!'),
+              backgroundColor: Colors.green,
+              duration: Duration(seconds: 2),
+            ),
+          );
+        }
+        
+        // Force a rebuild to show the new image
+        setState(() {});
+      } else {
+        debugPrint('ItemDetailScreen: Failed to generate label image');
+        
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Failed to generate label image. Please try again.'),
+              backgroundColor: Colors.red,
+              duration: Duration(seconds: 3),
+            ),
+          );
+        }
+      }
+    } catch (e) {
+      debugPrint('ItemDetailScreen: Error generating label image: $e');
+      
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Error generating label image: ${e.toString()}'),
+            backgroundColor: Colors.red,
+            duration: const Duration(seconds: 3),
+          ),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isGeneratingLabel = false;
+        });
+      }
+    }
+  }
+
+  void _showRegenerateLabelDialog() {
+    if (_item == null) return;
+    
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Regenerate Label'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'Are you sure you want to regenerate the label image for this item?',
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              if (_item != null) ...[
+                Text(
+                  _item!.name,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Item Code: ${_item!.code}',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: Colors.grey[600],
+                    fontFamily: 'monospace',
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).pop();
+                _generateLabelImage();
+              },
+              icon: const Icon(Icons.auto_awesome),
+              label: const Text('Regenerate'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF388E3C),
+                foregroundColor: Colors.white,
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   Widget _buildItemInfo() {
     if (_item == null) return const SizedBox.shrink();
@@ -865,14 +1119,18 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         ),
       ),
       body: SafeArea(
-        child: _isLoading
-            ? const Center(
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF388E3C)),
-                ),
-              )
-            : _isError
-                ? Center(
+        child: Builder(
+          builder: (context) {
+            debugPrint('ItemDetailScreen: Building UI - _isLoading: $_isLoading, _isError: $_isError, _item: ${_item?.name}');
+            
+            return _isLoading
+                ? const Center(
+                    child: CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF388E3C)),
+                    ),
+                  )
+                : _isError
+                    ? Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -908,7 +1166,13 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                       ],
                     ),
                   )
-                : SingleChildScrollView(
+                : _item == null
+                    ? const Center(
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF388E3C)),
+                        ),
+                      )
+                    : SingleChildScrollView(
                     child: Column(
                       children: [
                         // Label image
@@ -917,6 +1181,11 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                           child: _buildLabelImage(),
                         ),
                         
+                        // Purchase button
+                        _buildPurchaseButton(),
+                        
+                        const SizedBox(height: 16),
+                        
                         // Item information
                         _buildItemInfo(),
                         
@@ -924,19 +1193,16 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                         _buildProperties(),
                         
                         const SizedBox(height: 16),
-                        
+
                         // Tasting notes
                         _buildTastingNotes(),
                         
                         const SizedBox(height: 16),
-                        
-                        // Purchase button
-                        _buildPurchaseButton(),
-                        
-                        const SizedBox(height: 16),
                       ],
                     ),
-                  ),
+                  );
+          },
+        ),
       ),
     );
   }
@@ -1034,23 +1300,61 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   }
 
   Future<void> _scanBarcodeForPurchase() async {
+    debugPrint('ItemDetailScreen: Starting barcode scan for purchase');
     Navigator.of(context).pop(); // Close the dialog first
     
     final result = await context.push('/scan?return=true');
-    if (result != null && result is String) {
-      final scannedBarcode = result;
-      debugPrint('ItemDetailScreen: Scanned barcode for purchase: $scannedBarcode');
+    debugPrint('ItemDetailScreen: Barcode scan result: $result');
+    
+    if (result != null && result is Map<String, dynamic>) {
+      final scannedBarcode = result['barcode'] as String;
+      final scannedItem = result['item'] as Item?;
       
-      try {
-        // Get the item that corresponds to the scanned barcode
-        final scannedItem = await _apiService.getItemByBarcode(scannedBarcode);
+      debugPrint('ItemDetailScreen: Scanned barcode for purchase: $scannedBarcode');
+      debugPrint('ItemDetailScreen: Current item ID: ${_item?.id}');
+      debugPrint('ItemDetailScreen: Widget mounted: $mounted');
+      
+      if (scannedItem == null) {
+        // Item not found - handle unknown barcode
+        debugPrint('ItemDetailScreen: Item not found for barcode: $scannedBarcode');
         
-        if (scannedItem.id != _item!.id) {
-          // Different item was scanned - load the correct item (like items list behavior)
-          debugPrint('ItemDetailScreen: Scanned barcode belongs to different item (${scannedItem.id} vs ${_item!.id})');
-          
-          // Load the new item into the current screen
-          await _loadNewItem(scannedItem.id);
+        // Check if user is admin for wine learning
+        final authProvider = Provider.of<AuthProvider>(context, listen: false);
+        final user = authProvider.user;
+        
+        if (user?.isAdmin == true) {
+          // Admin user - navigate to wine learning
+          debugPrint('ItemDetailScreen: Unknown barcode for admin user, navigating to wine learning');
+          context.go('/wine-learning?barcode=$scannedBarcode');
+        } else {
+          // Regular user - show message
+          debugPrint('ItemDetailScreen: Unknown barcode for regular user, showing message');
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Barcode "$scannedBarcode" is not in our database'),
+              backgroundColor: Colors.orange,
+              duration: const Duration(seconds: 4),
+              action: SnackBarAction(
+                label: 'OK',
+                textColor: Colors.white,
+                onPressed: () {
+                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                },
+              ),
+            ),
+          );
+        }
+        return;
+      }
+      
+      debugPrint('ItemDetailScreen: Successfully got item: ${scannedItem.id} - ${scannedItem.name}');
+      
+      if (scannedItem.id != _item!.id) {
+        // Different item was scanned - navigate to the new item
+        debugPrint('ItemDetailScreen: Scanned barcode belongs to different item (${scannedItem.id} vs ${_item!.id})');
+        
+        if (mounted) {
+          context.go('/item/${scannedItem.id}');
           
           // Show message about item change
           ScaffoldMessenger.of(context).showSnackBar(
@@ -1060,69 +1364,57 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
               duration: const Duration(seconds: 3),
             ),
           );
-        } else {
-          // Same item was scanned - proceed with purchase
-          debugPrint('ItemDetailScreen: Scanned barcode matches current item, proceeding with purchase');
-          
-          setState(() {
-            _isPurchasing = true;
-          });
-
-          try {
-            final authProvider = Provider.of<AuthProvider>(context, listen: false);
-            final user = authProvider.user;
-            
-            if (user == null) {
-              throw Exception('User not authenticated');
-            }
-
-            debugPrint('ItemDetailScreen: Creating purchase for item ${_item!.id} with barcode $scannedBarcode');
-
-            final purchase = await _apiService.createPurchase(
-              userEmail: user.email,
-              itemId: _item!.id,
-              priceAsked: _item!.price,
-              pricePaid: _item!.price, // For now, assume full price is paid
-              barcode: scannedBarcode,
-            );
-
-            debugPrint('ItemDetailScreen: Purchase created successfully: ${purchase.id}');
-
-            if (mounted) {
-              // Navigate to purchases list
-              context.go('/tabs/purchases');
-            }
-          } catch (e) {
-            debugPrint('ItemDetailScreen: Error creating purchase: $e');
-            
-            if (mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Failed to complete purchase: ${e.toString()}'),
-                  backgroundColor: Colors.red,
-                  duration: const Duration(seconds: 3),
-                ),
-              );
-            }
-          } finally {
-            if (mounted) {
-              setState(() {
-                _isPurchasing = false;
-              });
-            }
-          }
         }
-      } catch (e) {
-        debugPrint('ItemDetailScreen: Error processing scanned barcode: $e');
+      } else {
+        // Same item was scanned - proceed with purchase
+        debugPrint('ItemDetailScreen: Scanned barcode matches current item, proceeding with purchase');
         
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Failed to process barcode: ${e.toString()}'),
-              backgroundColor: Colors.red,
-              duration: const Duration(seconds: 3),
-            ),
+        setState(() {
+          _isPurchasing = true;
+        });
+
+        try {
+          final authProvider = Provider.of<AuthProvider>(context, listen: false);
+          final user = authProvider.user;
+          
+          if (user == null) {
+            throw Exception('User not authenticated');
+          }
+
+          debugPrint('ItemDetailScreen: Creating purchase for item ${_item!.id} with barcode $scannedBarcode');
+
+          final purchase = await _apiService.createPurchase(
+            userEmail: user.email,
+            itemId: _item!.id,
+            priceAsked: _item!.price,
+            pricePaid: _item!.price, // For now, assume full price is paid
+            barcode: scannedBarcode,
           );
+
+          debugPrint('ItemDetailScreen: Purchase created successfully: ${purchase.id}');
+
+          if (mounted) {
+            // Navigate to purchases list
+            context.go('/tabs/purchases');
+          }
+        } catch (e) {
+          debugPrint('ItemDetailScreen: Error creating purchase: $e');
+          
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Failed to complete purchase: ${e.toString()}'),
+                backgroundColor: Colors.red,
+                duration: const Duration(seconds: 3),
+              ),
+            );
+          }
+        } finally {
+          if (mounted) {
+            setState(() {
+              _isPurchasing = false;
+            });
+          }
         }
       }
     }
@@ -1130,97 +1422,31 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
 
   Future<void> _loadNewItem(int newItemId) async {
     debugPrint('ItemDetailScreen: Loading new item with ID: $newItemId');
+    debugPrint('ItemDetailScreen: Current state - mounted: $mounted, _isLoading: $_isLoading, _isError: $_isError');
     
+    if (!mounted) {
+      debugPrint('ItemDetailScreen: Widget not mounted, skipping load');
+      return;
+    }
+    
+    debugPrint('ItemDetailScreen: Setting loading state to true');
+    // Set loading state immediately
     setState(() {
       _isLoading = true;
       _isError = false;
       _errorMessage = null;
-      _item = null;
-      _itemProperties = null;
-      _tastingNotes = null;
+      // Don't clear _item immediately to avoid black screen
     });
+    debugPrint('ItemDetailScreen: Loading state set, _isLoading is now: $_isLoading');
 
+    // Add timeout to prevent infinite loading
     try {
-      // Check if user is authenticated before making API calls
-      final authProvider = Provider.of<AuthProvider>(context, listen: false);
-      if (!authProvider.isAuthenticated) {
-        setState(() {
-          _isError = true;
-          _errorMessage = 'User not authenticated';
-          _isLoading = false;
-        });
-        return;
-      }
-
-      debugPrint('ItemDetailScreen: Loading details for new item $newItemId');
-
-      // Check cache first for item and properties
-      final cachedItems = await CacheService.getCachedItems();
-      final cachedProperties = await CacheService.getCachedItemProperties();
-      
-      Item? item;
-      List<Map<String, dynamic>> properties = [];
-      
-      // Try to get item from cache first
-      if (cachedItems != null) {
-        item = cachedItems.firstWhere(
-          (cachedItem) => cachedItem.id == newItemId,
-          orElse: () => Item(
-            id: -1, 
-            code: '', 
-            name: '', 
-            description: '', 
-            cost: 0, 
-            price: 0, 
-            isAlcohol: false, 
-            createdAt: DateTime.now().toIso8601String(), 
-            updatedAt: DateTime.now().toIso8601String(),
-            onHand: 0
-          ),
-        );
-        if (item.id != -1) {
-          debugPrint('ItemDetailScreen: Found new item $newItemId in cache');
-        }
-      }
-      
-      // Try to get properties from cache
-      if (cachedProperties != null && cachedProperties.containsKey(newItemId)) {
-        properties = cachedProperties[newItemId]!;
-        debugPrint('ItemDetailScreen: Found properties for new item $newItemId in cache');
-      }
-
-      // If we don't have cached data, fetch from API
-      if (item == null || item.id == -1) {
-        debugPrint('ItemDetailScreen: New item $newItemId not in cache, fetching from API');
-        item = await _apiService.getItem(newItemId);
-      }
-      
-      if (properties.isEmpty) {
-        debugPrint('ItemDetailScreen: Properties for new item $newItemId not in cache, fetching from API');
-        properties = await _apiService.getItemProperties(newItemId);
-      }
-
-      // Always fetch tasting notes (they change frequently)
-      final tastingNotes = await _apiService.getTastingNotes(newItemId).catchError((e) {
-        debugPrint('ItemDetailScreen: Error loading tasting notes: $e');
-        return <Map<String, dynamic>>[];
-      });
-
-      setState(() {
-        _item = item!;
-        _itemProperties = {newItemId: properties};
-        _tastingNotes = tastingNotes;
-        _isLoading = false;
-      });
-
-      // Fetch user information for tasting notes that don't have complete user data
-      for (final note in tastingNotes) {
-        if (note['user'] != null && !_tastingNoteUsers.containsKey(note['user'])) {
-          _fetchUserForTastingNote(note['user']);
-        }
-      }
-      
-      debugPrint('ItemDetailScreen: Successfully loaded new item: ${_item?.name}');
+      await Future.any([
+        _loadNewItemData(newItemId),
+        Future.delayed(const Duration(seconds: 30), () {
+          throw TimeoutException('Loading timeout after 30 seconds', const Duration(seconds: 30));
+        }),
+      ]);
     } catch (e) {
       debugPrint('ItemDetailScreen: Error loading new item: $e');
       
@@ -1240,6 +1466,129 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         );
       }
     }
+  }
+
+  Future<void> _loadNewItemData(int newItemId) async {
+    debugPrint('ItemDetailScreen: _loadNewItemData called for item $newItemId');
+    debugPrint('ItemDetailScreen: Widget mounted in _loadNewItemData: $mounted');
+    
+    // Check if user is authenticated before making API calls
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+    debugPrint('ItemDetailScreen: User authenticated: ${authProvider.isAuthenticated}');
+    
+    if (!authProvider.isAuthenticated) {
+      debugPrint('ItemDetailScreen: User not authenticated');
+      if (mounted) {
+        setState(() {
+          _isError = true;
+          _errorMessage = 'User not authenticated';
+          _isLoading = false;
+        });
+        debugPrint('ItemDetailScreen: Set error state for unauthenticated user');
+      }
+      return;
+    }
+
+    debugPrint('ItemDetailScreen: Loading details for new item $newItemId');
+
+    // Check cache first for item and properties
+    final cachedItems = await CacheService.getCachedItems();
+    final cachedProperties = await CacheService.getCachedItemProperties();
+    
+    Item? item;
+    List<Map<String, dynamic>> properties = [];
+    
+    // Try to get item from cache first
+    if (cachedItems != null) {
+      try {
+        item = cachedItems.firstWhere(
+          (cachedItem) => cachedItem.id == newItemId,
+          orElse: () => Item(
+            id: -1, 
+            code: '', 
+            name: '', 
+            description: '', 
+            cost: 0, 
+            price: 0, 
+            isAlcohol: false, 
+            createdAt: DateTime.now().toIso8601String(), 
+            updatedAt: DateTime.now().toIso8601String(),
+            onHand: 0
+          ),
+        );
+        if (item.id != -1) {
+          debugPrint('ItemDetailScreen: Found new item $newItemId in cache');
+        }
+      } catch (e) {
+        debugPrint('ItemDetailScreen: Error finding item in cache: $e');
+        item = null;
+      }
+    }
+    
+    // Try to get properties from cache
+    if (cachedProperties != null && cachedProperties.containsKey(newItemId)) {
+      properties = cachedProperties[newItemId]!;
+      debugPrint('ItemDetailScreen: Found properties for new item $newItemId in cache');
+    }
+
+    // If we don't have cached data, fetch from API
+    if (item == null || item.id == -1) {
+      debugPrint('ItemDetailScreen: New item $newItemId not in cache, fetching from API');
+      try {
+        item = await _apiService.getItem(newItemId);
+        debugPrint('ItemDetailScreen: Successfully fetched item $newItemId from API: ${item.name}');
+      } catch (e) {
+        debugPrint('ItemDetailScreen: Error fetching item from API: $e');
+        throw Exception('Failed to fetch item: $e');
+      }
+    }
+    
+    if (properties.isEmpty) {
+      debugPrint('ItemDetailScreen: Properties for new item $newItemId not in cache, fetching from API');
+      try {
+        properties = await _apiService.getItemProperties(newItemId);
+        debugPrint('ItemDetailScreen: Successfully fetched properties for item $newItemId');
+      } catch (e) {
+        debugPrint('ItemDetailScreen: Error fetching properties from API: $e');
+        // Don't throw here, just use empty properties
+        properties = [];
+      }
+    }
+
+    // Always fetch tasting notes (they change frequently)
+    final tastingNotes = await _apiService.getTastingNotes(newItemId).catchError((e) {
+      debugPrint('ItemDetailScreen: Error loading tasting notes: $e');
+      return <Map<String, dynamic>>[];
+    });
+
+    if (!mounted) {
+      debugPrint('ItemDetailScreen: Widget not mounted during setState, skipping');
+      return;
+    }
+
+    debugPrint('ItemDetailScreen: About to update state with new item data');
+    debugPrint('ItemDetailScreen: New item: ${item?.name} (ID: ${item?.id})');
+    debugPrint('ItemDetailScreen: Properties count: ${properties.length}');
+    debugPrint('ItemDetailScreen: Tasting notes count: ${tastingNotes.length}');
+    
+    // Update state with new item data
+    setState(() {
+      _item = item!;
+      _itemProperties = {newItemId: properties};
+      _tastingNotes = tastingNotes;
+      _isLoading = false;
+    });
+    
+    debugPrint('ItemDetailScreen: State updated successfully, _isLoading: $_isLoading, _item: ${_item?.name}');
+
+    // Fetch user information for tasting notes that don't have complete user data
+    for (final note in tastingNotes) {
+      if (note['user'] != null && !_tastingNoteUsers.containsKey(note['user'])) {
+        _fetchUserForTastingNote(note['user']);
+      }
+    }
+    
+    debugPrint('ItemDetailScreen: Successfully loaded new item: ${_item?.name}');
   }
 
 }

@@ -253,10 +253,46 @@ class ApiService {
 
   Future<Item> getItemByBarcode(String barcode) async {
     try {
+      debugPrint('ApiService: Getting item by barcode: $barcode');
       final response = await _dio.get('/items/barcode/${Uri.encodeComponent(barcode)}');
-      return Item.fromJson(response.data['data']);
+      debugPrint('ApiService: Barcode response: ${response.data}');
+      
+      Item item;
+      // Handle different response formats
+      if (response.data is Map<String, dynamic>) {
+        final data = response.data as Map<String, dynamic>;
+        if (data.containsKey('data')) {
+          item = Item.fromJson(data['data']);
+        } else {
+          // Direct item response
+          item = Item.fromJson(data);
+        }
+      } else {
+        throw Exception('Unexpected response format: ${response.data.runtimeType}');
+      }
+      
+      // Update cache with the new item
+      debugPrint('ApiService: Updating cache with item from barcode: ${item.name} (ID: ${item.id})');
+      final cachedItems = await CacheService.getCachedItems() ?? <Item>[];
+      final updatedItems = List<Item>.from(cachedItems);
+      
+      // Remove existing item with same ID if it exists
+      updatedItems.removeWhere((cachedItem) => cachedItem.id == item.id);
+      // Add the new item
+      updatedItems.add(item);
+      
+      await CacheService.setCachedItems(updatedItems);
+      debugPrint('ApiService: Cache updated with ${updatedItems.length} items');
+      
+      return item;
     } catch (e) {
       debugPrint('ApiService: Error getting item by barcode $barcode: $e');
+      
+      // Check if this is a DioException with 404 status
+      if (e is DioException && e.response?.statusCode == 404) {
+        throw Exception('Item not found for barcode: $barcode');
+      }
+      
       rethrow;
     }
   }
