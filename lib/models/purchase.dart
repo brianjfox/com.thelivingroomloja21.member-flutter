@@ -6,14 +6,15 @@ part 'purchase.g.dart';
 
 @JsonSerializable()
 class Purchase {
+  @JsonKey(fromJson: _intFromJson)
   final int id;
   @JsonKey(name: 'user_email')
   final String userEmail;
-  @JsonKey(name: 'item_id')
+  @JsonKey(name: 'item_id', fromJson: _intFromJson)
   final int itemId;
-  @JsonKey(name: 'price_asked')
+  @JsonKey(name: 'price_asked', fromJson: _doubleFromJson)
   final double priceAsked;
-  @JsonKey(name: 'price_paid')
+  @JsonKey(name: 'price_paid', fromJson: _doubleFromJson)
   final double pricePaid;
   @JsonKey(name: 'purchased_on')
   final String purchasedOn;
@@ -72,5 +73,19 @@ class Purchase {
     if (value is int) return value == 1;
     if (value is String) return value == '1' || value.toLowerCase() == 'true';
     return false; // Default to false for null or other types
+  }
+
+  static int _intFromJson(dynamic value) {
+    if (value is int) return value;
+    if (value is double) return value.toInt();
+    if (value is String) return int.tryParse(value) ?? 0;
+    return 0; // Default to 0 for null or other types
+  }
+
+  static double _doubleFromJson(dynamic value) {
+    if (value is double) return value;
+    if (value is int) return value.toDouble();
+    if (value is String) return double.tryParse(value) ?? 0.0;
+    return 0.0; // Default to 0.0 for null or other types
   }
 }

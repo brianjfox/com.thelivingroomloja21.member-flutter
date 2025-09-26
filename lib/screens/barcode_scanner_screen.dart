@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:provider/provider.dart';
+import 'package:dio/dio.dart';
 import '../services/api_service.dart';
 import '../models/item.dart';
+import '../providers/auth_provider.dart';
 
 class BarcodeScannerScreen extends StatefulWidget {
   final bool returnResult;
+  final bool isPurchase;
+  final int? purchaseItemId;
   
-  const BarcodeScannerScreen({super.key, this.returnResult = false});
+  const BarcodeScannerScreen({
+    super.key, 
+    this.returnResult = false,
+    this.isPurchase = false,
+    this.purchaseItemId,
+  });
 
   @override
   State<BarcodeScannerScreen> createState() => _BarcodeScannerScreenState();
@@ -48,50 +58,32 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     try {
       debugPrint('BarcodeScannerScreen: Scanning barcode: ${barcode.rawValue}');
       
-      if (widget.returnResult) {
-        // For purchase flow, we need to check if it's a different item and handle navigation
-        try {
-          final item = await _apiService.getItemByBarcode(barcode.rawValue!);
-          
-          if (mounted) {
-            // Return both the barcode and the item info
-            Navigator.of(context).pop({
-              'barcode': barcode.rawValue,
-              'item': item,
-            });
-          }
-        } catch (e) {
-          debugPrint('BarcodeScannerScreen: Error finding item for purchase flow: $e');
-          
-          if (mounted) {
-            // Return just the barcode if item not found
-            Navigator.of(context).pop({
-              'barcode': barcode.rawValue,
-              'item': null,
-            });
-          }
-        }
+      // Handle purchase flow - NEW CLEAN ARCHITECTURE
+      if (widget.isPurchase) {
+        await _handlePurchaseFlow(barcode.rawValue!);
         return;
       }
       
-      // Try to find the item by barcode
-      final item = await _apiService.getItemByBarcode(barcode.rawValue!);
-      
-      if (mounted) {
-        // Navigate to item detail screen
-        context.go('/item/${item.id}');
+      // Handle return result flow (legacy)
+      if (widget.returnResult) {
+        await _handleReturnResultFlow(barcode.rawValue!);
+        return;
       }
+      
+      // Regular barcode scanning flow
+      await _handleRegularFlow(barcode.rawValue!);
+      
     } catch (e) {
-      debugPrint('BarcodeScannerScreen: Error finding item: $e');
+      debugPrint('BarcodeScannerScreen: Error in _onDetect: $e');
       
       if (mounted) {
-        if (widget.returnResult) {
-          // For purchase flow, still return the barcode even if item not found
-          Navigator.of(context).pop(barcode.rawValue);
-        } else {
-          // Show item not found dialog
-          _showItemNotFoundDialog(barcode.rawValue!);
-        }
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Error scanning barcode: ${e.toString()}'),
+            backgroundColor: Colors.red,
+            duration: const Duration(seconds: 3),
+          ),
+        );
       }
     } finally {
       if (mounted) {
@@ -100,6 +92,228 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
           _isScanning = true;
           _lastScannedCode = null;
         });
+      }
+    }
+  }
+
+  /// Handle purchase flow - scan barcode and either purchase or change item
+  Future<void> _handlePurchaseFlow(String barcode) async {
+    debugPrint('BarcodeScannerScreen: Handling purchase flow for barcode: $barcode');
+    debugPrint('BarcodeScannerScreen: Purchase item ID: ${widget.purchaseItemId}');
+    
+    try {
+      // Get the scanned item
+      final scannedItem = await _apiService.getItemByBarcode(barcode);
+      debugPrint('BarcodeScannerScreen: Found scanned item: ${scannedItem.id} - ${scannedItem.name}');
+      
+      // Check if it's the same item or different
+      if (scannedItem.id == widget.purchaseItemId) {
+        // Same item - complete the purchase
+        debugPrint('BarcodeScannerScreen: Same item scanned, completing purchase');
+        await _completePurchase(scannedItem, barcode);
+      } else {
+        // Different item - navigate to new item detail
+        debugPrint('BarcodeScannerScreen: Different item scanned, navigating to new item');
+        await _navigateToNewItem(scannedItem);
+      }
+      
+    } catch (e) {
+      debugPrint('BarcodeScannerScreen: Error in purchase flow: $e');
+      await _handleUnknownBarcode(barcode);
+    }
+  }
+
+  /// Complete purchase for the same item
+  Future<void> _completePurchase(Item item, String barcode) async {
+    try {
+      if (!mounted) return;
+      
+      final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      final user = authProvider.user;
+      
+      if (user == null) {
+        throw Exception('User not authenticated');
+      }
+
+      debugPrint('BarcodeScannerScreen: Creating purchase for item ${item.id}');
+      debugPrint('BarcodeScannerScreen: Item details - name: ${item.name}, price: ${item.price}, onHand: ${item.onHand}');
+      debugPrint('BarcodeScannerScreen: User email: ${user.email}');
+      debugPrint('BarcodeScannerScreen: Barcode: $barcode');
+      
+      final purchase = await _apiService.createPurchase(
+        userEmail: user.email,
+        itemId: item.id,
+        priceAsked: item.price,
+        pricePaid: item.price,
+        barcode: barcode,
+      );
+
+      debugPrint('BarcodeScannerScreen: Purchase created successfully: ${purchase.id}');
+
+      if (mounted) {
+        // Close the scanner first
+        if (Navigator.of(context).canPop()) {
+          Navigator.of(context).pop();
+        }
+        
+        // Use post-frame callback to ensure navigation happens after the scanner is disposed
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          // Show success message and navigate to purchases
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Enjoy your ${item.displayName}'),
+              backgroundColor: Colors.green,
+              duration: const Duration(seconds: 3),
+            ),
+          );
+          
+          // Navigate to purchases list
+          context.go('/tabs/purchases');
+        });
+      }
+    } catch (e) {
+      debugPrint('BarcodeScannerScreen: Error completing purchase: $e');
+      
+      if (mounted) {
+        String errorMessage = 'Purchase failed';
+        
+        // Handle specific error cases
+        if (e is DioException && e.response?.data != null) {
+          final responseData = e.response!.data;
+          if (responseData is Map<String, dynamic>) {
+            final message = responseData['message'] as String?;
+            if (message != null) {
+              if (message.contains('out of stock')) {
+                errorMessage = 'This item is out of stock and cannot be purchased';
+              } else {
+                errorMessage = message;
+              }
+            }
+          }
+        }
+        
+        // Close the scanner first
+        if (Navigator.of(context).canPop()) {
+          Navigator.of(context).pop();
+        }
+        
+        // Show error toast and stay on item page
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(errorMessage),
+            backgroundColor: Colors.red,
+            duration: const Duration(seconds: 5),
+            action: SnackBarAction(
+              label: 'Dismiss',
+              textColor: Colors.white,
+              onPressed: () {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              },
+            ),
+          ),
+        );
+      }
+    }
+  }
+
+  /// Navigate to new item detail page
+  Future<void> _navigateToNewItem(Item item) async {
+    if (mounted) {
+      // Close the scanner first
+      if (Navigator.of(context).canPop()) {
+        Navigator.of(context).pop();
+      }
+      
+      // Use post-frame callback to ensure navigation happens after the scanner is disposed
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        // Navigate to new item detail
+        context.go('/item/${item.id}');
+      });
+    }
+  }
+
+  /// Handle unknown barcode in purchase flow
+  Future<void> _handleUnknownBarcode(String barcode) async {
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+    final user = authProvider.user;
+    
+    if (user?.isAdmin == true) {
+      // Admin user - navigate to wine learning
+      debugPrint('BarcodeScannerScreen: Unknown barcode for admin, navigating to wine learning');
+      if (mounted) {
+        // Close the scanner first
+        if (Navigator.of(context).canPop()) {
+          Navigator.of(context).pop();
+        }
+        
+        // Use post-frame callback to ensure navigation happens after the scanner is disposed
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          context.go('/wine-learning?barcode=$barcode');
+        });
+      }
+    } else {
+      // Regular user - show message and close scanner
+      debugPrint('BarcodeScannerScreen: Unknown barcode for regular user');
+      if (mounted) {
+        // Close the scanner first
+        if (Navigator.of(context).canPop()) {
+          Navigator.of(context).pop();
+        }
+        
+        // Use post-frame callback to ensure UI updates happen after the scanner is disposed
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          // Show long-lasting error toast
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Barcode "$barcode" is not in our database'),
+              backgroundColor: Colors.orange,
+              duration: const Duration(seconds: 8), // Longer duration for error messages
+              action: SnackBarAction(
+                label: 'Dismiss',
+                textColor: Colors.white,
+                onPressed: () {
+                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                },
+              ),
+            ),
+          );
+        });
+      }
+    }
+  }
+
+  /// Legacy: Handle return result flow
+  Future<void> _handleReturnResultFlow(String barcode) async {
+    try {
+      final item = await _apiService.getItemByBarcode(barcode);
+      
+      if (mounted && Navigator.of(context).canPop()) {
+        Navigator.of(context).pop({
+          'barcode': barcode,
+          'item': item,
+        });
+      }
+    } catch (e) {
+      if (mounted && Navigator.of(context).canPop()) {
+        Navigator.of(context).pop({
+          'barcode': barcode,
+          'item': null,
+        });
+      }
+    }
+  }
+
+  /// Regular barcode scanning flow
+  Future<void> _handleRegularFlow(String barcode) async {
+    try {
+      final item = await _apiService.getItemByBarcode(barcode);
+      
+      if (mounted) {
+        context.go('/item/${item.id}');
+      }
+    } catch (e) {
+      if (mounted) {
+        _showItemNotFoundDialog(barcode);
       }
     }
   }

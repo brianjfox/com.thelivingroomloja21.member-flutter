@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import '../models/purchase.dart';
 import '../services/api_service.dart';
+import '../providers/auth_provider.dart';
 
 class PurchasesScreen extends StatefulWidget {
   const PurchasesScreen({super.key});
@@ -13,38 +15,160 @@ class PurchasesScreen extends StatefulWidget {
 
 class _PurchasesScreenState extends State<PurchasesScreen> {
   final ApiService _apiService = ApiService();
+  final ScrollController _scrollController = ScrollController();
   
   List<Purchase> _purchases = [];
   double _outstandingBalance = 0.0;
   bool _isLoading = true;
+  bool _isLoadingMore = false;
   bool _isError = false;
   String? _errorMessage;
   String _selectedFilter = 'all'; // all, settled, outstanding
   String _selectedSort = 'recent'; // recent, oldest, amount_high, amount_low
+  
+  // Pagination state
+  int _currentPage = 1;
+  bool _hasMoreData = true;
+  int _totalItems = 0;
 
   @override
   void initState() {
     super.initState();
-    _loadPurchasesData();
+    try {
+      _scrollController.addListener(_onScroll);
+      
+      // Start with loading state and check authentication after a delay
+      setState(() {
+        _isLoading = true;
+        _isError = false;
+      });
+      
+      // Delay the data loading to allow the app to fully initialize
+      Future.delayed(const Duration(milliseconds: 500), () {
+        if (mounted) {
+          _checkAuthAndLoadData();
+        }
+      });
+    } catch (e) {
+      debugPrint('PurchasesScreen: Error in initState: $e');
+      setState(() {
+        _isError = true;
+        _errorMessage = 'Failed to initialize: ${e.toString()}';
+        _isLoading = false;
+      });
+    }
+  }
+
+  void _checkAuthAndLoadData() {
+    try {
+      final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      if (authProvider.isAuthenticated) {
+        _loadPurchasesData();
+      } else {
+        debugPrint('PurchasesScreen: User not authenticated, showing login prompt');
+        setState(() {
+          _isLoading = false;
+          _isError = true;
+          _errorMessage = 'Please log in to view your purchases';
+        });
+      }
+    } catch (e) {
+      debugPrint('PurchasesScreen: Error checking auth: $e');
+      setState(() {
+        _isLoading = false;
+        _isError = true;
+        _errorMessage = 'Authentication error: ${e.toString()}';
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    try {
+      _scrollController.dispose();
+    } catch (e) {
+      debugPrint('PurchasesScreen: Error disposing scroll controller: $e');
+    }
+    super.dispose();
+  }
+
+  void _onScroll() {
+    if (_scrollController.position.pixels >= 
+        _scrollController.position.maxScrollExtent - 200) {
+      _loadMorePurchases();
+    }
+  }
+
+  String? _getStatusFilter() {
+    switch (_selectedFilter) {
+      case 'settled':
+        return 'settled';
+      case 'outstanding':
+        return 'unsettled';
+      default:
+        return null; // 'all' - no filter
+    }
   }
 
   Future<void> _loadPurchasesData() async {
+    debugPrint('PurchasesScreen: Starting to load purchases data');
+    
+    // Check authentication first
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+    if (!authProvider.isAuthenticated) {
+      debugPrint('PurchasesScreen: User not authenticated, skipping data load');
+      setState(() {
+        _isLoading = false;
+        _isError = true;
+        _errorMessage = 'User not authenticated';
+      });
+      return;
+    }
+    
     setState(() {
       _isLoading = true;
       _isError = false;
+      _currentPage = 1;
+      _hasMoreData = true;
     });
 
     try {
-      final results = await Future.wait([
-        _apiService.getUserPurchases(),
-        _apiService.getUserBalance(),
-      ]);
+      debugPrint('PurchasesScreen: Calling API with status filter: ${_getStatusFilter()}');
+      
+      // Try to load purchases first
+      final purchasesData = await _apiService.getUserPurchasesPaginated(
+        page: 1, 
+        limit: 20,
+        status: _getStatusFilter(),
+      );
+      
+      debugPrint('PurchasesScreen: Purchases API call completed');
+      
+      // Try to load balance separately
+      double balance = 0.0;
+      try {
+        balance = await _apiService.getUserBalance();
+        debugPrint('PurchasesScreen: Balance API call completed: $balance');
+      } catch (balanceError) {
+        debugPrint('PurchasesScreen: Balance API call failed: $balanceError');
+        // Continue without balance
+      }
+
+      debugPrint('PurchasesScreen: All API calls completed successfully');
+      final pagination = purchasesData['pagination'] as Map<String, dynamic>;
+
+      debugPrint('PurchasesScreen: Purchases data: ${purchasesData['purchases']?.length ?? 0} items');
+      debugPrint('PurchasesScreen: Pagination: $pagination');
 
       setState(() {
-        _purchases = results[0] as List<Purchase>;
-        _outstandingBalance = results[1] as double;
+        _purchases = purchasesData['purchases'] as List<Purchase>;
+        _outstandingBalance = balance;
         _isLoading = false;
+        _currentPage = 1;
+        _hasMoreData = pagination['hasNext'] as bool;
+        _totalItems = pagination['total'] as int;
       });
+      debugPrint('PurchasesScreen: State updated successfully');
     } catch (e) {
       debugPrint('PurchasesScreen: Error loading purchases data: $e');
       setState(() {
@@ -55,38 +179,60 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
     }
   }
 
-  List<Purchase> get _filteredAndSortedPurchases {
-    List<Purchase> filtered = _purchases;
-    
-    // Apply filter
-    switch (_selectedFilter) {
-      case 'settled':
-        filtered = _purchases.where((p) => p.settled).toList();
-        break;
-      case 'outstanding':
-        filtered = _purchases.where((p) => !p.settled).toList();
-        break;
-      default:
-        filtered = _purchases;
+  Future<void> _loadMorePurchases() async {
+    if (_isLoadingMore || !_hasMoreData) return;
+
+    setState(() {
+      _isLoadingMore = true;
+    });
+
+    try {
+      final nextPage = _currentPage + 1;
+      final result = await _apiService.getUserPurchasesPaginated(
+        page: nextPage,
+        limit: 20,
+        status: _getStatusFilter(),
+      );
+
+      final purchasesData = result as Map<String, dynamic>;
+      final pagination = purchasesData['pagination'] as Map<String, dynamic>;
+      final newPurchases = purchasesData['purchases'] as List<Purchase>;
+
+      setState(() {
+        _purchases.addAll(newPurchases);
+        _currentPage = nextPage;
+        _hasMoreData = pagination['hasNext'] as bool;
+        _isLoadingMore = false;
+      });
+    } catch (e) {
+      debugPrint('PurchasesScreen: Error loading more purchases: $e');
+      setState(() {
+        _isLoadingMore = false;
+      });
     }
+  }
+
+  List<Purchase> get _filteredAndSortedPurchases {
+    // Since filtering is now done server-side, we only need to apply client-side sorting
+    List<Purchase> sorted = List<Purchase>.from(_purchases ?? []);
     
     // Apply sorting
     switch (_selectedSort) {
       case 'recent':
-        filtered.sort((a, b) => b.purchasedOn.compareTo(a.purchasedOn));
+        sorted.sort((a, b) => b.purchasedOn.compareTo(a.purchasedOn));
         break;
       case 'oldest':
-        filtered.sort((a, b) => a.purchasedOn.compareTo(b.purchasedOn));
+        sorted.sort((a, b) => a.purchasedOn.compareTo(b.purchasedOn));
         break;
       case 'amount_high':
-        filtered.sort((a, b) => b.pricePaid.compareTo(a.pricePaid));
+        sorted.sort((a, b) => b.pricePaid.compareTo(a.pricePaid));
         break;
       case 'amount_low':
-        filtered.sort((a, b) => a.pricePaid.compareTo(b.pricePaid));
+        sorted.sort((a, b) => a.pricePaid.compareTo(b.pricePaid));
         break;
     }
     
-    return filtered;
+    return sorted;
   }
 
   String _formatCurrency(double amount) {
@@ -113,22 +259,70 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          // Balance card
-          if (!_isLoading && !_isError) _buildBalanceCard(),
-          
-          // Filter and sort controls
-          if (!_isLoading && !_isError) _buildFilterControls(),
-          
-          // Purchases list
-          Expanded(
-            child: _buildPurchasesList(),
+    try {
+      return Scaffold(
+        body: Column(
+          children: [
+            // Balance card
+            if (!_isLoading && !_isError) _buildBalanceCard(),
+            
+            // Filter and sort controls
+            if (!_isLoading && !_isError) _buildFilterControls(),
+            
+            // Purchases list
+            Expanded(
+              child: _buildPurchasesList(),
+            ),
+          ],
+        ),
+      );
+    } catch (e) {
+      debugPrint('PurchasesScreen: Error in build method: $e');
+      return Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.error_outline,
+                size: 64,
+                color: Colors.red,
+              ),
+              const SizedBox(height: 16),
+              Text(
+                'Error Loading Screen',
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                e.toString(),
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Colors.grey[600],
+                ),
+              ),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    _isLoading = true;
+                    _isError = false;
+                  });
+                  _checkAuthAndLoadData();
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF388E3C),
+                  foregroundColor: Colors.white,
+                ),
+                child: const Text('Retry'),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
+        ),
+      );
+    }
   }
 
   Widget _buildBalanceCard() {
@@ -292,6 +486,8 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
                   setState(() {
                     _selectedSort = value!;
                   });
+                  // Reset pagination when sort changes
+                  _loadPurchasesData();
                 },
               ),
             ],
@@ -307,9 +503,13 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
       label: Text(label),
       selected: isSelected,
       onSelected: (selected) {
-        setState(() {
-          _selectedFilter = value;
-        });
+        if (selected) {
+          setState(() {
+            _selectedFilter = value;
+          });
+          // Reset pagination when filter changes
+          _loadPurchasesData();
+        }
       },
       selectedColor: const Color(0xFF388E3C).withOpacity(0.2),
       checkmarkColor: const Color(0xFF388E3C),
@@ -352,7 +552,13 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: _loadPurchasesData,
+              onPressed: () {
+                setState(() {
+                  _isLoading = true;
+                  _isError = false;
+                });
+                _checkAuthAndLoadData();
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF388E3C),
                 foregroundColor: Colors.white,
@@ -403,12 +609,28 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
     return RefreshIndicator(
       onRefresh: _loadPurchasesData,
       child: ListView.builder(
+        controller: _scrollController,
         padding: const EdgeInsets.all(16),
-        itemCount: filteredPurchases.length,
+        itemCount: filteredPurchases.length + (_isLoadingMore ? 1 : 0),
         itemBuilder: (context, index) {
+          if (index == filteredPurchases.length) {
+            // Loading indicator at the bottom
+            return _buildLoadingIndicator();
+          }
+          
           final purchase = filteredPurchases[index];
           return _buildPurchaseCard(purchase);
         },
+      ),
+    );
+  }
+
+  Widget _buildLoadingIndicator() {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      alignment: Alignment.center,
+      child: const CircularProgressIndicator(
+        valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF388E3C)),
       ),
     );
   }

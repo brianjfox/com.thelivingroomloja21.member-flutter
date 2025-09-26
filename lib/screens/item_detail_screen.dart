@@ -174,6 +174,16 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     }
   }
 
+  String _formatPropertyName(String propertyName) {
+    // Convert snake_case to Title Case
+    return propertyName
+        .split('_')
+        .map((word) => word.isNotEmpty 
+            ? word[0].toUpperCase() + word.substring(1).toLowerCase()
+            : word)
+        .join(' ');
+  }
+
   // Tasting notes methods
   Future<void> _fetchUserForTastingNote(String userEmail) async {
     if (_tastingNoteUsers.containsKey(userEmail)) return; // Already have this user
@@ -782,6 +792,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
 
   Widget _buildProperties() {
     final properties = _itemProperties?[_item?.id];
+    
     if (properties == null || properties.isEmpty) {
       return const SizedBox.shrink();
     }
@@ -825,24 +836,39 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
               child: Column(
                 children: properties.map((property) {
                   return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    padding: const EdgeInsets.symmetric(vertical: 8),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          width: 120,
-                          child: Text(
-                            property['property_name'] ?? 'Unknown',
-                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              fontWeight: FontWeight.w500,
-                              color: Colors.grey[600],
-                            ),
+                        // Information icon
+                        Padding(
+                          padding: const EdgeInsets.only(top: 2, right: 12),
+                          child: Icon(
+                            Icons.info_outline,
+                            size: 16,
+                            color: Colors.grey[600],
                           ),
                         ),
+                        // Property name and value
                         Expanded(
-                          child: Text(
-                            property['property_value'] ?? 'N/A',
-                            style: Theme.of(context).textTheme.bodyMedium,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                _formatPropertyName(property['name'] ?? 'Unknown'),
+                                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.grey[800],
+                                ),
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                property['value'] ?? 'N/A',
+                                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                  color: Colors.grey[600],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -1303,121 +1329,14 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     debugPrint('ItemDetailScreen: Starting barcode scan for purchase');
     Navigator.of(context).pop(); // Close the dialog first
     
-    final result = await context.push('/scan?return=true');
-    debugPrint('ItemDetailScreen: Barcode scan result: $result');
+    // Navigate to scanner with current item context - let scanner handle everything
+    final currentItemId = _item!.id;
+    final currentItemName = _item!.name;
     
-    if (result != null && result is Map<String, dynamic>) {
-      final scannedBarcode = result['barcode'] as String;
-      final scannedItem = result['item'] as Item?;
-      
-      debugPrint('ItemDetailScreen: Scanned barcode for purchase: $scannedBarcode');
-      debugPrint('ItemDetailScreen: Current item ID: ${_item?.id}');
-      debugPrint('ItemDetailScreen: Widget mounted: $mounted');
-      
-      if (scannedItem == null) {
-        // Item not found - handle unknown barcode
-        debugPrint('ItemDetailScreen: Item not found for barcode: $scannedBarcode');
-        
-        // Check if user is admin for wine learning
-        final authProvider = Provider.of<AuthProvider>(context, listen: false);
-        final user = authProvider.user;
-        
-        if (user?.isAdmin == true) {
-          // Admin user - navigate to wine learning
-          debugPrint('ItemDetailScreen: Unknown barcode for admin user, navigating to wine learning');
-          context.go('/wine-learning?barcode=$scannedBarcode');
-        } else {
-          // Regular user - show message
-          debugPrint('ItemDetailScreen: Unknown barcode for regular user, showing message');
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Barcode "$scannedBarcode" is not in our database'),
-              backgroundColor: Colors.orange,
-              duration: const Duration(seconds: 4),
-              action: SnackBarAction(
-                label: 'OK',
-                textColor: Colors.white,
-                onPressed: () {
-                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                },
-              ),
-            ),
-          );
-        }
-        return;
-      }
-      
-      debugPrint('ItemDetailScreen: Successfully got item: ${scannedItem.id} - ${scannedItem.name}');
-      
-      if (scannedItem.id != _item!.id) {
-        // Different item was scanned - navigate to the new item
-        debugPrint('ItemDetailScreen: Scanned barcode belongs to different item (${scannedItem.id} vs ${_item!.id})');
-        
-        if (mounted) {
-          context.go('/item/${scannedItem.id}');
-          
-          // Show message about item change
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('You\'ve changed the item to ${scannedItem.name}'),
-              backgroundColor: Colors.blue,
-              duration: const Duration(seconds: 3),
-            ),
-          );
-        }
-      } else {
-        // Same item was scanned - proceed with purchase
-        debugPrint('ItemDetailScreen: Scanned barcode matches current item, proceeding with purchase');
-        
-        setState(() {
-          _isPurchasing = true;
-        });
-
-        try {
-          final authProvider = Provider.of<AuthProvider>(context, listen: false);
-          final user = authProvider.user;
-          
-          if (user == null) {
-            throw Exception('User not authenticated');
-          }
-
-          debugPrint('ItemDetailScreen: Creating purchase for item ${_item!.id} with barcode $scannedBarcode');
-
-          final purchase = await _apiService.createPurchase(
-            userEmail: user.email,
-            itemId: _item!.id,
-            priceAsked: _item!.price,
-            pricePaid: _item!.price, // For now, assume full price is paid
-            barcode: scannedBarcode,
-          );
-
-          debugPrint('ItemDetailScreen: Purchase created successfully: ${purchase.id}');
-
-          if (mounted) {
-            // Navigate to purchases list
-            context.go('/tabs/purchases');
-          }
-        } catch (e) {
-          debugPrint('ItemDetailScreen: Error creating purchase: $e');
-          
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text('Failed to complete purchase: ${e.toString()}'),
-                backgroundColor: Colors.red,
-                duration: const Duration(seconds: 3),
-              ),
-            );
-          }
-        } finally {
-          if (mounted) {
-            setState(() {
-              _isPurchasing = false;
-            });
-          }
-        }
-      }
-    }
+    debugPrint('ItemDetailScreen: Navigating to scanner for item $currentItemId ($currentItemName)');
+    
+    // Use simple navigation - scanner will handle all logic internally
+    context.push('/scan?purchase=true&itemId=$currentItemId');
   }
 
   Future<void> _loadNewItem(int newItemId) async {

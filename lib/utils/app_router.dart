@@ -104,7 +104,13 @@ class AppRouter {
         path: '/scan',
         builder: (context, state) {
           final returnResult = state.uri.queryParameters['return'] == 'true';
-          return BarcodeScannerScreen(returnResult: returnResult);
+          final isPurchase = state.uri.queryParameters['purchase'] == 'true';
+          final itemId = state.uri.queryParameters['itemId'];
+          return BarcodeScannerScreen(
+            returnResult: returnResult,
+            isPurchase: isPurchase,
+            purchaseItemId: itemId != null ? int.tryParse(itemId) : null,
+          );
         },
       ),
       GoRoute(

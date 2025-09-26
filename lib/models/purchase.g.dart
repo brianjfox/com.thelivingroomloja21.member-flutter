@@ -7,11 +7,11 @@ part of 'purchase.dart';
 // **************************************************************************
 
 Purchase _$PurchaseFromJson(Map<String, dynamic> json) => Purchase(
-  id: (json['id'] as num).toInt(),
+  id: Purchase._intFromJson(json['id']),
   userEmail: json['user_email'] as String,
-  itemId: (json['item_id'] as num).toInt(),
-  priceAsked: (json['price_asked'] as num).toDouble(),
-  pricePaid: (json['price_paid'] as num).toDouble(),
+  itemId: Purchase._intFromJson(json['item_id']),
+  priceAsked: Purchase._doubleFromJson(json['price_asked']),
+  pricePaid: Purchase._doubleFromJson(json['price_paid']),
   purchasedOn: json['purchased_on'] as String,
   settled: Purchase._boolFromJson(json['settled']),
   settledOn: json['settled_on'] as String?,

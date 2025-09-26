@@ -253,8 +253,9 @@ class ApiService {
 
   Future<Item> getItemByBarcode(String barcode) async {
     try {
-      debugPrint('ApiService: Getting item by barcode: $barcode');
-      final response = await _dio.get('/items/barcode/${Uri.encodeComponent(barcode)}');
+      debugPrint('ApiService: Getting item by barcode for mobile: $barcode');
+      // Use the mobile-specific endpoint that updates inventory if needed
+      final response = await _dio.get('/items/barcode/${Uri.encodeComponent(barcode)}/mobile');
       debugPrint('ApiService: Barcode response: ${response.data}');
       
       Item item;
@@ -262,10 +263,17 @@ class ApiService {
       if (response.data is Map<String, dynamic>) {
         final data = response.data as Map<String, dynamic>;
         if (data.containsKey('data')) {
-          item = Item.fromJson(data['data']);
+          final itemData = data['data'] as Map<String, dynamic>;
+          debugPrint('ApiService: Item data from API: $itemData');
+          debugPrint('ApiService: on_hand value from API: ${itemData['on_hand']}');
+          item = Item.fromJson(itemData);
+          debugPrint('ApiService: Item.onHand after parsing: ${item.onHand}');
         } else {
           // Direct item response
+          debugPrint('ApiService: Direct item response: $data');
+          debugPrint('ApiService: on_hand value from API: ${data['on_hand']}');
           item = Item.fromJson(data);
+          debugPrint('ApiService: Item.onHand after parsing: ${item.onHand}');
         }
       } else {
         throw Exception('Unexpected response format: ${response.data.runtimeType}');
@@ -364,6 +372,57 @@ class ApiService {
     return purchasesJson.map((json) => Purchase.fromJson(json)).toList();
   }
 
+  Future<Map<String, dynamic>> getUserPurchasesPaginated({
+    int page = 1,
+    int limit = 20,
+    String? status, // 'settled' or 'unsettled'
+  }) async {
+    try {
+      debugPrint('ApiService: Getting paginated purchases - page: $page, limit: $limit, status: $status');
+      
+      final queryParams = <String, dynamic>{
+        'page': page,
+        'limit': limit,
+      };
+      
+      if (status != null) {
+        queryParams['status'] = status;
+      }
+      
+      final response = await _dio.get('/purchases', queryParameters: queryParams);
+      debugPrint('ApiService: Purchases response status: ${response.statusCode}');
+      debugPrint('ApiService: Purchases response data: ${response.data}');
+      
+      final data = response.data;
+      
+      if (data == null) {
+        throw Exception('Response data is null');
+      }
+      
+      if (data['data'] == null) {
+        throw Exception('Response data.data is null');
+      }
+      
+      if (data['pagination'] == null) {
+        throw Exception('Response data.pagination is null');
+      }
+      
+      final List<dynamic> purchasesJson = data['data'];
+      final pagination = data['pagination'];
+      
+      debugPrint('ApiService: Found ${purchasesJson.length} purchases');
+      debugPrint('ApiService: Pagination info: $pagination');
+      
+      return {
+        'purchases': purchasesJson.map((json) => Purchase.fromJson(json)).toList(),
+        'pagination': pagination,
+      };
+    } catch (e) {
+      debugPrint('ApiService: Error getting paginated purchases: $e');
+      rethrow;
+    }
+  }
+
   Future<Purchase> createPurchase({
     required String userEmail,
     required int itemId,
@@ -381,8 +440,45 @@ class ApiService {
       if (barcode != null) 'barcode': barcode,
     };
     
-    final response = await _dio.post('/purchases', data: data);
-    return Purchase.fromJson(response.data['data']);
+    debugPrint('🌐 ApiService: Creating purchase with data: $data');
+    
+    try {
+      final response = await _dio.post('/purchases', data: data);
+      debugPrint('🌐 ApiService: Purchase created successfully: ${response.data}');
+      
+      // Handle the API response format - it may not have all the fields the Purchase model expects
+      final responseData = response.data['data'] as Map<String, dynamic>;
+      
+      // Create a complete purchase object with default values for missing fields
+      final completePurchaseData = {
+        'id': responseData['id'] ?? 0,
+        'user_email': responseData['user_email'] ?? userEmail,
+        'item_id': responseData['item_id'] ?? itemId,
+        'price_asked': responseData['price_asked'] ?? priceAsked,
+        'price_paid': responseData['price_paid'] ?? pricePaid,
+        'purchased_on': responseData['purchased_on'] ?? (purchasedOn ?? DateTime.now().toIso8601String()),
+        'settled': responseData['settled'] ?? false,
+        'settled_on': responseData['settled_on'],
+        'created_at': responseData['created_at'] ?? DateTime.now().toIso8601String(),
+        'updated_at': responseData['updated_at'] ?? DateTime.now().toIso8601String(),
+        'code': responseData['code'],
+        'name': responseData['name'],
+        'description': responseData['description'],
+        'fname': responseData['fname'],
+        'lname': responseData['lname'],
+        'phone': responseData['phone'],
+        'item': responseData['item'],
+        'user': responseData['user'],
+      };
+      
+      return Purchase.fromJson(completePurchaseData);
+    } catch (e) {
+      debugPrint('🌐 ApiService: Purchase creation failed: $e');
+      if (e is DioException) {
+        debugPrint('🌐 ApiService: DioException details - status: ${e.response?.statusCode}, data: ${e.response?.data}');
+      }
+      rethrow;
+    }
   }
 
   Future<double> getOutstandingBalance() async {
