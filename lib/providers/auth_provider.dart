@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 import '../models/user.dart';
 import '../services/auth_service.dart';
+import '../services/username_service.dart';
 import '../services/api_service.dart';
 import '../utils/app_router.dart';
 
@@ -120,6 +121,15 @@ class AuthProvider with ChangeNotifier {
       _user = null;
       _isAuthenticated = false;
       _biometricEnabled = false;
+      
+      // Clear saved username
+      try {
+        final usernameService = await UsernameService.getInstance();
+        await usernameService.clearUsername();
+        debugPrint('AuthProvider: Cleared saved username on logout');
+      } catch (e) {
+        debugPrint('AuthProvider: Error clearing saved username: $e');
+      }
       
       // Recheck biometric availability after logout
       _biometricAvailable = await _authService.isBiometricAvailable();

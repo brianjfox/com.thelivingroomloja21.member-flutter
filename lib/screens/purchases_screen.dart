@@ -30,6 +30,9 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
   int _currentPage = 1;
   bool _hasMoreData = true;
   int _totalItems = 0;
+  
+  // Collapsible balance card state
+  bool _isBalanceCardCollapsed = false;
 
   @override
   void initState() {
@@ -93,9 +96,18 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
   }
 
   void _onScroll() {
+    // Check for pagination
     if (_scrollController.position.pixels >= 
         _scrollController.position.maxScrollExtent - 200) {
       _loadMorePurchases();
+    }
+    
+    // Check for balance card collapse (collapse after scrolling 80 pixels)
+    final shouldCollapse = _scrollController.position.pixels > 80;
+    if (shouldCollapse != _isBalanceCardCollapsed) {
+      setState(() {
+        _isBalanceCardCollapsed = shouldCollapse;
+      });
     }
   }
 
@@ -266,8 +278,13 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
             // Balance card
             if (!_isLoading && !_isError) _buildBalanceCard(),
             
-            // Filter and sort controls
-            if (!_isLoading && !_isError) _buildFilterControls(),
+            // Filter and sort controls - hide when collapsed
+            if (!_isLoading && !_isError && !_isBalanceCardCollapsed) 
+              AnimatedOpacity(
+                opacity: _isBalanceCardCollapsed ? 0.0 : 1.0,
+                duration: const Duration(milliseconds: 300),
+                child: _buildFilterControls(),
+              ),
             
             // Purchases list
             Expanded(
@@ -326,80 +343,143 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
   }
 
   Widget _buildBalanceCard() {
-    return Card(
-      margin: const EdgeInsets.all(16),
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return AnimatedSize(
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+      child: Card(
+        margin: const EdgeInsets.all(16),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: _isBalanceCardCollapsed 
+              ? _buildCollapsedBalanceCard()
+              : _buildExpandedBalanceCard(),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildExpandedBalanceCard() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
           children: [
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: _outstandingBalance > 0 
-                        ? Colors.red.withOpacity(0.1)
-                        : const Color(0xFF388E3C).withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Icon(
-                    Icons.account_balance_wallet,
-                    color: _outstandingBalance > 0 ? Colors.red : const Color(0xFF388E3C),
-                    size: 24,
-                  ),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Outstanding Balance',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        _formatCurrency(_outstandingBalance),
-                        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: _outstandingBalance > 0 ? Colors.red : const Color(0xFF388E3C),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: _outstandingBalance > 0 
+                    ? Colors.red.withOpacity(0.1)
+                    : const Color(0xFF388E3C).withOpacity(0.1),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Icon(
+                Icons.account_balance_wallet,
+                color: _outstandingBalance > 0 ? Colors.red : const Color(0xFF388E3C),
+                size: 24,
+              ),
             ),
-            const SizedBox(height: 16),
-            Row(
-              children: [
-                Expanded(
-                  child: _buildBalanceStat(
-                    'Total Purchases',
-                    _purchases.length.toString(),
-                    Icons.shopping_bag,
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Outstanding Balance',
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: _buildBalanceStat(
-                    'Outstanding',
-                    _purchases.where((p) => !p.settled).length.toString(),
-                    Icons.pending,
+                  const SizedBox(height: 4),
+                  Text(
+                    _formatCurrency(_outstandingBalance),
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: _outstandingBalance > 0 ? Colors.red : const Color(0xFF388E3C),
+                    ),
                   ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 16),
+        Row(
+          children: [
+            Expanded(
+              child: _buildBalanceStat(
+                'Total Purchases',
+                _purchases.length.toString(),
+                Icons.shopping_bag,
+              ),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: _buildBalanceStat(
+                'Outstanding',
+                _purchases.where((p) => !p.settled).length.toString(),
+                Icons.pending,
+              ),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: _buildBalanceStat(
+                'Settled',
+                _purchases.where((p) => p.settled).length.toString(),
+                Icons.check_circle,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildCollapsedBalanceCard() {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _isBalanceCardCollapsed = false;
+        });
+        // Scroll to top to show the expanded card
+        _scrollController.animateTo(
+          0,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeInOut,
+        );
+      },
+      child: Container(
+        height: 40,
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                color: _outstandingBalance > 0 
+                    ? Colors.red.withOpacity(0.1)
+                    : const Color(0xFF388E3C).withOpacity(0.1),
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Icon(
+                Icons.account_balance_wallet,
+                color: _outstandingBalance > 0 ? Colors.red : const Color(0xFF388E3C),
+                size: 18,
+              ),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                'Balance: ${_formatCurrency(_outstandingBalance)}',
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: _outstandingBalance > 0 ? Colors.red : const Color(0xFF388E3C),
                 ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: _buildBalanceStat(
-                    'Settled',
-                    _purchases.where((p) => p.settled).length.toString(),
-                    Icons.check_circle,
-                  ),
-                ),
-              ],
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            Icon(
+              Icons.keyboard_arrow_up,
+              color: Colors.grey[600],
+              size: 18,
             ),
           ],
         ),
@@ -752,28 +832,6 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Colors.grey[600],
                         ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-              
-              // Item code (if available)
-              if (purchase.code != null && purchase.code!.isNotEmpty) ...[
-                const SizedBox(height: 8),
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.qr_code,
-                      size: 16,
-                      color: Colors.grey,
-                    ),
-                    const SizedBox(width: 8),
-                    Text(
-                      'Code: ${purchase.code}',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.grey[600],
-                        fontFamily: 'monospace',
                       ),
                     ),
                   ],

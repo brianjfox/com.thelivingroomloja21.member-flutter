@@ -20,6 +20,11 @@ class AppRouter {
     initialLocation: '/login',
     redirect: (context, state) {
       try {
+        // Check if AuthProvider is available
+        if (!context.mounted) {
+          return null;
+        }
+        
         final authProvider = Provider.of<AuthProvider>(context, listen: false);
         
         // If still loading, don't redirect

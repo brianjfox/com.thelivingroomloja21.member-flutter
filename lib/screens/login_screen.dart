@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../providers/auth_provider.dart';
+import '../services/username_service.dart';
 
 class LoginScreen extends StatefulWidget {
   final String? unauthorizedMessage;
@@ -19,12 +20,44 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
   bool _obscurePassword = true;
   bool _showBiometricAlert = false;
+  UsernameService? _usernameService;
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeUsernameService();
+  }
 
   @override
   void dispose() {
     _usernameController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  Future<void> _initializeUsernameService() async {
+    try {
+      _usernameService = await UsernameService.getInstance();
+      await _loadSavedUsername();
+    } catch (e) {
+      debugPrint('LoginScreen: Error initializing username service: $e');
+    }
+  }
+
+  Future<void> _loadSavedUsername() async {
+    try {
+      if (_usernameService != null) {
+        final savedUsername = await _usernameService!.getSavedUsername();
+        if (savedUsername != null && savedUsername.isNotEmpty) {
+          debugPrint('LoginScreen: Loading saved username: $savedUsername');
+          if (mounted) {
+            _usernameController.text = savedUsername;
+          }
+        }
+      }
+    } catch (e) {
+      debugPrint('LoginScreen: Error loading saved username: $e');
+    }
   }
 
   String _getBiometricLabel() {
@@ -41,8 +74,9 @@ class _LoginScreenState extends State<LoginScreen> {
     if (!_formKey.currentState!.validate()) return;
 
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
+    final username = _usernameController.text.trim();
     final success = await authProvider.login(
-      _usernameController.text.trim(),
+      username,
       _passwordController.text,
     );
 
@@ -51,6 +85,16 @@ class _LoginScreenState extends State<LoginScreen> {
         debugPrint('🔐 LoginScreen: Login successful');
         debugPrint('🔐 LoginScreen: biometricAvailable: ${authProvider.biometricAvailable}');
         debugPrint('🔐 LoginScreen: biometricEnabled: ${authProvider.biometricEnabled}');
+        
+        // Save username for future logins
+        try {
+          if (_usernameService != null) {
+            await _usernameService!.saveUsername(username);
+            debugPrint('🔐 LoginScreen: Username saved for future logins');
+          }
+        } catch (e) {
+          debugPrint('🔐 LoginScreen: Error saving username: $e');
+        }
         
         // Check if biometric is available and not enabled
         if (authProvider.biometricAvailable && !authProvider.biometricEnabled) {
@@ -95,13 +139,24 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> _setupBiometric() async {
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
+    final username = _usernameController.text.trim();
     final result = await authProvider.setupBiometric(
-      _usernameController.text.trim(),
+      username,
       _passwordController.text,
     );
 
     if (mounted) {
       if (result['success']) {
+        // Save username for future logins
+        try {
+          if (_usernameService != null) {
+            await _usernameService!.saveUsername(username);
+            debugPrint('🔐 LoginScreen: Username saved after biometric setup');
+          }
+        } catch (e) {
+          debugPrint('🔐 LoginScreen: Error saving username after biometric setup: $e');
+        }
+        
         _showSuccessSnackBar('Biometric authentication enabled! You can use ${Platform.isIOS ? 'Face ID' : Platform.isAndroid ? 'Touch ID' : 'biometric authentication'} next time.');
         context.go('/tabs/dashboard');
       } else {

@@ -18,7 +18,7 @@ class Purchase {
   final double pricePaid;
   @JsonKey(name: 'purchased_on')
   final String purchasedOn;
-  @JsonKey(fromJson: _boolFromJson)
+  @JsonKey(fromJson: _boolFromJson, includeToJson: false)
   final bool settled;
   @JsonKey(name: 'settled_on')
   final String? settledOn;
@@ -62,7 +62,18 @@ class Purchase {
     this.user,
   });
 
-  factory Purchase.fromJson(Map<String, dynamic> json) => _$PurchaseFromJson(json);
+  factory Purchase.fromJson(Map<String, dynamic> json) {
+    // Compute settled status from settled_on field
+    final settledOn = json['settled_on'] as String?;
+    final settled = settledOn != null && settledOn.isNotEmpty;
+    
+    // Create a modified json with the computed settled field
+    final modifiedJson = Map<String, dynamic>.from(json);
+    modifiedJson['settled'] = settled;
+    
+    return _$PurchaseFromJson(modifiedJson);
+  }
+  
   Map<String, dynamic> toJson() => _$PurchaseToJson(this);
 
   String get itemName => name ?? item?.name ?? 'Unknown Item';

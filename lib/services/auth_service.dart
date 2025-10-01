@@ -60,44 +60,77 @@ class AuthService {
     }
   }
 
+  /// Validates token with backend in background without blocking UI
+  void _validateTokenInBackground(String token) {
+    Future.delayed(Duration.zero, () async {
+      try {
+        debugPrint('🔐 AuthService: Validating token in background...');
+        final user = await _apiService.getCurrentUser().timeout(
+          const Duration(seconds: 15),
+          onTimeout: () {
+            throw Exception('Token validation timeout');
+          },
+        );
+        
+        // Update user data if validation successful
+        _currentUser = user;
+        _isAuthenticated = true;
+        
+        // Cache updated user data
+        await _secureStorage.write(
+          key: _userKey,
+          value: jsonEncode(user.toJson()),
+        );
+        
+        debugPrint('🔐 AuthService: Token validation successful in background');
+      } catch (e) {
+        debugPrint('🔐 AuthService: Token validation failed in background: $e');
+        // Token is invalid, clear it
+        await _secureStorage.delete(key: _tokenKey);
+        await _secureStorage.delete(key: _userKey);
+        _currentUser = null;
+        _isAuthenticated = false;
+      }
+    });
+  }
+
   Future<void> _loadStoredAuth() async {
     try {
       final token = await _secureStorage.read(key: _tokenKey);
       if (token != null) {
         _apiService.setAuthToken(token);
         
-        // Try to validate token with backend (with timeout)
-        try {
-          final user = await _apiService.getCurrentUser().timeout(
-            const Duration(seconds: 10),
-            onTimeout: () {
-              throw Exception('Token validation timeout');
-            },
-          );
-          _currentUser = user;
-          _isAuthenticated = true;
-          
-          // Cache user data
-          await _secureStorage.write(
-            key: _userKey,
-            value: jsonEncode(user.toJson()),
-          );
-        } catch (e) {
-          // Token is invalid, try to load cached user data as fallback
-          final cachedUserData = await _secureStorage.read(key: _userKey);
-          if (cachedUserData != null) {
-            try {
-              final userJson = jsonDecode(cachedUserData);
-              _currentUser = User.fromJson(userJson);
-              _isAuthenticated = true;
-            } catch (parseError) {
-              // Clear invalid data
-              await _secureStorage.delete(key: _tokenKey);
-              await _secureStorage.delete(key: _userKey);
-            }
-          } else {
-            // Clear invalid token
+        // First, try to load cached user data to avoid blocking UI
+        final cachedUserData = await _secureStorage.read(key: _userKey);
+        if (cachedUserData != null) {
+          try {
+            final userJson = jsonDecode(cachedUserData);
+            _currentUser = User.fromJson(userJson);
+            _isAuthenticated = true;
+            debugPrint('🔐 AuthService: Loaded cached user data');
+          } catch (parseError) {
+            debugPrint('🔐 AuthService: Error parsing cached user data: $parseError');
+            // Clear invalid data
             await _secureStorage.delete(key: _tokenKey);
+            await _secureStorage.delete(key: _userKey);
+          }
+        }
+        
+        // Then validate token with backend in background (non-blocking)
+        _validateTokenInBackground(token);
+      } else {
+        // No token, try to load cached user data as fallback
+        final cachedUserData = await _secureStorage.read(key: _userKey);
+        if (cachedUserData != null) {
+          try {
+            final userJson = jsonDecode(cachedUserData);
+            _currentUser = User.fromJson(userJson);
+            _isAuthenticated = true;
+            debugPrint('🔐 AuthService: Loaded cached user data without token');
+          } catch (parseError) {
+            debugPrint('🔐 AuthService: Error parsing cached user data: $parseError');
+            // Clear invalid data
+            await _secureStorage.delete(key: _userKey);
           }
         }
       }

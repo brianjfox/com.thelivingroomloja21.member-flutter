@@ -768,6 +768,26 @@ class ApiService {
     }
   }
 
+  // Learn wine from barcode only using GPT-4o
+  Future<Map<String, dynamic>> learnWineFromBarcode({
+    required String barcode,
+  }) async {
+    try {
+      debugPrint('ApiService: Learning wine from barcode: $barcode');
+      
+      final requestData = <String, dynamic>{
+        'barcode': barcode,
+      };
+      
+      final response = await _dio.post('/wine-learning/learn-wine-from-barcode', data: requestData);
+      debugPrint('ApiService: Wine learning from barcode response: ${response.data}');
+      return response.data;
+    } catch (e) {
+      debugPrint('ApiService: Error learning wine from barcode: $e');
+      rethrow;
+    }
+  }
+
   // Prefetch API
   Future<Map<String, dynamic>> getPrefetchData({Map<String, String>? headers}) async {
     try {

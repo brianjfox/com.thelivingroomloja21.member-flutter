@@ -38,7 +38,6 @@ Map<String, dynamic> _$PurchaseToJson(Purchase instance) => <String, dynamic>{
   'price_asked': instance.priceAsked,
   'price_paid': instance.pricePaid,
   'purchased_on': instance.purchasedOn,
-  'settled': instance.settled,
   'settled_on': instance.settledOn,
   'created_at': instance.createdAt,
   'updated_at': instance.updatedAt,

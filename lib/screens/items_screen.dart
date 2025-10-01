@@ -690,12 +690,19 @@ class _ItemsScreenState extends State<ItemsScreen> {
                           controller: _scrollController,
                           padding: const EdgeInsets.all(16),
                           itemCount: _filteredItems.length,
+                          // Performance optimizations for smooth scrolling
+                          physics: const BouncingScrollPhysics(),
+                          cacheExtent: 1000, // Cache more items for smoother scrolling
+                          addAutomaticKeepAlives: false, // Don't keep items alive to save memory
+                          addRepaintBoundaries: true, // Reduce repaints
+                          addSemanticIndexes: false, // Disable semantic indexing for better performance
                           itemBuilder: (context, index) {
                             final item = _filteredItems[index];
                             final properties = _itemProperties[item.id] ?? [];
                             // Image will be handled by ImageService
                             
                             return Card(
+                              key: ValueKey('item_${item.id}'),
                               margin: const EdgeInsets.only(bottom: 16),
                               child: InkWell(
                                 onTap: () {

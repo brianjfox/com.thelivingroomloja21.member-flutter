@@ -50,6 +50,41 @@ class TLRMemberApp extends StatelessWidget {
       ],
       child: Consumer<AuthProvider>(
         builder: (context, authProvider, child) {
+          // Show loading screen while AuthProvider is initializing
+          if (authProvider.isLoading) {
+            return MaterialApp(
+              title: 'The Living Room Member',
+              theme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(
+                  seedColor: const Color(0xFF388E3C), // Green theme
+                  brightness: Brightness.light,
+                ),
+                useMaterial3: true,
+              ),
+              home: const Scaffold(
+                body: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF388E3C)),
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        'Loading...',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Color(0xFF388E3C),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              debugShowCheckedModeBanner: false,
+            );
+          }
+          
           return MaterialApp.router(
             title: 'The Living Room Member',
             theme: ThemeData(
