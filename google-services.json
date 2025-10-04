@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "196848491465",
+    "project_id": "tlr-member",
+    "storage_bucket": "tlr-member.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196848491465:android:dd28d41de0865488c6e618",
+        "android_client_info": {
+          "package_name": "com.thelivingroomloja21.member"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVVSv2HyEeMFEjCGKRKlKF22blv5a2uzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

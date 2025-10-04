@@ -1,7 +1,7 @@
 {
-  "name": "com.thelivingroomloja21.flutter",
-  "version": "1.0.0",
-  "description": "TLR Flutter App Icon Management",
+  "name": "com.thelivingroomloja21.member",
+  "version": "1.3.0",
+  "description": "TLR Member",
   "scripts": {
     "icons:generate": "./manage_icons.sh generate",
     "icons:deploy": "./manage_icons.sh deploy",

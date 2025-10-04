@@ -1,113 +1,157 @@
-# Project Setup Scripts
+# Setup Scripts for The Living Room Member Flutter App
 
-This directory contains scripts to set up the TLR Member Flutter project after a fresh git checkout.
+This directory contains setup scripts to configure the Flutter app for building from a fresh git checkout.
 
-## Quick Start
+## Scripts Overview
 
-After cloning the repository, run:
+### 1. `setup_project.sh` - Complete Project Setup
+**Purpose**: Comprehensive setup script that handles the entire project setup from a fresh git checkout.
 
+**What it does**:
+- Checks for required tools (Flutter, Dart)
+- Cleans the project
+- Installs dependencies
+- Copies Firebase configuration files
+- Verifies Android configuration
+- Runs code generation
+- Analyzes the project
+- Tests build configuration
+
+**Usage**:
 ```bash
 ./scripts/setup_project.sh
 ```
 
-This will set up everything needed to run the project.
+**When to use**: First time setup or after a fresh git clone.
 
-## Individual Scripts
+### 2. `copy_firebase_config.sh` - Firebase Configuration Only
+**Purpose**: Simple script to copy Firebase configuration files to the correct locations.
 
-### `setup_project.sh`
-Complete project setup script that:
-- Gets Flutter dependencies
-- Sets up Android configuration for biometric authentication
-- Sets up iOS configuration (on macOS)
-- Runs code generation
-- Cleans and refreshes dependencies
+**What it does**:
+- Copies `google-services.json` to `android/app/`
+- Copies `GoogleService-Info.plist` to `ios/Runner/` (if available)
+- Provides next steps guidance
 
-### `setup_android.sh`
-Android-specific setup that:
-- Changes MainActivity from `FlutterActivity` to `FlutterFragmentActivity` (required for biometric auth)
-- Adds biometric permissions to AndroidManifest.xml
-- Ensures compileSdkVersion is sufficient for biometric support
-
-### `revert_android.sh`
-Reverts Android changes made by `setup_android.sh`:
-- Restores MainActivity to `FlutterActivity`
-- Removes biometric permissions from AndroidManifest.xml
-
-## Why These Scripts Are Needed
-
-### MainActivity Change
-The `local_auth` plugin requires the Android activity to be a `FragmentActivity`, but Flutter generates a regular `FlutterActivity` by default. This causes biometric authentication to fail with the error:
-```
-PlatformException(no_fragment_activity, local_auth plugin requires activity to be a FragmentActivity., null, null)
+**Usage**:
+```bash
+./scripts/copy_firebase_config.sh
 ```
 
-### Biometric Permissions
-The app needs specific permissions in AndroidManifest.xml to use biometric authentication:
-- `android.permission.USE_BIOMETRIC`
-- `android.permission.USE_FINGERPRINT`
+**When to use**: After pulling from git when you only need to update Firebase configuration.
 
-### iOS Deployment Target
-iOS apps using biometric authentication need a minimum deployment target of iOS 11.0.
+### 3. `setup_android_firebase.sh` - Android Firebase Setup
+**Purpose**: Focused script for Android Firebase configuration.
 
-## Manual Setup (Alternative)
+**What it does**:
+- Copies `google-services.json` to `android/app/`
+- Verifies Google Services plugin configuration
+- Provides build instructions
 
-If you prefer to make changes manually:
+**Usage**:
+```bash
+./scripts/setup_android_firebase.sh
+```
 
-### Android
-1. Edit `android/app/src/main/kotlin/com/thelivingroomloja21/tlr_member_flutter/MainActivity.kt`:
-   ```kotlin
-   // Change from:
-   import io.flutter.embedding.android.FlutterActivity
-   class MainActivity : FlutterActivity()
-   
-   // To:
-   import io.flutter.embedding.android.FlutterFragmentActivity
-   class MainActivity : FlutterFragmentActivity()
-   ```
+**When to use**: When you only need to set up Android Firebase configuration.
 
-2. Add to `android/app/src/main/AndroidManifest.xml` before `<application>`:
-   ```xml
-   <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-   <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-   ```
+## Prerequisites
 
-### iOS (macOS only)
-1. Edit `ios/Podfile`:
-   ```ruby
-   platform :ios, '11.0'
-   ```
+Before running any script, ensure you have:
+
+1. **Flutter SDK** installed and in your PATH
+2. **Dart SDK** (usually comes with Flutter)
+3. **Firebase configuration files** in the project root:
+   - `google-services.json` (required for Android)
+   - `GoogleService-Info.plist` (required for iOS)
+
+## Quick Start
+
+### For a fresh git checkout:
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd com.thelivingroomloja21.flutter
+
+# Run the complete setup
+./scripts/setup_project.sh
+```
+
+### For updating Firebase configuration only:
+
+```bash
+# After pulling from git
+./scripts/copy_firebase_config.sh
+
+# Clean and rebuild
+flutter clean
+flutter pub get
+```
+
+## Firebase Configuration Files
+
+The app requires Firebase configuration files to be in the project root:
+
+### Android: `google-services.json`
+- Must be in the project root
+- Will be copied to `android/app/google-services.json`
+- Contains Android app configuration for Firebase
+
+### iOS: `GoogleService-Info.plist`
+- Must be in the project root
+- Will be copied to `ios/Runner/GoogleService-Info.plist`
+- Contains iOS app configuration for Firebase
+- **Important**: After copying, you must add this file to your Xcode project
+
+## iOS Additional Setup
+
+After running the scripts, for iOS you need to:
+
+1. Open `ios/Runner.xcworkspace` in Xcode
+2. Right-click on the Runner folder
+3. Select "Add Files to Runner"
+4. Choose `GoogleService-Info.plist`
+5. Make sure "Copy items if needed" is checked
+6. Add to target: Runner
 
 ## Troubleshooting
 
-### Biometric Authentication Not Working
-1. Ensure you've run `./scripts/setup_android.sh`
-2. Check that the device has biometric hardware enabled
-3. Verify the user has enrolled biometric data (fingerprint/face)
-4. Check device logs for any permission errors
+### Script fails with "command not found"
+- Ensure Flutter is installed and in your PATH
+- Run `flutter doctor` to check your Flutter installation
 
-### Build Errors
-1. Run `flutter clean`
-2. Run `flutter pub get`
-3. For iOS: `cd ios && pod install && cd ..`
-4. Try building again
+### Firebase configuration not working
+- Verify the configuration files are in the project root
+- Check that the bundle ID matches in the configuration files
+- Ensure the files are valid JSON/XML
 
-### Script Permission Errors
-Make sure scripts are executable:
-```bash
-chmod +x scripts/*.sh
+### Build fails
+- Run `flutter clean` and try again
+- Check that all dependencies are installed with `flutter pub get`
+- Verify Firebase configuration files are in the correct locations
+
+### Push notifications not working
+- Test on physical devices (not simulators)
+- Check that Firebase project is properly configured
+- Verify APNs certificates are uploaded to Firebase Console (iOS)
+- Check device notification permissions
+
+## File Structure
+
+```
+scripts/
+├── README.md                    # This file
+├── setup_project.sh            # Complete project setup
+├── copy_firebase_config.sh     # Firebase config only
+└── setup_android_firebase.sh   # Android Firebase setup
 ```
 
-## Development Workflow
+## Support
 
-1. **Fresh checkout**: Run `./scripts/setup_project.sh`
-2. **Development**: Make your changes
-3. **Testing**: Run `flutter run`
-4. **Before commit**: Test biometric authentication works
-5. **Revert if needed**: Run `./scripts/revert_android.sh`
+If you encounter issues:
 
-## Notes
-
-- These scripts modify generated files that are typically not committed to git
-- The changes are necessary for biometric authentication to work properly
-- Scripts are idempotent - safe to run multiple times
-- Always test biometric authentication after setup
+1. Check the script output for error messages
+2. Verify all prerequisites are met
+3. Ensure Firebase configuration files are valid
+4. Run `flutter doctor` to check your Flutter installation
+5. Check the main project README for additional setup instructions

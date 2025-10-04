@@ -9,20 +9,26 @@ import '../models/item.dart';
 import '../models/purchase.dart';
 import '../models/event.dart';
 import 'cache_service.dart';
+import 'development_mode_service.dart';
 
 class ApiService {
-  static const String _baseUrl = 'https://api.thelivingroomloja21.com/api';
   late final Dio _dio;
   String? _authToken;
   Function()? _onUnauthorized;
+  DevelopmentModeService? _devModeService;
 
   // Singleton pattern
   static final ApiService _instance = ApiService._internal();
   factory ApiService() => _instance;
   
   ApiService._internal() {
+    _initializeDio();
+  }
+
+  Future<void> _initializeDio() async {
+    _devModeService = await DevelopmentModeService.getInstance();
     _dio = Dio(BaseOptions(
-      baseUrl: _baseUrl,
+      baseUrl: _devModeService!.currentApiUrl,
       connectTimeout: const Duration(seconds: 30),
       receiveTimeout: const Duration(seconds: 30),
       headers: {
@@ -71,10 +77,29 @@ class ApiService {
     _onUnauthorized = callback;
   }
 
+  /// Update the base URL when development mode is toggled
+  Future<void> updateBaseUrl() async {
+    if (_devModeService == null) {
+      _devModeService = await DevelopmentModeService.getInstance();
+    }
+    
+    final newBaseUrl = _devModeService!.currentApiUrl;
+    _dio.options.baseUrl = newBaseUrl;
+    debugPrint('ApiService: Base URL updated to: $newBaseUrl');
+  }
+
+  /// Get the current API server display name
+  Future<String> getCurrentApiServer() async {
+    if (_devModeService == null) {
+      _devModeService = await DevelopmentModeService.getInstance();
+    }
+    return _devModeService!.currentApiServer;
+  }
+
   // Auth API
   Future<AuthResponse> login(String username, String password) async {
     debugPrint('🌐 ApiService: Making login request to /auth/authenticate');
-    debugPrint('🌐 ApiService: Base URL: $_baseUrl');
+    debugPrint('🌐 ApiService: Base URL: ${_dio.options.baseUrl}');
     debugPrint('🌐 ApiService: Username: $username');
     
     final response = await _dio.post('/auth/authenticate', data: {
@@ -864,6 +889,28 @@ class ApiService {
       }
     } catch (e) {
       debugPrint('ApiService: Error getting recent purchases: $e');
+      rethrow;
+    }
+  }
+
+  // Push Notifications API
+  Future<Map<String, dynamic>> registerPushToken(String token) async {
+    try {
+      debugPrint('ApiService: Registering push token: $token');
+      
+      // Get platform information
+      final deviceInfo = await getDeviceInfo();
+      final platform = deviceInfo['platform'] ?? 'unknown';
+      
+      final response = await _dio.post('/push/register', data: {
+        'token': token,
+        'platform': platform,
+      });
+      
+      debugPrint('ApiService: Push token registration response: ${response.data}');
+      return response.data;
+    } catch (e) {
+      debugPrint('ApiService: Error registering push token: $e');
       rethrow;
     }
   }

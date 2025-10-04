@@ -19,6 +19,35 @@ A cross-platform Flutter application for The Living Room Member system, providin
 - iOS development: Xcode and iOS device/simulator
 - Android development: Android Studio and Android device/emulator
 
+### Setup from Fresh Git Checkout
+
+For a complete setup from a fresh git checkout, use the provided setup script:
+
+```bash
+# Run the complete setup script
+./scripts/setup_project.sh
+```
+
+This script will:
+- Install dependencies
+- Copy Firebase configuration files
+- Run code generation
+- Analyze the project
+- Test build configuration
+
+### Firebase Configuration
+
+The app uses Firebase for push notifications. Configuration files must be in the project root:
+
+- `google-services.json` - Android Firebase configuration
+- `GoogleService-Info.plist` - iOS Firebase configuration
+
+**Important**: These files are not included in the repository for security reasons. You must obtain them from your Firebase Console and place them in the project root.
+
+### Manual Setup
+
+If you prefer to set up manually:
+
 ### Running the App
 
 Use the automated scripts for the best experience:

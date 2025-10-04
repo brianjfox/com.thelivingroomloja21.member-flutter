@@ -2,9 +2,48 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../providers/auth_provider.dart';
+import '../services/development_mode_service.dart';
+import '../services/api_service.dart';
+import '../services/push_notification_service.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
+
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  DevelopmentModeService? _devModeService;
+  String _currentApiServer = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeDevModeService();
+  }
+
+  Future<void> _initializeDevModeService() async {
+    _devModeService = await DevelopmentModeService.getInstance();
+    _currentApiServer = _devModeService!.currentApiServer;
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  Future<void> _toggleDevelopmentMode() async {
+    if (_devModeService == null) return;
+    
+    await _devModeService!.toggleDevelopmentMode();
+    _currentApiServer = _devModeService!.currentApiServer;
+    
+    // Update the API service base URL
+    await ApiService().updateBaseUrl();
+    
+    if (mounted) {
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -113,6 +152,111 @@ class SettingsScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
+
+              // Push Notifications
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Notifications',
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      FutureBuilder<bool>(
+                        future: PushNotificationService.areNotificationsEnabled(),
+                        builder: (context, snapshot) {
+                          final isEnabled = snapshot.data ?? false;
+                          return SwitchListTile(
+                            title: const Text('Push Notifications'),
+                            subtitle: Text(
+                              isEnabled 
+                                ? 'Receive notifications about new events and updates'
+                                : 'Enable to receive notifications about new events and updates',
+                            ),
+                            value: isEnabled,
+                            onChanged: (value) async {
+                              if (value) {
+                                // Request notification permissions
+                                await PushNotificationService.initialize();
+                              } else {
+                                // Open app settings to disable notifications
+                                await PushNotificationService.openAppSettings();
+                              }
+                              if (mounted) {
+                                setState(() {});
+                              }
+                            },
+                          );
+                        },
+                      ),
+                      if (PushNotificationService.fcmToken != null) ...[
+                        const SizedBox(height: 8),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          child: Text(
+                            'Device Token: ${PushNotificationService.fcmToken?.substring(0, 20)}...',
+                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              color: Colors.grey[600],
+                              fontFamily: 'monospace',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // Development Mode (Admin Only)
+              if (authProvider.user?.isAdmin == true) ...[
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Development',
+                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        SwitchListTile(
+                          title: Text(
+                            (_devModeService?.isDevelopmentMode ?? false) 
+                              ? 'Use Local API' 
+                              : 'Use Production API'
+                          ),
+                          subtitle: const Text('Switch between local and production API servers'),
+                          value: _devModeService?.isDevelopmentMode ?? false,
+                          onChanged: _devModeService != null ? (value) => _toggleDevelopmentMode() : null,
+                        ),
+                        if (_currentApiServer.isNotEmpty) ...[
+                          const SizedBox(height: 8),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: Text(
+                              'Current API Server: $_currentApiServer',
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                color: Colors.grey[600],
+                                fontFamily: 'monospace',
+                              ),
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+              ],
 
               // App Settings
               Card(

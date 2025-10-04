@@ -1,9 +1,12 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../providers/auth_provider.dart';
 import '../services/username_service.dart';
+import '../services/development_mode_service.dart';
+import '../services/api_service.dart';
 
 class LoginScreen extends StatefulWidget {
   final String? unauthorizedMessage;
@@ -21,11 +24,14 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _obscurePassword = true;
   bool _showBiometricAlert = false;
   UsernameService? _usernameService;
+  DevelopmentModeService? _devModeService;
+  String _currentApiServer = '';
 
   @override
   void initState() {
     super.initState();
     _initializeUsernameService();
+    _initializeDevModeService();
   }
 
   @override
@@ -57,6 +63,33 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     } catch (e) {
       debugPrint('LoginScreen: Error loading saved username: $e');
+    }
+  }
+
+  Future<void> _initializeDevModeService() async {
+    try {
+      _devModeService = await DevelopmentModeService.getInstance();
+      _currentApiServer = await ApiService().getCurrentApiServer();
+      if (mounted) {
+        setState(() {});
+      }
+    } catch (e) {
+      debugPrint('LoginScreen: Error initializing development mode service: $e');
+    }
+  }
+
+  Future<void> _toggleDevelopmentMode() async {
+    try {
+      if (_devModeService != null) {
+        await _devModeService!.toggleDevelopmentMode();
+        await ApiService().updateBaseUrl();
+        _currentApiServer = await ApiService().getCurrentApiServer();
+        if (mounted) {
+          setState(() {});
+        }
+      }
+    } catch (e) {
+      debugPrint('LoginScreen: Error toggling development mode: $e');
     }
   }
 
@@ -287,6 +320,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             TextFormField(
                               controller: _passwordController,
                               obscureText: _obscurePassword,
+                              textInputAction: TextInputAction.go,
+                              onFieldSubmitted: (value) => _handleLogin(),
                               decoration: InputDecoration(
                                 labelText: 'Password',
                                 prefixIcon: const Icon(Icons.lock),
@@ -309,6 +344,55 @@ class _LoginScreenState extends State<LoginScreen> {
                                 return null;
                               },
                             ),
+                            // Development Mode Toggle (only in debug mode)
+                            if (kDebugMode) ...[
+                              const SizedBox(height: 16),
+                              Container(
+                                padding: const EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  color: Colors.orange.shade50,
+                                  border: Border.all(color: Colors.orange.shade200),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(Icons.bug_report, color: Colors.orange.shade600, size: 20),
+                                        const SizedBox(width: 8),
+                                        Text(
+                                          'Development Mode',
+                                          style: TextStyle(
+                                            color: Colors.orange.shade700,
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(height: 8),
+                                    SwitchListTile(
+                                      contentPadding: EdgeInsets.zero,
+                                      title: Text(
+                                        (_devModeService?.isDevelopmentMode ?? false) 
+                                          ? 'Use Local API' 
+                                          : 'Use Production API'
+                                      ),
+                                      subtitle: Text(
+                                        'Current API: $_currentApiServer',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey.shade600,
+                                        ),
+                                      ),
+                                      value: _devModeService?.isDevelopmentMode ?? false,
+                                      onChanged: (value) => _toggleDevelopmentMode(),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                             const SizedBox(height: 24),
                             Consumer<AuthProvider>(
                               builder: (context, authProvider, child) {

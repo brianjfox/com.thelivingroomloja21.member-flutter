@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'providers/auth_provider.dart';
 import 'utils/app_router.dart';
+import 'services/push_notification_service.dart';
 
-void main() {
+void main() async {
   try {
     WidgetsFlutterBinding.ensureInitialized();
+    
+    // Initialize Firebase and push notifications
+    await PushNotificationService.initialize();
+    
+    // Set up background message handler
+    FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
     
     // Add error handling for uncaught exceptions
     FlutterError.onError = (FlutterErrorDetails details) {
