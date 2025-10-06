@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
-import 'package:go_router/go_router.dart';
 import '../models/user.dart';
 import '../services/auth_service.dart';
 import '../services/username_service.dart';
 import '../services/api_service.dart';
+import '../services/push_notification_service.dart';
 import '../utils/app_router.dart';
 
 class AuthProvider with ChangeNotifier {
@@ -37,6 +37,24 @@ class AuthProvider with ChangeNotifier {
       debugPrint('🔐 AuthProvider: biometricAvailable: $_biometricAvailable');
       debugPrint('🔐 AuthProvider: biometricEnabled: $_biometricEnabled');
       debugPrint('🔐 AuthProvider: isAuthenticated: $_isAuthenticated');
+      
+      // If not authenticated but biometric is enabled, try biometric login
+      if (!_isAuthenticated && _biometricEnabled && _biometricAvailable) {
+        debugPrint('🔐 AuthProvider: Attempting automatic biometric login');
+        try {
+          final biometricSuccess = await _authService.loginWithBiometric();
+          if (biometricSuccess) {
+            _user = _authService.currentUser;
+            _isAuthenticated = _authService.isAuthenticated;
+            debugPrint('🔐 AuthProvider: Automatic biometric login successful');
+            notifyListeners();
+          } else {
+            debugPrint('🔐 AuthProvider: Automatic biometric login failed');
+          }
+        } catch (e) {
+          debugPrint('🔐 AuthProvider: Automatic biometric login error: $e');
+        }
+      }
     } catch (e) {
       debugPrint('Auth initialization error: $e');
     } finally {
@@ -74,6 +92,22 @@ class AuthProvider with ChangeNotifier {
         _isAuthenticated = _authService.isAuthenticated;
         _biometricAvailable = await _authService.isBiometricAvailable();
         notifyListeners();
+        
+        // Initialize push notifications after successful login (non-blocking)
+        // This matches the Ionic app's pattern
+        Future.delayed(Duration.zero, () async {
+          try {
+            debugPrint('🚀 Starting push notification initialization after login');
+            final result = await PushNotificationService.initAfterLogin();
+            if (result['success'] == true && result['granted'] == true && result['token'] != null) {
+              debugPrint('📲 Push token acquired (login): ${result['token'].toString().substring(0, 12)}…');
+            } else {
+              debugPrint('📲 Push not granted or no token');
+            }
+          } catch (error) {
+            debugPrint('⚠️ Push notification initialization failed, continuing: $error');
+          }
+        });
       }
       return success;
     } catch (e) {
@@ -96,6 +130,22 @@ class AuthProvider with ChangeNotifier {
         _isAuthenticated = _authService.isAuthenticated;
         debugPrint('🔐 AuthProvider: Biometric login successful, user set');
         notifyListeners();
+        
+        // Initialize push notifications after successful biometric login (non-blocking)
+        // This matches the Ionic app's pattern
+        Future.delayed(Duration.zero, () async {
+          try {
+            debugPrint('🚀 Starting push notification initialization after biometric login');
+            final result = await PushNotificationService.initAfterLogin();
+            if (result['success'] == true && result['granted'] == true && result['token'] != null) {
+              debugPrint('📲 Push token acquired (biometric): ${result['token'].toString().substring(0, 12)}…');
+            } else {
+              debugPrint('📲 Push not granted or no token');
+            }
+          } catch (error) {
+            debugPrint('⚠️ Push notification initialization failed, continuing: $error');
+          }
+        });
       } else {
         // Check if biometric was revoked
         _biometricEnabled = _authService.biometricEnabled;

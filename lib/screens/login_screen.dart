@@ -23,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
   bool _obscurePassword = true;
   bool _showBiometricAlert = false;
+  bool _enableBiometric = false;
   UsernameService? _usernameService;
   DevelopmentModeService? _devModeService;
   String _currentApiServer = '';
@@ -108,16 +109,15 @@ class _LoginScreenState extends State<LoginScreen> {
 
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
     final username = _usernameController.text.trim();
-    final success = await authProvider.login(
-      username,
-      _passwordController.text,
-    );
+    final password = _passwordController.text;
+    final success = await authProvider.login(username, password);
 
     if (mounted) {
       if (success) {
         debugPrint('🔐 LoginScreen: Login successful');
         debugPrint('🔐 LoginScreen: biometricAvailable: ${authProvider.biometricAvailable}');
         debugPrint('🔐 LoginScreen: biometricEnabled: ${authProvider.biometricEnabled}');
+        debugPrint('🔐 LoginScreen: enableBiometric toggle: $_enableBiometric');
         
         // Save username for future logins
         try {
@@ -129,12 +129,10 @@ class _LoginScreenState extends State<LoginScreen> {
           debugPrint('🔐 LoginScreen: Error saving username: $e');
         }
         
-        // Check if biometric is available and not enabled
-        if (authProvider.biometricAvailable && !authProvider.biometricEnabled) {
-          debugPrint('🔐 LoginScreen: Showing biometric setup alert');
-          setState(() {
-            _showBiometricAlert = true;
-          });
+        // If biometric toggle was enabled and biometric is available, set it up
+        if (_enableBiometric && authProvider.biometricAvailable && !authProvider.biometricEnabled) {
+          debugPrint('🔐 LoginScreen: Setting up biometric authentication');
+          await _setupBiometricAfterLogin(username, password);
         } else {
           debugPrint('🔐 LoginScreen: Navigating to dashboard');
           context.go('/tabs/dashboard');
@@ -166,6 +164,22 @@ class _LoginScreenState extends State<LoginScreen> {
       debugPrint('🔐 LoginScreen: Biometric login error: $e');
       if (mounted) {
         _showErrorDialog('Biometric authentication error: $e');
+      }
+    }
+  }
+
+  Future<void> _setupBiometricAfterLogin(String username, String password) async {
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+    final result = await authProvider.setupBiometric(username, password);
+
+    if (mounted) {
+      if (result['success']) {
+        _showSuccessSnackBar('Biometric authentication enabled! You can use ${Platform.isIOS ? 'Face ID' : Platform.isAndroid ? 'Touch ID' : 'biometric authentication'} next time.');
+        context.go('/tabs/dashboard');
+      } else {
+        _showErrorDialog('Failed to enable biometric authentication: ${result['message']}');
+        // Still navigate to dashboard even if biometric setup fails
+        context.go('/tabs/dashboard');
       }
     }
   }
@@ -342,6 +356,51 @@ class _LoginScreenState extends State<LoginScreen> {
                                   return 'Please enter your password';
                                 }
                                 return null;
+                              },
+                            ),
+                            // Biometric Toggle
+                            Consumer<AuthProvider>(
+                              builder: (context, authProvider, child) {
+                                if (authProvider.biometricAvailable && !authProvider.biometricEnabled) {
+                                  return Column(
+                                    children: [
+                                      const SizedBox(height: 16),
+                                      Container(
+                                        padding: const EdgeInsets.all(12),
+                                        decoration: BoxDecoration(
+                                          color: Colors.blue.shade50,
+                                          border: Border.all(color: Colors.blue.shade200),
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: SwitchListTile(
+                                          contentPadding: EdgeInsets.zero,
+                                          title: Text(
+                                            'Enable Biometric Login',
+                                            style: TextStyle(
+                                              color: Colors.blue.shade700,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                          subtitle: Text(
+                                            'Use ${Platform.isIOS ? 'Face ID' : Platform.isAndroid ? 'Touch ID' : 'biometric authentication'} for quick login',
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              color: Colors.grey.shade600,
+                                            ),
+                                          ),
+                                          value: _enableBiometric,
+                                          onChanged: (value) {
+                                            setState(() {
+                                              _enableBiometric = value;
+                                            });
+                                          },
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                }
+                                return const SizedBox.shrink();
                               },
                             ),
                             // Development Mode Toggle (only in debug mode)

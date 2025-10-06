@@ -45,6 +45,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,64 +95,66 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               const SizedBox(height: 16),
 
-              // Biometric Settings
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Security',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
+              // Biometric Status (Read-only)
+              if (authProvider.biometricAvailable) ...[
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Security',
+                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 16),
-                      SwitchListTile(
-                        title: const Text('Biometric Authentication'),
-                        subtitle: Text(
-                          authProvider.biometricAvailable
-                              ? 'Use Face ID or Touch ID for quick login'
-                              : 'Biometric authentication is not available on this device',
+                        const SizedBox(height: 16),
+                        ListTile(
+                          leading: Icon(
+                            authProvider.biometricEnabled ? Icons.fingerprint : Icons.fingerprint_outlined,
+                            color: authProvider.biometricEnabled ? Colors.green : Colors.grey,
+                          ),
+                          title: const Text('Biometric Authentication'),
+                          subtitle: Text(
+                            authProvider.biometricEnabled
+                                ? 'Face ID or Touch ID is enabled for quick login'
+                                : 'Biometric authentication is not set up. Enable it on the login screen.',
+                          ),
+                          trailing: authProvider.biometricEnabled
+                              ? const Icon(Icons.check_circle, color: Colors.green)
+                              : const Icon(Icons.info_outline, color: Colors.orange),
                         ),
-                        value: authProvider.biometricEnabled,
-                        onChanged: authProvider.biometricAvailable
-                            ? (value) async {
-                                if (value) {
-                                  // Enable biometric
-                                  final result = await authProvider.setupBiometric(
-                                    authProvider.user?.email ?? '',
-                                    '', // Password would be needed here
+                        if (authProvider.biometricEnabled) ...[
+                          const SizedBox(height: 8),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: TextButton.icon(
+                              onPressed: () async {
+                                final result = await authProvider.disableBiometric();
+                                if (context.mounted) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(result['message']),
+                                      backgroundColor: result['success'] ? Colors.green : Colors.red,
+                                    ),
                                   );
-                                  if (context.mounted) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(result['message']),
-                                        backgroundColor: result['success'] ? Colors.green : Colors.red,
-                                      ),
-                                    );
-                                  }
-                                } else {
-                                  // Disable biometric
-                                  final result = await authProvider.disableBiometric();
-                                  if (context.mounted) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(result['message']),
-                                        backgroundColor: result['success'] ? Colors.green : Colors.red,
-                                      ),
-                                    );
-                                  }
                                 }
-                              }
-                            : null,
-                      ),
-                    ],
+                              },
+                              icon: const Icon(Icons.fingerprint_outlined, size: 16),
+                              label: const Text('Disable Biometric Authentication'),
+                              style: TextButton.styleFrom(
+                                foregroundColor: Colors.red,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 16),
+                const SizedBox(height: 16),
+              ],
 
               // Push Notifications
               Card(
@@ -181,11 +184,65 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             value: isEnabled,
                             onChanged: (value) async {
                               if (value) {
-                                // Request notification permissions
-                                await PushNotificationService.initialize();
+                                // Show loading indicator
+                                if (context.mounted) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Requesting notification permissions...'),
+                                      duration: Duration(seconds: 2),
+                                    ),
+                                  );
+                                }
+                                
+                                try {
+                                  // Initialize push notifications (only if user is authenticated)
+                                  if (authProvider.isAuthenticated) {
+                                    final result = await PushNotificationService.initAfterLogin();
+                                    if (context.mounted) {
+                                      ScaffoldMessenger.of(context).showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            result['success'] 
+                                              ? 'Push notifications enabled successfully!'
+                                              : 'Failed to enable push notifications: ${result['error'] ?? 'Unknown error'}'
+                                          ),
+                                          backgroundColor: result['success'] ? Colors.green : Colors.red,
+                                        ),
+                                      );
+                                    }
+                                  } else {
+                                    // If not authenticated, just request permissions
+                                    await PushNotificationService.initialize();
+                                    if (context.mounted) {
+                                      ScaffoldMessenger.of(context).showSnackBar(
+                                        const SnackBar(
+                                          content: Text('Push notification permissions requested'),
+                                          backgroundColor: Colors.green,
+                                        ),
+                                      );
+                                    }
+                                  }
+                                } catch (e) {
+                                  if (context.mounted) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text('Error enabling push notifications: $e'),
+                                        backgroundColor: Colors.red,
+                                      ),
+                                    );
+                                  }
+                                }
                               } else {
                                 // Open app settings to disable notifications
                                 await PushNotificationService.openAppSettings();
+                                if (context.mounted) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Please disable notifications in your device settings'),
+                                      backgroundColor: Colors.orange,
+                                    ),
+                                  );
+                                }
                               }
                               if (mounted) {
                                 setState(() {});
