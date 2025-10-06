@@ -106,7 +106,6 @@
 				7D33BE2AC696169E61093001 /* Pods-RunnerTests.release.xcconfig */,
 				7601342F0201817FD44DD574 /* Pods-RunnerTests.profile.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -499,7 +498,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thelivingroomloja21.tlrMemberFlutter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thelivingroomloja21.member;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -683,7 +682,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thelivingroomloja21.tlrMemberFlutter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thelivingroomloja21.member;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -707,7 +706,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thelivingroomloja21.tlrMemberFlutter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thelivingroomloja21.member;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
