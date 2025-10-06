@@ -40,6 +40,9 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   String _editingNoteText = '';
   bool _fetchingTastingNotes = false;
   
+  // Scroll controller for auto-scrolling
+  final ScrollController _scrollController = ScrollController();
+  
   // Properties state
   bool _propertiesExpanded = false;
   
@@ -54,6 +57,12 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     super.initState();
     debugPrint('ItemDetailScreen: initState called with itemId: ${widget.itemId}');
     _loadItemDetails();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   Future<void> _loadItemDetails([int? itemId]) async {
@@ -357,6 +366,42 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         duration: const Duration(seconds: 3),
       ),
     );
+  }
+
+  void _scrollToTastingNotesBottom() {
+    if (_scrollController.hasClients) {
+      // Wait a bit for the UI to render the expanded tasting notes
+      Future.delayed(const Duration(milliseconds: 200), () {
+        if (_scrollController.hasClients) {
+          // Scroll to the very bottom to ensure the entire tasting notes card is visible
+          final maxScroll = _scrollController.position.maxScrollExtent;
+          
+          _scrollController.animateTo(
+            maxScroll,
+            duration: const Duration(milliseconds: 800),
+            curve: Curves.easeInOut,
+          );
+        }
+      });
+    }
+  }
+
+  void _scrollToPropertiesBottom() {
+    if (_scrollController.hasClients) {
+      // Wait a bit for the UI to render the expanded properties
+      Future.delayed(const Duration(milliseconds: 200), () {
+        if (_scrollController.hasClients) {
+          // Scroll to the very bottom to ensure the entire properties card is visible
+          final maxScroll = _scrollController.position.maxScrollExtent;
+          
+          _scrollController.animateTo(
+            maxScroll,
+            duration: const Duration(milliseconds: 800),
+            curve: Curves.easeInOut,
+          );
+        }
+      });
+    }
   }
 
   Widget _buildLabelImage() {
@@ -807,6 +852,13 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
               setState(() {
                 _propertiesExpanded = !_propertiesExpanded;
               });
+              
+              // Auto-scroll to bottom of properties card when expanded
+              if (_propertiesExpanded) {
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  _scrollToPropertiesBottom();
+                });
+              }
             },
             child: Padding(
               padding: const EdgeInsets.all(16),
@@ -944,6 +996,13 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
               setState(() {
                 _tastingNotesExpanded = !_tastingNotesExpanded;
               });
+              
+              // Auto-scroll to bottom of tasting notes card when expanded
+              if (_tastingNotesExpanded) {
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  _scrollToTastingNotesBottom();
+                });
+              }
             },
             child: Padding(
               padding: const EdgeInsets.all(16),
@@ -1199,6 +1258,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                         ),
                       )
                     : SingleChildScrollView(
+                    controller: _scrollController,
                     child: Column(
                       children: [
                         // Label image
