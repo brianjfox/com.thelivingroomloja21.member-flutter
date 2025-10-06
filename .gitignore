@@ -49,3 +49,5 @@ app.*.map.json
 
 # Generated app icons and previews
 /app-icons/
+.ios_device
+ios/build/
