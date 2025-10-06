@@ -16,8 +16,14 @@ class PushNotificationService {
     if (_isInitialized) return;
 
     try {
-      // Initialize Firebase
-      await Firebase.initializeApp();
+      // Check if Firebase is already initialized
+      try {
+        await Firebase.initializeApp();
+        debugPrint('✅ Firebase initialized for push notifications');
+      } catch (e) {
+        debugPrint('❌ Firebase already initialized or failed: $e');
+        // Continue anyway - Firebase might already be initialized
+      }
       
       // Request notification permissions
       await _requestPermissions();
@@ -29,10 +35,11 @@ class PushNotificationService {
       _setupMessageHandlers();
       
       _isInitialized = true;
-      debugPrint('Push notification service initialized successfully');
+      debugPrint('✅ Push notification service initialized successfully');
     } catch (e) {
-      debugPrint('Error initializing push notification service: $e');
-      rethrow;
+      debugPrint('❌ Error initializing push notification service: $e');
+      debugPrint('⚠️  Push notifications will not be available');
+      // Don't rethrow - let the app continue without push notifications
     }
   }
 
@@ -64,11 +71,7 @@ class PushNotificationService {
       _fcmToken = await _firebaseMessaging.getToken();
       debugPrint('FCM Token: $_fcmToken');
       
-      // Automatically register the token with the server
-      if (_fcmToken != null) {
-        await sendTokenToServer(_fcmToken);
-      }
-      
+      // Don't automatically register here - wait for explicit call after login
       return _fcmToken;
     } catch (e) {
       debugPrint('Error getting FCM token: $e');
@@ -192,7 +195,48 @@ class PushNotificationService {
 
   /// Open app settings
   static Future<void> openAppSettings() async {
-    await openAppSettings();
+    await Permission.notification.request();
+  }
+
+  /// Initialize push notifications after successful login
+  /// This matches the Ionic app's pattern of initializing after login
+  static Future<Map<String, dynamic>> initAfterLogin() async {
+    try {
+      debugPrint('📲 Initializing push notifications after login...');
+      
+      // Request permissions if not already granted
+      await _requestPermissions();
+      
+      // Get FCM token
+      final token = await _getFCMToken();
+      
+      if (token != null) {
+        // Register token with server
+        await sendTokenToServer(token);
+        debugPrint('📲 Push token registered after login: ${token.substring(0, 12)}...');
+        
+        return {
+          'success': true,
+          'granted': true,
+          'token': token,
+        };
+      } else {
+        debugPrint('📲 No push token available after login');
+        return {
+          'success': true,
+          'granted': false,
+          'token': null,
+        };
+      }
+    } catch (e) {
+      debugPrint('📲 Error initializing push notifications after login: $e');
+      return {
+        'success': false,
+        'granted': false,
+        'token': null,
+        'error': e.toString(),
+      };
+    }
   }
 }
 
@@ -200,6 +244,15 @@ class PushNotificationService {
 /// This function must be top-level and not a class method
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await Firebase.initializeApp();
-  debugPrint('Handling background message: ${message.messageId}');
+  try {
+    await Firebase.initializeApp();
+    debugPrint('✅ Firebase initialized for background message handling');
+  } catch (e) {
+    debugPrint('❌ Firebase initialization failed in background handler: $e');
+    // Continue anyway - the message might still be processable
+  }
+  
+  debugPrint('📱 Handling background message: ${message.messageId}');
+  debugPrint('📱 Message data: ${message.data}');
+  debugPrint('📱 Message notification: ${message.notification?.title}');
 }
