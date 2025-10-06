@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'firebase_options.dart';
 import 'providers/auth_provider.dart';
 import 'utils/app_router.dart';
 import 'services/push_notification_service.dart';
@@ -12,7 +13,9 @@ void main() async {
     
     // Initialize Firebase with better error handling
     try {
-      await Firebase.initializeApp();
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
       debugPrint('✅ Firebase initialized successfully');
       
       // Set up background message handler

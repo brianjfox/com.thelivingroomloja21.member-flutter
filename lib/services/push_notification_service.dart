@@ -4,6 +4,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import '../firebase_options.dart';
 import 'api_service.dart';
 
 class PushNotificationService {
@@ -18,7 +19,9 @@ class PushNotificationService {
     try {
       // Check if Firebase is already initialized
       try {
-        await Firebase.initializeApp();
+        await Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform,
+        );
         debugPrint('✅ Firebase initialized for push notifications');
       } catch (e) {
         debugPrint('❌ Firebase already initialized or failed: $e');
@@ -245,7 +248,9 @@ class PushNotificationService {
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   try {
-    await Firebase.initializeApp();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
     debugPrint('✅ Firebase initialized for background message handling');
   } catch (e) {
     debugPrint('❌ Firebase initialization failed in background handler: $e');
