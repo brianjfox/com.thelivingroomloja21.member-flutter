@@ -48,6 +48,11 @@ echo ""
 echo "📦 Getting dependencies..."
 flutter pub get
 
+# Update mobile_scanner to latest version to resolve Firebase conflicts
+echo ""
+echo "🔧 Updating mobile_scanner to resolve Firebase conflicts..."
+flutter pub upgrade mobile_scanner
+
 # Setup Firebase configuration
 echo ""
 echo "🔥 Setting up Firebase configuration..."

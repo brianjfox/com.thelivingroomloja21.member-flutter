@@ -54,6 +54,23 @@ This directory contains setup scripts to configure the Flutter app for building 
 
 **When to use**: When you only need to set up Android Firebase configuration.
 
+### 4. `fix_firebase_dependencies.sh` - Firebase Dependency Conflict Resolution
+**Purpose**: Resolves version conflicts between Firebase and other dependencies (especially mobile_scanner).
+
+**What it does**:
+- Cleans the project completely
+- Updates CocoaPods repository
+- Updates mobile_scanner to latest version
+- Reinstalls all dependencies
+- Reinstalls iOS pods
+
+**Usage**:
+```bash
+./scripts/fix_firebase_dependencies.sh
+```
+
+**When to use**: When you encounter CocoaPods dependency conflicts, especially with GoogleUtilities/UserDefaults version conflicts.
+
 ## Prerequisites
 
 Before running any script, ensure you have:
@@ -129,6 +146,11 @@ After running the scripts, for iOS you need to:
 - Run `flutter clean` and try again
 - Check that all dependencies are installed with `flutter pub get`
 - Verify Firebase configuration files are in the correct locations
+
+### CocoaPods dependency conflicts
+- Run `./scripts/fix_firebase_dependencies.sh` to resolve version conflicts
+- Common issue: GoogleUtilities/UserDefaults version conflicts between Firebase and mobile_scanner
+- The fix script updates mobile_scanner to the latest version which is compatible with newer Firebase versions
 
 ### Push notifications not working
 - Test on physical devices (not simulators)
