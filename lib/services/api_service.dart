@@ -390,6 +390,49 @@ class ApiService {
     return Item.fromJson(response.data['data']);
   }
 
+  Future<Item> updateItemPrices(int id, double cost, double price) async {
+    try {
+      debugPrint('ApiService: Updating prices for item $id - cost: $cost, price: $price');
+      
+      final response = await _dio.put('/items/$id', data: {
+        'cost': cost,
+        'price': price,
+      });
+      
+      debugPrint('ApiService: Price update response status: ${response.statusCode}');
+      debugPrint('ApiService: Price update response data: ${response.data}');
+      
+      // Handle different possible response structures
+      if (response.data is Map<String, dynamic>) {
+        final data = response.data as Map<String, dynamic>;
+        
+        // Check if the response has a 'data' field
+        if (data.containsKey('data') && data['data'] != null) {
+          return Item.fromJson(data['data']);
+        } else if (data.containsKey('id')) {
+          // If the response is the item directly
+          return Item.fromJson(data);
+        } else if (data.containsKey('success') && data.containsKey('message')) {
+          // Handle success/message response format
+          if (data['success'] == true) {
+            // If successful, we need to fetch the updated item
+            debugPrint('ApiService: Price update successful, fetching updated item');
+            return await getItem(id);
+          } else {
+            throw Exception('Price update failed: ${data['message']}');
+          }
+        } else {
+          throw Exception('Unexpected response structure: ${data.keys}');
+        }
+      } else {
+        throw Exception('Unexpected response type: ${response.data.runtimeType}');
+      }
+    } catch (e) {
+      debugPrint('ApiService: Error updating prices for item $id: $e');
+      rethrow;
+    }
+  }
+
   // Purchases API
   Future<List<Purchase>> getUserPurchases() async {
     final response = await _dio.get('/purchases');

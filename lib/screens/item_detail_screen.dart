@@ -33,9 +33,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   List<Map<String, dynamic>>? _tastingNotes;
   Map<String, User> _tastingNoteUsers = {};
   bool _tastingNotesExpanded = false;
-  bool _showTastingNotePrompt = false;
-  bool _showTastingNoteInput = false;
-  String _tastingNoteText = '';
   int? _editingNoteId;
   String _editingNoteText = '';
   bool _fetchingTastingNotes = false;
@@ -51,6 +48,9 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   
   // Label generation state
   bool _isGeneratingLabel = false;
+  
+  // Price editing state
+  bool _isUpdatingPrices = false;
 
   @override
   void initState() {
@@ -209,34 +209,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     }
   }
 
-  Future<void> _handleSaveTastingNote() async {
-    if (_tastingNoteText.trim().isEmpty) {
-      _showSnackBar('Please enter a tasting note', Colors.red);
-      return;
-    }
-
-    try {
-      await _apiService.createTastingNote(_item!.id, _tastingNoteText.trim());
-      _showSnackBar('Tasting note saved successfully!', Colors.green);
-      
-      // Reload tasting notes to show the new one
-      final notes = await _apiService.getTastingNotes(_item!.id);
-      setState(() {
-        _tastingNotes = notes;
-        _showTastingNoteInput = false;
-        _tastingNoteText = '';
-      });
-
-      // Fetch user information for new notes
-      for (final note in notes) {
-        if (note['user'] != null && !_tastingNoteUsers.containsKey(note['user'])) {
-          _fetchUserForTastingNote(note['user']);
-        }
-      }
-    } catch (e) {
-      _showSnackBar('Failed to save tasting note', Colors.red);
-    }
-  }
 
   Future<void> _handleUpdateTastingNote() async {
     if (_editingNoteText.trim().isEmpty) {
@@ -674,6 +646,173 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     );
   }
 
+  void _showPriceEditDialog() {
+    if (_item == null) return;
+    
+    final costController = TextEditingController(text: _item!.cost.toStringAsFixed(2));
+    final priceController = TextEditingController(text: _item!.price.toStringAsFixed(2));
+    
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Edit Prices'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (_item != null) ...[
+                Text(
+                  _item!.name,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 16),
+              ],
+              TextField(
+                controller: costController,
+                decoration: const InputDecoration(
+                  labelText: 'Cost (€)',
+                  border: OutlineInputBorder(),
+                  prefixText: '€ ',
+                ),
+                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: priceController,
+                decoration: const InputDecoration(
+                  labelText: 'Price (€)',
+                  border: OutlineInputBorder(),
+                  prefixText: '€ ',
+                ),
+                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: _isUpdatingPrices ? null : () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+            ElevatedButton(
+              onPressed: _isUpdatingPrices ? null : () async {
+                await _updateItemPrices(
+                  double.tryParse(costController.text) ?? _item!.cost,
+                  double.tryParse(priceController.text) ?? _item!.price,
+                );
+                if (mounted) {
+                  Navigator.of(context).pop();
+                }
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF388E3C),
+                foregroundColor: Colors.white,
+              ),
+              child: _isUpdatingPrices
+                  ? const SizedBox(
+                      width: 16,
+                      height: 16,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                      ),
+                    )
+                  : const Text('Update'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _updateItemPrices(double cost, double price) async {
+    if (_item == null) return;
+    
+    setState(() {
+      _isUpdatingPrices = true;
+    });
+
+    try {
+      debugPrint('ItemDetailScreen: Updating prices for item ${_item!.id} - cost: $cost, price: $price');
+      
+      // Call the API to update prices
+      final updatedItem = await _apiService.updateItemPrices(_item!.id, cost, price);
+      
+      debugPrint('ItemDetailScreen: Prices updated successfully');
+      
+      // Update the cache with the new item data
+      final cachedItems = await CacheService.getCachedItems() ?? <Item>[];
+      final updatedItems = List<Item>.from(cachedItems);
+      
+      // Find and update the item in cache
+      final itemIndex = updatedItems.indexWhere((item) => item.id == _item!.id);
+      if (itemIndex != -1) {
+        updatedItems[itemIndex] = updatedItem;
+        await CacheService.setCachedItems(updatedItems);
+        debugPrint('ItemDetailScreen: Cache updated with new prices');
+      }
+      
+      // Update the local state
+      setState(() {
+        _item = updatedItem;
+      });
+      
+      // Show success message
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Prices updated successfully!'),
+            backgroundColor: Colors.green,
+            duration: Duration(seconds: 2),
+          ),
+        );
+      }
+    } catch (e) {
+      debugPrint('ItemDetailScreen: Error updating prices: $e');
+      
+      if (mounted) {
+        String errorMessage = 'Failed to update prices';
+        
+        // Provide more specific error messages
+        if (e.toString().contains('Null')) {
+          errorMessage = 'Server returned invalid response. Please try again.';
+        } else if (e.toString().contains('Unexpected response structure')) {
+          errorMessage = 'Server response format changed. Please try again.';
+        } else if (e.toString().contains('Price update failed')) {
+          errorMessage = e.toString().replaceFirst('Exception: ', '');
+        } else if (e.toString().contains('401')) {
+          errorMessage = 'Authentication failed. Please log in again.';
+        } else if (e.toString().contains('403')) {
+          errorMessage = 'You do not have permission to update prices.';
+        } else if (e.toString().contains('404')) {
+          errorMessage = 'Item not found. Please refresh and try again.';
+        } else if (e.toString().contains('500')) {
+          errorMessage = 'Server error. Please try again later.';
+        } else {
+          errorMessage = 'Failed to update prices: ${e.toString()}';
+        }
+        
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(errorMessage),
+            backgroundColor: Colors.red,
+            duration: const Duration(seconds: 4),
+          ),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isUpdatingPrices = false;
+        });
+      }
+    }
+  }
+
   Widget _buildItemInfo() {
     if (_item == null) return const SizedBox.shrink();
 
@@ -715,12 +854,53 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                           color: Colors.grey[600],
                         ),
                       ),
-                      Text(
-                        _formatCurrency(_item!.price),
-                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xFF388E3C),
-                        ),
+                      Consumer<AuthProvider>(
+                        builder: (context, authProvider, child) {
+                          final isAdmin = authProvider.isAuthenticated && authProvider.user!.isAdmin;
+                          
+                          if (isAdmin) {
+                            return GestureDetector(
+                              onTap: _showPriceEditDialog,
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF388E3C).withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(8),
+                                  border: Border.all(
+                                    color: const Color(0xFF388E3C).withOpacity(0.3),
+                                    width: 1,
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      _formatCurrency(_item!.price),
+                                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: const Color(0xFF388E3C),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Icon(
+                                      Icons.edit,
+                                      size: 16,
+                                      color: const Color(0xFF388E3C).withOpacity(0.7),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          } else {
+                            return Text(
+                              _formatCurrency(_item!.price),
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xFF388E3C),
+                              ),
+                            );
+                          }
+                        },
                       ),
                     ],
                   ),
@@ -1399,175 +1579,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     context.push('/scan?purchase=true&itemId=$currentItemId');
   }
 
-  Future<void> _loadNewItem(int newItemId) async {
-    debugPrint('ItemDetailScreen: Loading new item with ID: $newItemId');
-    debugPrint('ItemDetailScreen: Current state - mounted: $mounted, _isLoading: $_isLoading, _isError: $_isError');
-    
-    if (!mounted) {
-      debugPrint('ItemDetailScreen: Widget not mounted, skipping load');
-      return;
-    }
-    
-    debugPrint('ItemDetailScreen: Setting loading state to true');
-    // Set loading state immediately
-    setState(() {
-      _isLoading = true;
-      _isError = false;
-      _errorMessage = null;
-      // Don't clear _item immediately to avoid black screen
-    });
-    debugPrint('ItemDetailScreen: Loading state set, _isLoading is now: $_isLoading');
 
-    // Add timeout to prevent infinite loading
-    try {
-      await Future.any([
-        _loadNewItemData(newItemId),
-        Future.delayed(const Duration(seconds: 30), () {
-          throw TimeoutException('Loading timeout after 30 seconds', const Duration(seconds: 30));
-        }),
-      ]);
-    } catch (e) {
-      debugPrint('ItemDetailScreen: Error loading new item: $e');
-      
-      if (mounted) {
-        setState(() {
-          _isError = true;
-          _errorMessage = 'Failed to load item: ${e.toString()}';
-          _isLoading = false;
-        });
-        
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Failed to load item: ${e.toString()}'),
-            backgroundColor: Colors.red,
-            duration: const Duration(seconds: 3),
-          ),
-        );
-      }
-    }
-  }
-
-  Future<void> _loadNewItemData(int newItemId) async {
-    debugPrint('ItemDetailScreen: _loadNewItemData called for item $newItemId');
-    debugPrint('ItemDetailScreen: Widget mounted in _loadNewItemData: $mounted');
-    
-    // Check if user is authenticated before making API calls
-    final authProvider = Provider.of<AuthProvider>(context, listen: false);
-    debugPrint('ItemDetailScreen: User authenticated: ${authProvider.isAuthenticated}');
-    
-    if (!authProvider.isAuthenticated) {
-      debugPrint('ItemDetailScreen: User not authenticated');
-      if (mounted) {
-        setState(() {
-          _isError = true;
-          _errorMessage = 'User not authenticated';
-          _isLoading = false;
-        });
-        debugPrint('ItemDetailScreen: Set error state for unauthenticated user');
-      }
-      return;
-    }
-
-    debugPrint('ItemDetailScreen: Loading details for new item $newItemId');
-
-    // Check cache first for item and properties
-    final cachedItems = await CacheService.getCachedItems();
-    final cachedProperties = await CacheService.getCachedItemProperties();
-    
-    Item? item;
-    List<Map<String, dynamic>> properties = [];
-    
-    // Try to get item from cache first
-    if (cachedItems != null) {
-      try {
-        item = cachedItems.firstWhere(
-          (cachedItem) => cachedItem.id == newItemId,
-          orElse: () => Item(
-            id: -1, 
-            code: '', 
-            name: '', 
-            description: '', 
-            cost: 0, 
-            price: 0, 
-            isAlcohol: false, 
-            createdAt: DateTime.now().toIso8601String(), 
-            updatedAt: DateTime.now().toIso8601String(),
-            onHand: 0
-          ),
-        );
-        if (item.id != -1) {
-          debugPrint('ItemDetailScreen: Found new item $newItemId in cache');
-        }
-      } catch (e) {
-        debugPrint('ItemDetailScreen: Error finding item in cache: $e');
-        item = null;
-      }
-    }
-    
-    // Try to get properties from cache
-    if (cachedProperties != null && cachedProperties.containsKey(newItemId)) {
-      properties = cachedProperties[newItemId]!;
-      debugPrint('ItemDetailScreen: Found properties for new item $newItemId in cache');
-    }
-
-    // If we don't have cached data, fetch from API
-    if (item == null || item.id == -1) {
-      debugPrint('ItemDetailScreen: New item $newItemId not in cache, fetching from API');
-      try {
-        item = await _apiService.getItem(newItemId);
-        debugPrint('ItemDetailScreen: Successfully fetched item $newItemId from API: ${item.name}');
-      } catch (e) {
-        debugPrint('ItemDetailScreen: Error fetching item from API: $e');
-        throw Exception('Failed to fetch item: $e');
-      }
-    }
-    
-    if (properties.isEmpty) {
-      debugPrint('ItemDetailScreen: Properties for new item $newItemId not in cache, fetching from API');
-      try {
-        properties = await _apiService.getItemProperties(newItemId);
-        debugPrint('ItemDetailScreen: Successfully fetched properties for item $newItemId');
-      } catch (e) {
-        debugPrint('ItemDetailScreen: Error fetching properties from API: $e');
-        // Don't throw here, just use empty properties
-        properties = [];
-      }
-    }
-
-    // Always fetch tasting notes (they change frequently)
-    final tastingNotes = await _apiService.getTastingNotes(newItemId).catchError((e) {
-      debugPrint('ItemDetailScreen: Error loading tasting notes: $e');
-      return <Map<String, dynamic>>[];
-    });
-
-    if (!mounted) {
-      debugPrint('ItemDetailScreen: Widget not mounted during setState, skipping');
-      return;
-    }
-
-    debugPrint('ItemDetailScreen: About to update state with new item data');
-    debugPrint('ItemDetailScreen: New item: ${item?.name} (ID: ${item?.id})');
-    debugPrint('ItemDetailScreen: Properties count: ${properties.length}');
-    debugPrint('ItemDetailScreen: Tasting notes count: ${tastingNotes.length}');
-    
-    // Update state with new item data
-    setState(() {
-      _item = item!;
-      _itemProperties = {newItemId: properties};
-      _tastingNotes = tastingNotes;
-      _isLoading = false;
-    });
-    
-    debugPrint('ItemDetailScreen: State updated successfully, _isLoading: $_isLoading, _item: ${_item?.name}');
-
-    // Fetch user information for tasting notes that don't have complete user data
-    for (final note in tastingNotes) {
-      if (note['user'] != null && !_tastingNoteUsers.containsKey(note['user'])) {
-        _fetchUserForTastingNote(note['user']);
-      }
-    }
-    
-    debugPrint('ItemDetailScreen: Successfully loaded new item: ${_item?.name}');
-  }
 
 }
